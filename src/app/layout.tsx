@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/Header";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -11,17 +12,7 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
   title: "Dot Phenix Solutions | Web, Mobile, SaaS & AI Automation Company",
   description:
-    "Dot Phenix Solutions builds web applications, mobile apps, SaaS dashboards, payroll systems, automation solutions, and AI-powered agents for modern businesses.",
-  keywords: [
-    "Web Application Development",
-    "Mobile App Development",
-    "SaaS Solutions",
-    "AI Automation",
-    "Payroll Systems",
-    "Digital Transformation",
-    "AI Agents",
-    "Business Automation",
-  ],
+    "Dot Phenix Solutions builds modern web applications, mobile apps, SaaS platforms, and AI automation solutions.",
 };
 
 export default function RootLayout({
@@ -31,7 +22,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={spaceGrotesk.className}>{children}</body>
+      <body className={spaceGrotesk.className}>
+        <Header />
+        {children}
+      </body>
     </html>
   );
 }

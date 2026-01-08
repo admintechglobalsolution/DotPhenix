@@ -1,3 +1,5 @@
+"use client";
+
 import { Card, Container, Text } from "./ui";
 import {
   Globe,

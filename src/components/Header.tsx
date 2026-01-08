@@ -1,116 +1,86 @@
 "use client";
 
-import * as React from "react";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import CssBaseline from "@mui/material/CssBaseline";
-import Divider from "@mui/material/Divider";
-import dynamic from "next/dynamic";
-import IconButton from "@mui/material/IconButton";
+import Link from "next/link";
+import { useEffect, useState } from "react";
 
-const Drawer = dynamic(() => import("@mui/material/Drawer"), { ssr: false });
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemText from "@mui/material/ListItemText";
-const MenuIcon = dynamic(() => import("@mui/icons-material/Menu"), { ssr: false });
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
+const navItems = [
+  { label: "Services", href: "/services" },
+  { label: "Solutions", href: "/solutions" },
+  { label: "Research", href: "/research" },
+  { label: "Careers", href: "/careers" },
+  { label: "Company", href: "/company" },
+];
 
-interface Props {
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
-  window?: () => Window;
-}
+export default function Header() {
+  const [open, setOpen] = useState(false);
 
-const drawerWidth = 350;
-const navItems = ["Services", "Solutions", "Research", "Careers", "Company"];
-
-export default function DrawerAppBar(props: Props) {
-  const { window } = props;
-  const [mobileOpen, setMobileOpen] = React.useState(false);
-
-  const handleDrawerToggle = () => {
-    setMobileOpen((prevState) => !prevState);
-  };
-
-  const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-      <Typography variant="h6" sx={{ my: 2 }}>
-        🔥 DotPhenix
-      </Typography>
-      <Divider />
-      <List>
-        {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: "center" }}>
-              <ListItemText primary={item} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
-    </Box>
-  );
-
-  const container =
-    window !== undefined ? () => window().document.body : undefined;
+  // lock body scroll when mobile menu is open
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
 
   return (
-    <Box>
-      <CssBaseline />
-      <AppBar component="nav">
-        <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="start"
-            onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: "none" } }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography
-            variant="h6"
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
-          >
+    <header className="site-header" data-menu-open={open ? "true" : "false"}>
+      <div className="header-inner">
+        <div className="brand">
+          <Link href="/" className="logo" aria-label="DotPhenix home">
             🐦‍🔥 DotPhenix
-          </Typography>
-          <Box sx={{ display: { xs: "none", sm: "block" } }}>
+          </Link>
+        </div>
+
+        {/* Desktop nav */}
+        <nav className="nav-desktop" aria-label="Primary navigation">
+          <ul className="nav-list">
             {navItems.map((item) => (
-              <Button key={item} sx={{ color: "#fff" }}>
-                {item}
-              </Button>
+              <li key={item.href} className="nav-item">
+                <Link href={item.href} className="nav-link">
+                  {item.label}
+                </Link>
+              </li>
             ))}
-          </Box>
-        </Toolbar>
-      </AppBar>
-      <nav>
-        <Drawer
-          container={container}
-          variant="temporary"
-          open={mobileOpen}
-          onClose={handleDrawerToggle}
-          ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
-          }}
-          sx={{
-            display: { xs: "block", sm: "none" },
-            "& .MuiDrawer-paper": {
-              boxSizing: "border-box",
-              width: drawerWidth,
-            },
-          }}
+          </ul>
+        </nav>
+
+        {/* Mobile toggle button */}
+        <button
+          className="menu-toggle"
+          aria-label={open ? "Close menu" : "Open menu"}
+          aria-expanded={open}
+          onClick={() => setOpen((v) => !v)}
         >
-          {drawer}
-        </Drawer>
-      </nav>
-      <Box component="main" sx={{ p: 3 }}>
-        <Toolbar />
-      </Box>
-    </Box>
+          <span className="menu-icon" aria-hidden>
+            {open ? "✕" : "☰"}
+          </span>
+        </button>
+      </div>
+
+      {/* Mobile overlay + nav */}
+      <div
+        className="mobile-nav-wrap"
+        role="dialog"
+        aria-modal="true"
+        aria-hidden={!open}
+      >
+        <div className="mobile-nav-overlay" onClick={() => setOpen(false)} />
+        <nav className="nav-mobile" aria-label="Mobile navigation">
+          <ul>
+            {navItems.map((item) => (
+              <li key={item.href}>
+                <Link
+                  href={item.href}
+                  className="nav-link-mobile"
+                  onClick={() => setOpen(false)}
+                >
+                  {item.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </div>
+    </header>
   );
 }

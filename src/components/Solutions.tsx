@@ -1,14 +1,17 @@
+"use client";
+
 import { Card, Container, Text } from "./ui";
 
-function Solutions() {
+export default function Solutions() {
   return (
     <section className="solutions-section">
       <Text as="h2" className="solutions-title">
         Do More With Us
       </Text>
+
       <Container>
         <div className="solutions-layout">
-          {/* LEFT SOLUTIONS */}
+          {/* LEFT */}
           <div className="solutions-list">
             <Card className="solution-item">Coding & Technology Platforms</Card>
             <Card className="solution-item">Business & Legal Solutions</Card>
@@ -16,14 +19,12 @@ function Solutions() {
             <Card className="solution-item">Healthcare & Medical Systems</Card>
           </div>
 
-          {/* TITLE */}
+          {/* CENTER */}
           <div className="solutions-center">
-            <Text as="h2" className="solutions-title">
-              🐦‍🔥 DotPhenix Solutions
-            </Text>
+            <Text as="h3">🐦‍🔥 DotPhenix Solutions</Text>
           </div>
 
-          {/* RIGHT SOLUTIONS */}
+          {/* RIGHT */}
           <div className="solutions-list">
             <Card className="solution-item">Insurance Platforms</Card>
             <Card className="solution-item">Retail & E-commerce Solutions</Card>
@@ -39,5 +40,3 @@ function Solutions() {
     </section>
   );
 }
-
-export default Solutions;

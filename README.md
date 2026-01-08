@@ -27,5 +27,7 @@ pnpm add @mui/material @emotion/react @emotion/styled
 pnpm add @mui/icons-material
 pnpm dev
 pnpm add lucide-react
+pnpm start
+
 
 ```

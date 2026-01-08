@@ -1,8 +1,11 @@
+"use client";
+
 import { Card, Container, Text } from "./ui";
 import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
 import RocketLaunchSharpIcon from "@mui/icons-material/RocketLaunchSharp";
 import DocumentScannerRoundedIcon from "@mui/icons-material/DocumentScannerRounded";
 import MemoryRoundedIcon from "@mui/icons-material/MemoryRounded";
+import ViewInArRoundedIcon from "@mui/icons-material/ViewInArRounded";
 
 export default function Process() {
   return (
@@ -14,9 +17,9 @@ export default function Process() {
 
         <div className="vertical-flow">
           {/* 1 */}
-          <div className="flow-item">
+          <div className="flow-item desktop-only">
             {/* ===== Laptop / Desktop ONLY ===== */}
-            <div className="flow-cards-row desktop-only">
+            <div className="flow-cards-row">
               <Card className="flow-card">
                 <span className="flow-icon">📄</span>
                 <span className="flow-label">Task 1</span>
@@ -42,24 +45,33 @@ export default function Process() {
                 <span className="flow-label">Task 5</span>
               </Card>
             </div>
-
-            {/* ===== Mobile ONLY ===== */}
-            <div className="mobile-only">
-              <Card className="flow-card">
-                <span className="flow-icon">📄</span>
-              </Card>
-              <div className="flow-message">
-                <strong>Business Task and Data</strong>
-                <span>
-                  {" "}
-                  Structured and unstructured data from
-                  <br />
-                  business processes and operational systems.
-                </span>
-              </div>
-            </div>
           </div>
 
+          <div className="flow-line desktop-only">
+            <svg viewBox="0 0 2 100" preserveAspectRatio="none">
+              <line x1="1" y1="0" x2="1" y2="100" />
+            </svg>
+          </div>
+
+          {/* 1 */}
+          <div className="flow-item">
+            <Card className="flow-card automation">
+              <span className="flow-icon">
+                <DocumentScannerRoundedIcon />
+              </span>
+              <span className="flow-label">Tasks</span>
+            </Card>
+
+            <div className="flow-message">
+              <strong>Busines Task and Data</strong>
+              <span>
+                {" "}
+                Complex data from multiple task systems
+                <br />
+                and interconnected business workflows.
+              </span>
+            </div>
+          </div>
           <div className="flow-line">
             <svg viewBox="0 0 2 100" preserveAspectRatio="none">
               <line x1="1" y1="0" x2="1" y2="100" />
@@ -92,7 +104,7 @@ export default function Process() {
           <div className="flow-item">
             <Card className="flow-card automation">
               <span className="flow-icon">
-                <DocumentScannerRoundedIcon />
+                <ViewInArRoundedIcon />
               </span>
             </Card>
 
