@@ -316,6 +316,27 @@ model-viewer {
   }
 }
 
+/* Hint to the compositor for animated SVG stroke properties */
+.flow-line line {
+  will-change: stroke-dashoffset, stroke-opacity;
+}
+
+/* Respect user motion preference and reduce animations */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .particles-bg {
+    display: none !important;
+  }
+}
+
 /* =========================
    MOBILE FALLBACK
 ========================= */

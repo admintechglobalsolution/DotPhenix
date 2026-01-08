@@ -1,5 +1,3 @@
-"use client";
-
 import { Card, Container, Text } from "./ui";
 
 function Solutions() {

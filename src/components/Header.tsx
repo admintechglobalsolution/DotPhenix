@@ -5,13 +5,15 @@ import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
 import Divider from "@mui/material/Divider";
-import Drawer from "@mui/material/Drawer";
+import dynamic from "next/dynamic";
 import IconButton from "@mui/material/IconButton";
+
+const Drawer = dynamic(() => import("@mui/material/Drawer"), { ssr: false });
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
-import MenuIcon from "@mui/icons-material/Menu";
+const MenuIcon = dynamic(() => import("@mui/icons-material/Menu"), { ssr: false });
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";

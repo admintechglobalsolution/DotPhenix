@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 import { Button, Text, Container } from "./ui";
 
@@ -15,23 +15,16 @@ const ModelViewer = dynamic(
     await import("@google/model-viewer");
 
     return function Viewer() {
-      return (
-        <model-viewer
-          src="/models/robot.glb"
-          disable-zoom
-          autoplay
-          animation-name="*"
-          disable-zoom
-          loading="lazy"
-          exposure="1"
-          environment-image="neutral"
-          style={{
-            width: "100%",
-            height: "100%",
-            display: "block",
-          }}
-        />
-      );
+      // Use createElement to avoid TSX parser issues with hyphenated attributes
+      return React.createElement("model-viewer", {
+        src: "/models/robot.glb",
+        autoplay: true,
+        "animation-name": "*",
+        loading: "lazy",
+        exposure: 1,
+        "environment-image": "neutral",
+        style: { width: "100%", height: "100%", display: "block" },
+      });
     };
   },
   {

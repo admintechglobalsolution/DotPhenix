@@ -1,5 +1,3 @@
-"use client";
-
 import { Card, Container, Text } from "./ui";
 import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
 import RocketLaunchSharpIcon from "@mui/icons-material/RocketLaunchSharp";

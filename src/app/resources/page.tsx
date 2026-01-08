@@ -1,5 +1,7 @@
-// Auto-generated placeholder
+import React from "react";
 
-export default function Page() {
-  return null;
+function page() {
+  return <div>page</div>;
 }
+
+export default page;

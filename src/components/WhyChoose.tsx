@@ -1,24 +1,34 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import dynamic from "next/dynamic";
 import { Container, Text } from "./ui";
-import Particles from "react-tsparticles";
 import { loadSlim } from "tsparticles-slim";
 import type { Engine } from "tsparticles-engine";
+
+// Dynamic import so tsparticles code is not in initial bundle
+const Particles = dynamic(() => import("react-tsparticles"), { ssr: false });
 
 function WhyChoose() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
   const [stats, setStats] = useState([0, 0, 0]);
+  const animationRef = useRef<number | null>(null);
+  const startRef = useRef<number | null>(null);
 
   const particlesInit = async (engine: Engine) => {
     await loadSlim(engine);
   };
 
-  /* Scroll reveal */
+  /* Scroll reveal & decide whether to render particles */
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => entry.isIntersecting && setVisible(true),
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          observer.disconnect();
+        }
+      },
       { threshold: 0.25 }
     );
 
@@ -26,43 +36,61 @@ function WhyChoose() {
     return () => observer.disconnect();
   }, []);
 
-  /* Animated counters */
+  /* Animated counters using requestAnimationFrame for smooth updates */
   useEffect(() => {
     if (!visible) return;
 
     const targets = [60, 7, 9];
-    targets.forEach((target, i) => {
-      let current = 0;
-      const interval = setInterval(() => {
-        current += Math.ceil(target / 40);
-        setStats((prev) => {
-          const next = [...prev];
-          next[i] = current >= target ? target : current;
-          return next;
-        });
-        if (current >= target) clearInterval(interval);
-      }, 30);
-    });
+    const duration = 900; // ms per counter
+
+    const step = (timestamp: number) => {
+      if (!startRef.current) startRef.current = timestamp;
+      const elapsed = timestamp - (startRef.current ?? 0);
+      const progress = Math.min(elapsed / duration, 1);
+
+      const next = targets.map((t) => Math.round(t * progress));
+      setStats(next as [number, number, number]);
+
+      if (progress < 1) {
+        animationRef.current = requestAnimationFrame(step);
+      } else {
+        if (animationRef.current) cancelAnimationFrame(animationRef.current);
+        animationRef.current = null;
+        startRef.current = null;
+      }
+    };
+
+    animationRef.current = requestAnimationFrame(step);
+
+    return () => {
+      if (animationRef.current) cancelAnimationFrame(animationRef.current);
+    };
   }, [visible]);
 
   return (
     <section ref={sectionRef} className="why-section">
-      {/* Particles */}
-      <div className="particles-bg">
-        <Particles
-          init={particlesInit}
-          options={{
-            fullScreen: { enable: false },
-            particles: {
-              number: { value: 180 },
-              color: { value: "#ff8c28" },
-              opacity: { value: 0.25 },
-              size: { value: 2 },
-              move: { enable: true, speed: 0.2 },
-            },
-          }}
-        />
-      </div>
+      {/* Particles - lazy, throttled, and respects prefers-reduced-motion */}
+      {visible &&
+        typeof window !== "undefined" &&
+        !window.matchMedia("(prefers-reduced-motion: reduce)").matches && (
+          <div className="particles-bg">
+            <Particles
+              init={particlesInit}
+              options={{
+                fullScreen: { enable: false },
+                fpsLimit: 30,
+                detectRetina: true,
+                particles: {
+                  number: { value: 40 },
+                  color: { value: "#ff8c28" },
+                  opacity: { value: 0.25 },
+                  size: { value: 2 },
+                  move: { enable: true, speed: 0.2 },
+                },
+              }}
+            />
+          </div>
+        )}
 
       {/* Header */}
       <Container>
