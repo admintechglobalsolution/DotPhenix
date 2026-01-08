@@ -11,7 +11,7 @@ export default function Process() {
     <section className="process-vertical">
       <Container>
         <Text as="h2" className="process-title">
-          How Dot Phenix Works
+          How DotPhenix Works
         </Text>
 
         <div className="vertical-flow">

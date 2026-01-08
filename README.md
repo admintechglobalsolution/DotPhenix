@@ -1,4 +1,4 @@
-# DotPhenix Web Application
+# 🐦‍🔥DotPhenix Web Application
 
 This is the official web application for **Dot Phenix**, built using **Next.js App Router**, **Material UI**, and **pnpm**.
 

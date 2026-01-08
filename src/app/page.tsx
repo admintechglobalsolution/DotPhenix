@@ -11,8 +11,8 @@ function page() {
       <Header />
       <Hero />
       <Services />
-      <Solutions />
       <Process />
+      <Solutions />
       <WhyChoose />
       <Footer />
     </div>

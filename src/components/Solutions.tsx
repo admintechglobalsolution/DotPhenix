@@ -5,6 +5,9 @@ import { Card, Container, Text } from "./ui";
 function Solutions() {
   return (
     <section className="solutions-section">
+      <Text as="h2" className="solutions-title">
+        Do More With Us
+      </Text>
       <Container>
         <div className="solutions-layout">
           {/* LEFT SOLUTIONS */}
