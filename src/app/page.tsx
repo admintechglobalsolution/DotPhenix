@@ -2,7 +2,6 @@ import Hero from "../components/Hero";
 import Services from "@/components/Services";
 import Solutions from "@/components/Solutions";
 import WhyChoose from "@/components/WhyChoose";
-import Footer from "../components/Footer";
 import Process from "../components/Process";
 function page() {
   return (
@@ -12,7 +11,6 @@ function page() {
       <Process />
       <Solutions />
       <WhyChoose />
-      <Footer />
     </div>
   );
 }
