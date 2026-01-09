@@ -1,13 +1,35 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { Card, Container, Text } from "./ui";
+
 import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
 import RocketLaunchSharpIcon from "@mui/icons-material/RocketLaunchSharp";
 import DocumentScannerRoundedIcon from "@mui/icons-material/DocumentScannerRounded";
 import MemoryRoundedIcon from "@mui/icons-material/MemoryRounded";
 import ViewInArRoundedIcon from "@mui/icons-material/ViewInArRounded";
 
+const TOTAL_STEPS = 6; // INCLUDING FINAL STEP
+
 export default function Process() {
+  const [activeStep, setActiveStep] = useState(1);
+
+  /* ===============================
+     AUTO STEP FLOW (1 → 6 → 1)
+  ================================ */
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveStep((prev) => (prev === TOTAL_STEPS ? 1 : prev + 1));
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const cardActive = (step) => (activeStep === step ? "flow-card-phenix" : "");
+
+  const messageActive = (step) =>
+    activeStep === step ? "flow-message-active" : "";
+
   return (
     <section className="process-vertical">
       <Container>
@@ -53,42 +75,38 @@ export default function Process() {
             </svg>
           </div>
 
-          {/* 1 */}
+          {/* ================= STEP 1 ================= */}
           <div className="flow-item">
-            <Card className="flow-card automation">
+            <Card className={`flow-card automation ${cardActive(1)}`}>
               <span className="flow-icon">
                 <DocumentScannerRoundedIcon />
               </span>
-              <span className="flow-label">Tasks</span>
             </Card>
-
-            <div className="flow-message">
-              <strong>Busines Task and Data</strong>
+            <div className={`flow-message ${messageActive(1)}`}>
+              <strong>Business Task and Data</strong>
               <span>
-                {" "}
                 Complex data from multiple task systems
                 <br />
-                and interconnected business workflows.
+                and interconnected workflows.
               </span>
             </div>
           </div>
+
           <div className="flow-line">
             <svg viewBox="0 0 2 100" preserveAspectRatio="none">
               <line x1="1" y1="0" x2="1" y2="100" />
             </svg>
           </div>
 
-          {/* 2 */}
+          {/* ================= STEP 2 ================= */}
           <div className="flow-item">
-            <Card className="flow-card flow-card-phenix">
+            <Card className={`flow-card automation ${cardActive(2)}`}>
               <span className="flow-icon">🐦‍🔥</span>
             </Card>
-
-            <div className="flow-message">
+            <div className={`flow-message ${messageActive(2)}`}>
               <strong>Dot Phenix Solutions</strong>
               <span>
-                {" "}
-                An AI-driven platform that transforms
+                AI-driven platform transforming
                 <br />
                 digital operations into automation.
               </span>
@@ -100,21 +118,20 @@ export default function Process() {
               <line x1="1" y1="0" x2="1" y2="100" />
             </svg>
           </div>
-          {/* 3 */}
+
+          {/* ================= STEP 3 ================= */}
           <div className="flow-item">
-            <Card className="flow-card automation">
+            <Card className={`flow-card automation ${cardActive(3)}`}>
               <span className="flow-icon">
                 <ViewInArRoundedIcon />
               </span>
             </Card>
-
-            <div className="flow-message">
+            <div className={`flow-message ${messageActive(3)}`}>
               <strong>Data Analysis</strong>
               <span>
-                {" "}
-                Business data is analyzed to generate
+                Business data analyzed to generate
                 <br />
-                accurate and actionable insights.
+                accurate, actionable insights.
               </span>
             </div>
           </div>
@@ -124,21 +141,20 @@ export default function Process() {
               <line x1="1" y1="0" x2="1" y2="100" />
             </svg>
           </div>
-          {/* 4 */}
+
+          {/* ================= STEP 4 ================= */}
           <div className="flow-item">
-            <Card className="flow-card automation">
+            <Card className={`flow-card automation ${cardActive(4)}`}>
               <span className="flow-icon">
                 <AutoAwesomeIcon />
               </span>
             </Card>
-
-            <div className="flow-message">
+            <div className={`flow-message ${messageActive(4)}`}>
               <strong>AI Processing</strong>
               <span>
-                {" "}
-                Insights processed through AI models
+                Insights processed through AI
                 <br />
-                to enable intelligent decision-making.
+                for intelligent decision-making.
               </span>
             </div>
           </div>
@@ -149,20 +165,19 @@ export default function Process() {
             </svg>
           </div>
 
-          {/* 5 */}
+          {/* ================= STEP 5 ================= */}
           <div className="flow-item">
-            <Card className="flow-card automation">
+            <Card className={`flow-card automation ${cardActive(5)}`}>
               <span className="flow-icon">
                 <MemoryRoundedIcon />
               </span>
             </Card>
-
-            <div className="flow-message">
-              <strong>Automation programming</strong>
+            <div className={`flow-message ${messageActive(5)}`}>
+              <strong>Automation Programming</strong>
               <span>
-                AI-driven decisions are converted into
+                AI decisions converted into
                 <br />
-                reliable, automated workflows.
+                reliable automated workflows.
               </span>
             </div>
           </div>
@@ -173,18 +188,17 @@ export default function Process() {
             </svg>
           </div>
 
-          {/* 5 */}
+          {/* ================= STEP 6 (FINAL) ================= */}
           <div className="flow-item">
-            <Card className="flow-card automation">
+            <Card className={`flow-card automation ${cardActive(6)}`}>
               <span className="flow-icon">
                 <RocketLaunchSharpIcon />
               </span>
             </Card>
-            <div className="flow-message">
+            <div className={`flow-message ${messageActive(6)}`}>
               <strong>Enterprise Execution</strong>
               <span>
-                {" "}
-                Production grade automation with
+                Production-grade automation with
                 <br />
                 monitoring and continuous optimization.
               </span>

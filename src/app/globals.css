@@ -425,8 +425,7 @@ model-viewer {
     pointer-events: none;
     transition: opacity 240ms ease, transform 240ms ease;
   }
-
-  .flow-item:hover .flow-message {
+  .flow-message-active {
     opacity: 1;
     transform: translateY(-50%) translateX(0);
   }

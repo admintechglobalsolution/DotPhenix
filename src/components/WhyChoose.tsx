@@ -96,9 +96,9 @@ function WhyChoose() {
       <Container>
         <Text as="h1">Your One-Stop Solution</Text>
         <Text className="why-description">
-          Dot Phenix Solutions Is a Trusted Digital Transformation Partner,
-          Helping Global Organizations Design, Modernize, Optimize, and Scale
-          Digital Solutions With Speed, Reliability, and Precision.
+          Dot Phenix Solutions is an AI-driven Digital Automation platform that
+          helps Organizations execute Digital Transformation by Automating,
+          Optimizing, Scaling critical Digital Operations
         </Text>
       </Container>
 
