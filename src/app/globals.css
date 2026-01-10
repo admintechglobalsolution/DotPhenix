@@ -1130,3 +1130,250 @@ model-viewer {
 .dashboard-chart-real text {
   fill: #9aa0a6;
 }
+
+/* =========================
+   DOCUMENTATION STYLE
+========================= */
+
+.doc-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1rem;
+  line-height: 1.75;
+}
+
+.doc-header h1 {
+  font-size: clamp(2rem, 4vw, 2.6rem);
+  margin-bottom: 1rem;
+}
+
+.doc-header p {
+  color: #94a3b8;
+  font-size: 1.05rem;
+}
+
+.doc-section {
+  margin-top: 3rem;
+}
+
+.doc-section h2 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+.doc-section h3 {
+  font-size: 1.1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.4rem;
+}
+
+.doc-section p {
+  color: #cbd5f5;
+}
+
+.doc-section ul {
+  margin-top: 0.75rem;
+  padding-left: 1.25rem;
+}
+
+.doc-section ul li {
+  margin-bottom: 0.5rem;
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .doc-wrapper {
+    padding: 3rem 1.25rem;
+  }
+}
+/* Privacy policy responsive styles (add to globals.css) */
+
+.policy-wrapper,
+.policy-content {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 3rem 1.25rem;
+  color: #e6eef8;
+  line-height: 1.65;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, sans-serif;
+}
+
+/* header */
+.policy-header h1 {
+  font-size: clamp(1.6rem, 3.5vw, 2.25rem);
+  margin-bottom: 0.25rem;
+  color: #ffffff;
+}
+
+.policy-header .lead {
+  color: #94a3b8;
+  margin-top: 0.5rem;
+}
+
+/* TOC */
+.policy-toc {
+  margin-top: 1.25rem;
+  margin-bottom: 2rem;
+  background: transparent;
+}
+
+.policy-toc ul {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.policy-toc a {
+  color: #9fbce8;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.policy-toc a:hover,
+.policy-toc a:focus {
+  text-decoration: underline;
+}
+
+/* article content */
+.policy-content {
+  background: transparent;
+}
+
+.policy-section + .policy-section {
+  margin-top: 1.75rem;
+}
+
+.policy-section h2 {
+  font-size: 1.125rem;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+}
+
+.policy-section h3 {
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.25rem;
+  color: #e6eef8;
+}
+
+.policy-section p,
+.policy-section li {
+  color: #c7d6ea;
+  margin-bottom: 0.6rem;
+}
+
+.policy-section ul {
+  margin-left: 1.15rem;
+}
+
+.muted {
+  color: #94a3b8;
+  font-size: 0.95rem;
+}
+
+/* accessibility helpers */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+  width: auto;
+  height: auto;
+  background: #0b1220;
+  padding: 0.35rem 0.5rem;
+  color: #fff;
+  border-radius: 4px;
+  z-index: 1000;
+}
+
+/* responsive */
+@media (max-width: 720px) {
+  .policy-wrapper,
+  .policy-content {
+    padding: 2rem 1rem;
+  }
+
+  .policy-toc ul {
+    gap: 0.5rem;
+  }
+
+  .policy-toc a {
+    font-size: 0.9rem;
+  }
+}
+
+/* Terms & Conditions */
+
+.terms-wrapper,
+.terms-content {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 3rem 1.25rem;
+  line-height: 1.65;
+}
+
+.terms-header h1 {
+  font-size: clamp(1.7rem, 3.5vw, 2.3rem);
+  margin-bottom: 0.25rem;
+}
+
+.terms-header .lead {
+  color: #94a3b8;
+  margin-top: 0.5rem;
+}
+
+.terms-toc ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1rem;
+  list-style: none;
+  padding: 0;
+  margin: 1.25rem 0 2rem;
+}
+
+.terms-toc a {
+  color: #9fbce8;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.terms-toc a:hover {
+  text-decoration: underline;
+}
+
+.terms-section + .terms-section {
+  margin-top: 1.75rem;
+}
+
+.terms-section h2 {
+  font-size: 1.15rem;
+  margin-bottom: 0.5rem;
+}
+
+.terms-section p,
+.terms-section li {
+  color: #c7d6ea;
+  margin-bottom: 0.6rem;
+}
+
+.terms-section ul {
+  margin-left: 1.1rem;
+}
+
+@media (max-width: 720px) {
+  .terms-wrapper,
+  .terms-content {
+    padding: 2rem 1rem;
+  }
+}
