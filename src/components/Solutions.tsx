@@ -13,15 +13,21 @@ export default function Solutions() {
         <div className="solutions-layout">
           {/* LEFT */}
           <div className="solutions-list">
-            <Card className="solution-item">Coding & Technology Platforms</Card>
-            <Card className="solution-item">Business & Legal Solutions</Card>
-            <Card className="solution-item">Finance & Financial Services</Card>
+            <Card className="solution-item">
+              Technology & Product Platforms
+            </Card>
+            <Card className="solution-item">
+              Business Process & Legal Solutions
+            </Card>
+            <Card className="solution-item">
+              Financial Services & FinTech Systems
+            </Card>
             <Card className="solution-item">Healthcare & Medical Systems</Card>
           </div>
 
           {/* CENTER */}
           <div className="solutions-center">
-            <Text as="h3">🐦‍🔥 DotPhenix Solutions</Text>
+            <Text as="h3">🐦‍🔥 Dot Phenix Solutions</Text>
           </div>
 
           {/* RIGHT */}
@@ -32,7 +38,7 @@ export default function Solutions() {
               Manufacturing & Industrial Systems
             </Card>
             <Card className="solution-item">
-              Technical Education & Research
+              Education, Training & Research Platforms
             </Card>
           </div>
         </div>

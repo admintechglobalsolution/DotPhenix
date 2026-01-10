@@ -1,6 +1,5 @@
 "use client";
 
-import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import { Button } from "./ui";
 
 import {
@@ -25,7 +24,7 @@ function Process() {
             Modern Digital Operations
           </h2>
           <p className="process-description">
-            DotPhenix helps organizations visualize, automate, and scale their
+            Dot Phenix helps organizations visualize, automate, and scale their
             digital operations using intelligent, enterprise-grade dashboards.
           </p>
           <ul className="process-points">
@@ -71,7 +70,11 @@ function Process() {
                 </div>
 
                 <div className="dashboard-actions">
-                  <AccountCircleIcon className="dashboard-user-icon" />
+                  <div className="dashboard-user-icon">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.33-8 4v2h16v-2c0-2.67-5.33-4-8-4z" />
+                    </svg>
+                  </div>
                 </div>
               </div>
 

@@ -15,7 +15,7 @@ function Services() {
     <section className="services-section">
       <Container>
         <Text as="h2" className="services-title">
-          DotPhenix Services
+          Dot Phenix Services
         </Text>
 
         <div className="services-grid">

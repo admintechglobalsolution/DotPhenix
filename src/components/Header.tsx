@@ -27,7 +27,7 @@ export default function Header() {
       <div className="header-inner">
         <div className="brand">
           <Link href="/" className="logo" aria-label="DotPhenix home">
-            🐦‍🔥 DotPhenix
+            🐦‍🔥 Dot Phenix
           </Link>
         </div>
 
