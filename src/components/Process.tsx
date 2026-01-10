@@ -1,211 +1,137 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { Card, Container, Text } from "./ui";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import {
+  ResponsiveContainer,
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+} from "recharts";
 
-import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
-import RocketLaunchSharpIcon from "@mui/icons-material/RocketLaunchSharp";
-import DocumentScannerRoundedIcon from "@mui/icons-material/DocumentScannerRounded";
-import MemoryRoundedIcon from "@mui/icons-material/MemoryRounded";
-import ViewInArRoundedIcon from "@mui/icons-material/ViewInArRounded";
+import { dashboardChartData } from "./ui/chartData";
 
-const TOTAL_STEPS = 6; // INCLUDING FINAL STEP
-
-export default function Process() {
-  const [activeStep, setActiveStep] = useState(1);
-
-  /* ===============================
-     AUTO STEP FLOW (1 → 6 → 1)
-  ================================ */
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveStep((prev) => (prev === TOTAL_STEPS ? 1 : prev + 1));
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, []);
-
-  const cardActive = (step) => (activeStep === step ? "flow-card-phenix" : "");
-
-  const messageActive = (step) =>
-    activeStep === step ? "flow-message-active" : "";
-
+function Process() {
   return (
-    <section className="process-vertical">
-      <Container>
-        <Text as="h2" className="process-title">
-          How DotPhenix Works
-        </Text>
+    <section className="process-section">
+      <div className="process-container">
+        {/* LEFT — TEXT CONTENT */}
+        <div className="process-content">
+          <h2 className="process-heading">
+            Intelligent Dashboards for <br />
+            Modern Digital Operations
+          </h2>
 
-        <div className="vertical-flow">
-          {/* 1 */}
-          <div className="flow-item desktop-only">
-            {/* ===== Laptop / Desktop ONLY ===== */}
-            <div className="flow-cards-row">
-              <Card className="flow-card">
-                <span className="flow-icon">📄</span>
-                <span className="flow-label">Task 1</span>
-              </Card>
+          <ul className="process-points">
+            <li>Real-time operational insights</li>
+            <li>AI-driven automation workflows</li>
+            <li>Secure, enterprise-ready architecture</li>
+          </ul>
 
-              <Card className="flow-card">
-                <span className="flow-icon">📄</span>
-                <span className="flow-label">Task 2</span>
-              </Card>
-
-              <Card className="flow-card">
-                <span className="flow-icon">📄</span>
-                <span className="flow-label">Task 3</span>
-              </Card>
-
-              <Card className="flow-card">
-                <span className="flow-icon">📄</span>
-                <span className="flow-label">Task 4</span>
-              </Card>
-
-              <Card className="flow-card">
-                <span className="flow-icon">📄</span>
-                <span className="flow-label">Task 5</span>
-              </Card>
-            </div>
+          <div className="process-actions">
+            <button className="process-cta">Request a Demo</button>
           </div>
+        </div>
 
-          <div className="flow-line desktop-only">
-            <svg viewBox="0 0 2 100" preserveAspectRatio="none">
-              <line x1="1" y1="0" x2="1" y2="100" />
-            </svg>
-          </div>
+        {/* RIGHT — SAAS DASHBOARD */}
+        <div className="process-visual">
+          <div className="dashboard-mock">
+            {/* SIDEBAR */}
+            <aside className="dashboard-sidebar">
+              <div className="sidebar-logo">DotPhenix</div>
 
-          {/* ================= STEP 1 ================= */}
-          <div className="flow-item">
-            <Card className={`flow-card automation ${cardActive(1)}`}>
-              <span className="flow-icon">
-                <DocumentScannerRoundedIcon />
-              </span>
-            </Card>
-            <div className={`flow-message ${messageActive(1)}`}>
-              <strong>Business Task and Data</strong>
-              <span>
-                Complex data from multiple task systems
-                <br />
-                and interconnected workflows.
-              </span>
-            </div>
-          </div>
+              <nav className="sidebar-nav">
+                <span className="sidebar-item active">Dashboard</span>
+                <span className="sidebar-item">Analytics</span>
+                <span className="sidebar-item">Projects</span>
+                <span className="sidebar-item">Automation</span>
+                <span className="sidebar-item">Reports</span>
+                <span className="sidebar-item">Settings</span>
+              </nav>
+            </aside>
 
-          <div className="flow-line">
-            <svg viewBox="0 0 2 100" preserveAspectRatio="none">
-              <line x1="1" y1="0" x2="1" y2="100" />
-            </svg>
-          </div>
+            {/* MAIN */}
+            <div className="dashboard-main">
+              {/* TOP BAR */}
+              <div className="dashboard-top">
+                <div className="dashboard-title">
+                  {new Date().toLocaleDateString("en-US", {
+                    weekday: "long",
+                    month: "short",
+                    day: "2-digit",
+                    year: "numeric",
+                  })}
+                </div>
 
-          {/* ================= STEP 2 ================= */}
-          <div className="flow-item">
-            <Card className={`flow-card automation ${cardActive(2)}`}>
-              <span className="flow-icon">🐦‍🔥</span>
-            </Card>
-            <div className={`flow-message ${messageActive(2)}`}>
-              <strong>Dot Phenix Solutions</strong>
-              <span>
-                AI-driven platform transforming
-                <br />
-                digital operations into automation.
-              </span>
-            </div>
-          </div>
+                <div className="dashboard-actions">
+                  <AccountCircleIcon className="dashboard-user-icon" />
+                </div>
+              </div>
 
-          <div className="flow-line">
-            <svg viewBox="0 0 2 100" preserveAspectRatio="none">
-              <line x1="1" y1="0" x2="1" y2="100" />
-            </svg>
-          </div>
+              {/* KPI CARDS */}
+              <div className="dashboard-cards">
+                <div className="dashboard-metric">
+                  <span className="metric-label">Revenue</span>
+                  <span className="metric-value">$124k</span>
+                </div>
 
-          {/* ================= STEP 3 ================= */}
-          <div className="flow-item">
-            <Card className={`flow-card automation ${cardActive(3)}`}>
-              <span className="flow-icon">
-                <ViewInArRoundedIcon />
-              </span>
-            </Card>
-            <div className={`flow-message ${messageActive(3)}`}>
-              <strong>Data Analysis</strong>
-              <span>
-                Business data analyzed to generate
-                <br />
-                accurate, actionable insights.
-              </span>
-            </div>
-          </div>
+                <div className="dashboard-metric">
+                  <span className="metric-label">Orders</span>
+                  <span className="metric-value">2,430</span>
+                </div>
 
-          <div className="flow-line">
-            <svg viewBox="0 0 2 100" preserveAspectRatio="none">
-              <line x1="1" y1="0" x2="1" y2="100" />
-            </svg>
-          </div>
+                <div className="dashboard-metric">
+                  <span className="metric-label">Growth</span>
+                  <span className="metric-value positive">+18%</span>
+                </div>
+              </div>
 
-          {/* ================= STEP 4 ================= */}
-          <div className="flow-item">
-            <Card className={`flow-card automation ${cardActive(4)}`}>
-              <span className="flow-icon">
-                <AutoAwesomeIcon />
-              </span>
-            </Card>
-            <div className={`flow-message ${messageActive(4)}`}>
-              <strong>AI Processing</strong>
-              <span>
-                Insights processed through AI
-                <br />
-                for intelligent decision-making.
-              </span>
-            </div>
-          </div>
-
-          <div className="flow-line">
-            <svg viewBox="0 0 2 100" preserveAspectRatio="none">
-              <line x1="1" y1="0" x2="1" y2="100" />
-            </svg>
-          </div>
-
-          {/* ================= STEP 5 ================= */}
-          <div className="flow-item">
-            <Card className={`flow-card automation ${cardActive(5)}`}>
-              <span className="flow-icon">
-                <MemoryRoundedIcon />
-              </span>
-            </Card>
-            <div className={`flow-message ${messageActive(5)}`}>
-              <strong>Automation Programming</strong>
-              <span>
-                AI decisions converted into
-                <br />
-                reliable automated workflows.
-              </span>
-            </div>
-          </div>
-
-          <div className="flow-line">
-            <svg viewBox="0 0 2 100" preserveAspectRatio="none">
-              <line x1="1" y1="0" x2="1" y2="100" />
-            </svg>
-          </div>
-
-          {/* ================= STEP 6 (FINAL) ================= */}
-          <div className="flow-item">
-            <Card className={`flow-card automation ${cardActive(6)}`}>
-              <span className="flow-icon">
-                <RocketLaunchSharpIcon />
-              </span>
-            </Card>
-            <div className={`flow-message ${messageActive(6)}`}>
-              <strong>Enterprise Execution</strong>
-              <span>
-                Production-grade automation with
-                <br />
-                monitoring and continuous optimization.
-              </span>
+              {/* REAL LINE CHART */}
+              <div className="dashboard-chart dashboard-chart-real">
+                <ResponsiveContainer width="100%" height="100%">
+                  <LineChart data={dashboardChartData}>
+                    <CartesianGrid stroke="rgba(255,255,255,0.08)" />
+                    <XAxis
+                      dataKey="month"
+                      stroke="#9aa0a6"
+                      tick={{ fontSize: 10 }}
+                    />
+                    <YAxis
+                      width={25}
+                      stroke="#9aa0a6"
+                      tick={{ fontSize: 10 }}
+                    />
+                    <Line
+                      type="monotone"
+                      dataKey="revenue"
+                      stroke="#6d9cff"
+                      strokeWidth={2.5}
+                      dot={false}
+                    />
+                    <Line
+                      type="monotone"
+                      dataKey="orders"
+                      stroke="rgba(120,160,255,0.6)"
+                      strokeWidth={2}
+                      dot={false}
+                    />
+                    <Line
+                      type="monotone"
+                      dataKey="growth"
+                      stroke="hsla(0, 0%, 100%, 0.35)"
+                      strokeWidth={1.5}
+                      dot={false}
+                    />
+                  </LineChart>
+                </ResponsiveContainer>
+              </div>
             </div>
           </div>
         </div>
-      </Container>
+      </div>
     </section>
   );
 }
+
+export default Process;

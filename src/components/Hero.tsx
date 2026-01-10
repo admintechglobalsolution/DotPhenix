@@ -72,7 +72,7 @@ export default function Hero() {
         </Text>
 
         <div className="hero-actions">
-          <Button className="hero-button">Book a Demo →</Button>
+          <Button className="hero-button">Request a Demo →</Button>
         </div>
       </Container>
 
