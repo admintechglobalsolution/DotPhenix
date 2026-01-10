@@ -1,6 +1,8 @@
 "use client";
 
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import { Button } from "./ui";
+
 import {
   ResponsiveContainer,
   LineChart,
@@ -22,15 +24,18 @@ function Process() {
             Intelligent Dashboards for <br />
             Modern Digital Operations
           </h2>
-
+          <p className="process-description">
+            DotPhenix helps organizations visualize, automate, and scale their
+            digital operations using intelligent, enterprise-grade dashboards.
+          </p>
           <ul className="process-points">
             <li>Real-time operational insights</li>
             <li>AI-driven automation workflows</li>
             <li>Secure, enterprise-ready architecture</li>
           </ul>
 
-          <div className="process-actions">
-            <button className="process-cta">Request a Demo</button>
+          <div className="hero-actions">
+            <Button className="hero-button">Request a Demo →</Button>
           </div>
         </div>
 
@@ -39,13 +44,14 @@ function Process() {
           <div className="dashboard-mock">
             {/* SIDEBAR */}
             <aside className="dashboard-sidebar">
-              <div className="sidebar-logo">DotPhenix</div>
-
+              <div className="sidebar-logo">RevenueDesk</div>
               <nav className="sidebar-nav">
                 <span className="sidebar-item active">Dashboard</span>
-                <span className="sidebar-item">Analytics</span>
-                <span className="sidebar-item">Projects</span>
-                <span className="sidebar-item">Automation</span>
+                <span className="sidebar-item">Invoices</span>
+                <span className="sidebar-item">Payments</span>
+                <span className="sidebar-item">Subscriptions</span>
+                <span className="sidebar-item">Customers</span>
+                <span className="sidebar-item">Plans & Pricing</span>
                 <span className="sidebar-item">Reports</span>
                 <span className="sidebar-item">Settings</span>
               </nav>

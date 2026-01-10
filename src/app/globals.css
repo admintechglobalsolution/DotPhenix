@@ -819,12 +819,8 @@ model-viewer {
 ========================================================= */
 
 .process-section {
+  background-color: #0e0f12;
   padding: 5rem 1.5rem;
-  background: radial-gradient(
-    circle at top,
-    rgba(120, 160, 255, 0.08),
-    transparent 60%
-  );
 }
 
 .process-container {
@@ -832,7 +828,7 @@ model-viewer {
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  gap: 1rem;
   align-items: center;
 }
 
@@ -885,6 +881,7 @@ model-viewer {
 
 .process-actions {
   display: flex;
+  padding: 1rem;
 }
 
 .process-cta {
@@ -915,8 +912,8 @@ model-viewer {
 
 .dashboard-mock {
   width: 100%;
-  max-width: 560px;
-  height: 20rem;
+  max-width: 40rem;
+  height: 22rem;
   background: #0f1218;
   border-radius: 1rem;
   display: grid;
@@ -1069,10 +1066,6 @@ model-viewer {
     gap: 3rem;
   }
 
-  .process-visual {
-    order: -1;
-  }
-
   .dashboard-mock {
     max-width: 100%;
   }
@@ -1086,7 +1079,7 @@ model-viewer {
   }
 }
 .dashboard-chart-real {
-  height: 9rem; /* you can tune this */
+  height: 12rem; /* you can tune this */
   padding: 0.25rem;
 }
 
