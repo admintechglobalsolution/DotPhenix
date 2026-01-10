@@ -1,4 +1,4 @@
-# 🐦‍🔥DotPhenix Web Application
+# 🐦‍🔥 Dot Phenix Web Application
 
 This is the official web application for **Dot Phenix**, built using **Next.js App Router**, **Material UI**, and **pnpm**.
 
@@ -23,8 +23,8 @@ This is the official web application for **Dot Phenix**, built using **Next.js A
 pnpm create next-app dotphenix
 pnpm install
 pnpm remove tailwindcss @tailwindcss/postcss
-pnpm add @mui/material @emotion/react @emotion/styled
-pnpm add @mui/icons-material
+pnpm remove @mui/material @emotion/react @emotion/styled
+pnpm remove @mui/icons-material
 pnpm dev
 pnpm add lucide-react
 pnpm start for Deployment
