@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "./ui";
-
+import "./process.css";
 import {
   ResponsiveContainer,
   LineChart,

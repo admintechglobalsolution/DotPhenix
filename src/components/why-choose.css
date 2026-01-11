@@ -1,0 +1,254 @@
+/* =========================
+   WHY CHOOSE US SECTION
+========================= */
+
+.why-section {
+  position: relative;
+  min-height: 100vh;
+  padding: 120px 20px;
+  text-align: center;
+  overflow: hidden;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 120, 0, 0.07),
+    rgba(255, 120, 0, 0.04),
+    rgba(120, 160, 255, 0.05),
+    rgba(120, 160, 255, 0.025)
+  );
+  mask-image: radial-gradient(
+    ellipse at top,
+    #000 0%,
+    #000 45%,
+    transparent 100%
+  );
+}
+
+/* Header */
+.why-section h1 {
+  color: #fff;
+  font-size: clamp(2.5rem, 4vw, 3rem);
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+.why-description {
+  color: #d1d1d1;
+  max-width: 50rem;
+  margin: 0 auto;
+  font-size: 1rem;
+  line-height: 1.65;
+  text-align: center;
+}
+
+/* Particles */
+.particles-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.particles-bg canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.why-section > *:not(.particles-bg) {
+  position: relative;
+  z-index: 1;
+}
+/* =========================
+   EDITORIAL GRID
+========================= */
+
+.why-grid {
+  margin-top: 96px;
+  display: grid;
+  grid-template-columns: 1fr 1.3fr; /* LEFT stats, RIGHT features */
+  max-width: 1200px;
+  margin-inline: auto;
+  text-align: left;
+}
+
+/* =========================
+   LEFT — STATS PANEL
+========================= */
+
+.why-stats {
+  position: relative;
+  padding: 48px 40px;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  background: radial-gradient(
+    600px circle at top right,
+    rgba(255, 140, 40, 0.08),
+    transparent 45%
+  );
+}
+
+/* Glow divider */
+.why-stats::before {
+  content: "";
+  position: absolute;
+  right: -1px;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(255, 140, 40, 0.6),
+    transparent
+  );
+}
+
+.why-stats-header h4 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.why-stats-header p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.65);
+  max-width: 340px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 36px;
+  margin-top: 48px;
+}
+
+.stat-card {
+  display: flex;
+  padding-right: 1.5rem;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s ease;
+  flex-direction: column-reverse;
+}
+
+.stat-card:hover {
+  transform: translateX(-6px);
+  border-color: rgba(255, 140, 40, 0.6);
+}
+
+.stat-number {
+  font-size: 3.8rem;
+  font-weight: 600;
+  color: #ff8c28;
+  line-height: 1;
+}
+
+.stat-label {
+  margin-top: 8px;
+  font-size: 0.75rem;
+  letter-spacing: 1.5px;
+  text-transform: capitalize;
+  color: #ffffff;
+}
+
+.why-stats-footer {
+  margin-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.trust-line {
+  font-size: 0.8rem;
+  letter-spacing: 1.2px;
+  color: #ffffff;
+}
+
+/* =========================
+   RIGHT — FEATURE CARDS
+========================= */
+
+.why-left {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.why-card {
+  padding: 36px 32px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.03),
+    rgba(255, 255, 255, 0.01)
+  );
+  transition: all 0.4s ease;
+}
+
+.why-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(255, 140, 40, 0.4);
+}
+
+.index {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.why-card h3 {
+  margin: 14px 0 10px;
+  font-size: 1.6rem;
+  line-height: 1.15;
+  color: #fff;
+}
+
+.why-card p {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.why-left {
+  margin-top: 0;
+}
+@media (max-width: 1023px) {
+  .why-left {
+    margin-top: 2rem;
+  }
+}
+/* =========================
+   SCROLL REVEAL
+========================= */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(1.75rem);
+  will-change: opacity, transform;
+  transition: opacity 0.6s ease-out,
+    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1024px) {
+  .why-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .why-left {
+    grid-template-columns: 1fr;
+  }
+
+  .why-stats {
+    border-right: none;
+    padding: 0;
+    background: none;
+  }
+
+  .why-stats::before {
+    display: none;
+  }
+}

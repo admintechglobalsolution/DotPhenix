@@ -1,0 +1,64 @@
+/* Terms & Conditions */
+
+.terms-wrapper,
+.terms-content {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 3rem 1.25rem;
+  line-height: 1.65;
+}
+
+.terms-header h1 {
+  font-size: clamp(1.7rem, 3.5vw, 2.3rem);
+  margin-bottom: 0.25rem;
+}
+
+.terms-header .lead {
+  color: #94a3b8;
+  margin-top: 0.5rem;
+}
+
+.terms-toc ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1rem;
+  list-style: none;
+  padding: 0;
+  margin: 1.25rem 0 2rem;
+}
+
+.terms-toc a {
+  color: #9fbce8;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.terms-toc a:hover {
+  text-decoration: underline;
+}
+
+.terms-section + .terms-section {
+  margin-top: 1.75rem;
+}
+
+.terms-section h2 {
+  font-size: 1.15rem;
+  margin-bottom: 0.5rem;
+}
+
+.terms-section p,
+.terms-section li {
+  color: #c7d6ea;
+  margin-bottom: 0.6rem;
+}
+
+.terms-section ul {
+  margin-left: 1.1rem;
+}
+
+@media (max-width: 720px) {
+  .terms-wrapper,
+  .terms-content {
+    padding: 2rem 1rem;
+  }
+}

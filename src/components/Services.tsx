@@ -9,7 +9,7 @@ import {
   Megaphone,
   Building2,
 } from "lucide-react";
-
+import "./services.css";
 function Services() {
   return (
     <section className="services-section">

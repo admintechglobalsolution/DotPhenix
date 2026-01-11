@@ -1,3 +1,5 @@
+import "./terms.css";
+
 export const metadata = {
   title: "Terms & Conditions — Dot Phenix Solutions",
   description:
@@ -20,6 +22,45 @@ export default function TermsAndConditionsPage() {
         <h1>Terms &amp; Conditions</h1>
         <p className="muted">
           Effective date: <strong>{effectiveDate}</strong>
+        </p>
+        <p>
+          Welcome, and thank you for your interest in Dot Phenix Solutions
+          (&quot;Dot Phenix&quot;, &quot;we&quot;, &quot;us&quot;, or
+          &quot;our&quot;) and our website located at https://www.dotphenix.com,
+          including any subdomains, mobile versions, and related services
+          (collectively, the &quot;Site&quot;).
+        </p>
+
+        <p>
+          These Terms of Use (&quot;Terms & Conditions &quot;) constitute a
+          legally binding agreement between you (&quot;you&quot; or
+          &quot;user&quot;) and Dot Phenix Solutions governing your access to
+          and use of the Site.
+        </p>
+
+        <p>
+          By accessing, browsing, or otherwise using the Site, you confirm that
+          you have read, understood, and agree to be bound by these Terms, as
+          well as our Privacy Policy, which is incorporated herein by reference.
+          If you do not agree to these Terms, you must immediately discontinue
+          use of the Site.
+        </p>
+
+        <p>
+          Your access to and use of the Site is provided on an &quot;as is&quot;
+          and &quot;as available&quot; basis and is conditioned upon your
+          compliance with these Terms. Dot Phenix Solutions reserves the right,
+          at its sole discretion, to modify, suspend, or discontinue any part of
+          the Site or these Terms at any time without prior notice. Continued
+          use of the Site following any changes constitutes your acceptance of
+          the revised Terms.
+        </p>
+        <p>
+          You acknowledge that your use of the Site is at your own risk. Dot
+          Phenix Solutions shall not be responsible or liable for any
+          unauthorized access, hacking attempts, data breaches, misuse, loss, or
+          damage arising from your use of the Site, except to the extent
+          required by applicable law.
         </p>
         <p className="lead">
           These Terms &amp; Conditions govern your access to and use of the
@@ -198,6 +239,93 @@ export default function TermsAndConditionsPage() {
             </li>
             <li>Address: Bangalore, Karnataka, India</li>
           </ul>
+        </section>
+        <section className="terms-section">
+          <h2>13. Third-Party Links & Services</h2>
+          <p>
+            The Site may contain links to third-party websites, platforms,
+            tools, or services that are not owned or controlled by Dot Phenix
+            Solutions. We do not endorse, control, or assume responsibility for
+            the content, availability, security practices, or privacy policies
+            of any third-party websites or services.
+          </p>
+          <p>
+            Your interactions with third-party services are solely between you
+            and the applicable third party. Accessing or using such third-party
+            services is at your own risk.
+          </p>
+        </section>
+
+        <section className="terms-section">
+          <h2>14. Indemnification</h2>
+          <p>
+            You agree to indemnify, defend, and hold harmless Dot Phenix
+            Solutions, its directors, officers, employees, affiliates, and
+            partners from and against any claims, damages, losses, liabilities,
+            costs, and expenses (including reasonable legal fees) arising out of
+            or related to:
+          </p>
+          <ul>
+            <li>Your access to or use of the Site or services</li>
+            <li>Your violation of these Terms &amp; Conditions</li>
+            <li>Your violation of any applicable law or third-party rights</li>
+            <li>Any misuse of the Site, systems, or data</li>
+          </ul>
+        </section>
+
+        <section className="terms-section">
+          <h2>15. Force Majeure</h2>
+          <p>
+            Dot Phenix Solutions shall not be liable for any failure or delay in
+            performance caused by events beyond its reasonable control,
+            including but not limited to natural disasters, acts of government,
+            cyber-attacks, internet or infrastructure failures, system outages,
+            labor disputes, or other force majeure events.
+          </p>
+        </section>
+
+        <section className="terms-section">
+          <h2>16. No Professional Advice</h2>
+          <p>
+            Any information, content, automation outputs, insights, or
+            recommendations provided through the Site or services are for
+            general informational purposes only and do not constitute legal,
+            financial, medical, or professional advice.
+          </p>
+          <p>
+            You are solely responsible for evaluating the accuracy and
+            applicability of any information provided and should seek
+            independent professional advice before making decisions based on
+            such information.
+          </p>
+        </section>
+
+        <section className="terms-section">
+          <h2>17. Severability &amp; Waiver</h2>
+          <p>
+            If any provision of these Terms &amp; Conditions is held to be
+            invalid, illegal, or unenforceable, the remaining provisions shall
+            remain in full force and effect.
+          </p>
+          <p>
+            The failure of Dot Phenix Solutions to enforce any right or
+            provision of these Terms shall not constitute a waiver of such right
+            or provision.
+          </p>
+        </section>
+
+        <section className="terms-section">
+          <h2>18. Assignment</h2>
+          <p>
+            Dot Phenix Solutions may assign or transfer these Terms &amp;
+            Conditions, in whole or in part, without restriction, including in
+            connection with a merger, acquisition, restructuring, or sale of
+            assets.
+          </p>
+          <p>
+            You may not assign or transfer your rights or obligations under
+            these Terms without prior written consent from Dot Phenix Solutions.
+          </p>
         </section>
       </article>
     </main>

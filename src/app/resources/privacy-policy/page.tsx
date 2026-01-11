@@ -1,3 +1,5 @@
+import "./policy.css";
+
 export const metadata = {
   title: "Privacy Policy — Dot Phenix Solutions",
   description:
@@ -21,11 +23,40 @@ export default function PrivacyPolicyPage() {
         <p className="muted">
           Effective date: <strong>{effectiveDate}</strong>
         </p>
-        <p className="lead">
-          This Privacy Policy explains how Dot Phenix Solutions (&quot;we&quot;,
-          &quot;us&quot;, &quot;our&quot;) collects, uses, shares, and protects
-          personal information when you access our website, products, and
-          services.
+        <p>
+          Welcome, and thank you for your interest in Dot Phenix Solutions
+          (&quot;Dot Phenix&quot;, &quot;we&quot;, &quot;us&quot;, or
+          &quot;our&quot;) and our website located at https://www.dotphenix.com,
+          including any subdomains, mobile versions, and related services
+          (collectively, the &quot;Site&quot;).
+        </p>
+
+        <p>
+          This Privacy Policy explains how Dot Phenix Solutions collects, uses,
+          discloses, and safeguards personal information when you access or use
+          the Site. By using the Site, you acknowledge that you have read and
+          understood this Privacy Policy.
+        </p>
+
+        <p>
+          Your access to and use of the Site is voluntary. If you do not agree
+          with the data practices described in this Privacy Policy, you should
+          discontinue use of the Site.
+        </p>
+
+        <p>
+          Dot Phenix Solutions implements reasonable administrative, technical,
+          and organizational measures to protect personal information. However,
+          no digital platform or method of transmission over the internet can be
+          guaranteed to be completely secure.
+        </p>
+
+        <p>
+          By using the Site, you acknowledge that you do so at your own risk.
+          Dot Phenix Solutions shall not be responsible for unauthorized access,
+          hacking attempts, data breaches, misuse, loss, or damage to personal
+          information resulting from factors beyond our reasonable control,
+          except where such liability is required by applicable law.
         </p>
       </header>
 
@@ -160,15 +191,6 @@ export default function PrivacyPolicyPage() {
 
         <section id="contact" className="policy-section">
           <h2>12. Contact &amp; Updates</h2>
-          <ul>
-            <li>
-              Email: <a href="mailto:info@dotphenix.com">info@dotphenix.com</a>
-            </li>
-            <li>
-              Phone: <a href="tel:+919346622679">+91 9346622679</a>
-            </li>
-            <li>Address: Bangalore, Karnataka, India</li>
-          </ul>
           <p>
             We may update this policy periodically. Changes will be reflected by
             updating the effective date on this page.
@@ -207,6 +229,146 @@ export default function PrivacyPolicyPage() {
             Solutions disclaims liability for indirect, incidental,
             consequential, or punitive damages arising from the use of, or
             inability to use, our services.
+          </p>
+        </section>
+        <section className="policy-section">
+          <h2>13. Third-Party Services & Integrations</h2>
+          <p>
+            Our website and services may integrate with or link to third-party
+            tools, platforms, or services such as analytics providers, cloud
+            infrastructure, payment processors, or communication tools. Dot
+            Phenix Solutions does not control and is not responsible for the
+            privacy practices, security, or content of such third-party
+            services.
+          </p>
+          <p>
+            We encourage users to review the privacy policies of any third-party
+            services before providing personal information to them.
+          </p>
+        </section>
+        <section className="policy-section">
+          <h2>14. No Sale or Misuse of Personal Information</h2>
+          <p>
+            Dot Phenix Solutions does not sell, rent, trade, or monetize
+            personal information. We do not engage in cross-context behavioral
+            advertising or unauthorized profiling of users.
+          </p>
+          <p>
+            Personal data is used strictly for legitimate business operations,
+            platform functionality, service delivery, and legal compliance.
+          </p>
+        </section>
+        <section className="policy-section">
+          <h2>15. Grievance & Data Protection Contact</h2>
+          <p>
+            If you have any concerns, complaints, or questions regarding the
+            handling of your personal data or this Privacy Policy, you may
+            contact us using the details below. We will make reasonable efforts
+            to address concerns in a timely manner.
+          </p>
+          <ul>
+            <li>
+              Email: <a href="mailto:info@dotphenix.com">info@dotphenix.com</a>
+            </li>
+          </ul>
+        </section>
+        {/* =====================
+   16. CATEGORIES OF DATA
+====================== */}
+        <section id="data-categories" className="policy-section">
+          <h2>16. Categories of Data We May Process</h2>
+          <p>
+            Depending on the nature of the services provided, Dot Phenix
+            Solutions may process different categories of personal,
+            professional, and business-related data. This may include, but is
+            not limited to, user information, client data, employee-related
+            data, transactional records, usage metrics, system logs, analytics
+            data, and operational performance data.
+          </p>
+          <p>
+            The specific categories of data processed vary based on the service,
+            solution, or platform being used and the contractual relationship
+            between Dot Phenix Solutions and its clients.
+          </p>
+        </section>
+
+        {/* =====================
+   17. CLIENT & BUSINESS DATA
+====================== */}
+        <section id="client-data" className="policy-section">
+          <h2>17. Client-Provided & Business Data</h2>
+          <p>
+            In the course of providing enterprise, SaaS, automation, payroll,
+            analytics, or dashboard services, Dot Phenix Solutions may process
+            data on behalf of business clients as a data processor or service
+            provider.
+          </p>
+          <p>
+            Such data is processed strictly in accordance with client
+            instructions, applicable agreements, and relevant data protection
+            laws. Dot Phenix Solutions does not control the content, accuracy,
+            or legality of client- provided data and shall not be responsible
+            for such data beyond its contractual obligations.
+          </p>
+        </section>
+
+        {/* =====================
+   18. AI & AUTOMATION DISCLAIMER
+====================== */}
+        <section id="ai-disclaimer" className="policy-section">
+          <h2>18. AI, Automation & Analytics Disclaimer</h2>
+          <p>
+            Certain services may incorporate artificial intelligence,
+            automation, analytics, or algorithmic processing. Outputs generated
+            by such systems are provided for informational, analytical, or
+            operational purposes only.
+          </p>
+          <p>
+            While reasonable efforts are made to ensure accuracy, Dot Phenix
+            Solutions does not guarantee that AI-generated outputs will be
+            error-free, complete, or suitable for any specific purpose. Users
+            are responsible for reviewing, validating, and verifying outputs
+            before relying on them for business, financial, legal, or
+            operational decisions.
+          </p>
+        </section>
+
+        {/* =====================
+   19. SENSITIVE DATA DISCLAIMER
+====================== */}
+        <section id="sensitive-data" className="policy-section">
+          <h2>19. Sensitive Personal Data</h2>
+          <p>
+            Unless explicitly agreed in writing, users should not submit
+            sensitive personal data through the Site or services, including but
+            not limited to government-issued identification numbers, biometric
+            data, health records, financial account credentials, or highly
+            confidential personal information.
+          </p>
+          <p>
+            Any submission of sensitive data outside agreed service scopes is
+            done at the user’s own risk. Dot Phenix Solutions shall not be
+            responsible for the unauthorized disclosure or misuse of such data
+            beyond its reasonable control.
+          </p>
+        </section>
+
+        {/* =====================
+   20. DATA BREACH RESPONSE
+====================== */}
+        <section id="breach-response" className="policy-section">
+          <h2>20. Data Breach Response & Notification</h2>
+          <p>
+            In the event of a data breach affecting personal information, Dot
+            Phenix Solutions will take reasonable steps to investigate, contain,
+            and mitigate the incident in accordance with applicable laws and
+            internal security procedures.
+          </p>
+          <p>
+            Where legally required, affected individuals and relevant
+            authorities will be notified within applicable timeframes.
+            Notification obligations may vary based on jurisdiction, data type,
+            and severity of the incident.
           </p>
         </section>
       </article>

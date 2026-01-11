@@ -5,6 +5,7 @@ import dynamic from "next/dynamic";
 import { Container, Text } from "./ui";
 import { loadSlim } from "tsparticles-slim";
 import type { Engine } from "tsparticles-engine";
+import "./why-choose.css";
 
 const Particles = dynamic(() => import("react-tsparticles"), { ssr: false });
 

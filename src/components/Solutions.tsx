@@ -1,7 +1,7 @@
 "use client";
 
 import { Card, Container, Text } from "./ui";
-
+import "./solutions.css";
 export default function Solutions() {
   return (
     <section className="solutions-section">

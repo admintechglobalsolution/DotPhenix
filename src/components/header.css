@@ -1,0 +1,146 @@
+/* ---------- HEADER ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  will-change: transform;
+}
+
+/* Inner layout */
+.header-inner {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0.5rem 1rem;
+  height: var(--header-h);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+/* Brand */
+.logo {
+  font-weight: 600;
+  font-size: 1.4rem;
+  color: var(--text);
+  text-decoration: none;
+  display: inline-block;
+  line-height: 1;
+}
+
+/* Desktop nav (hidden on small screens) */
+.nav-desktop {
+  display: none;
+}
+.nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-link {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  transition: color 160ms ease, transform 160ms ease;
+  display: inline-block;
+  padding: 6px 0;
+}
+.nav-link:focus,
+.nav-link:hover {
+  color: var(--text);
+  transform: translateY(-1px);
+  outline: none;
+}
+
+/* Mobile toggle button */
+.menu-toggle {
+  background: none;
+  border: 0;
+  color: var(--text);
+  font-size: 1.25rem;
+  line-height: 1;
+  padding: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* Mobile nav wrapper: overlay + slide panel */
+.mobile-nav-wrap {
+  position: fixed;
+  inset: 0;
+  pointer-events: none; /* disabled by default */
+  z-index: 999;
+}
+
+/* overlay */
+.mobile-nav-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transition: opacity 200ms ease;
+  will-change: opacity;
+}
+
+/* panel */
+.nav-mobile {
+  position: absolute;
+  top: var(--header-h);
+  left: 0;
+  right: 0;
+  background: var(--bg);
+  transform: translateY(-8px) scale(0.995);
+  opacity: 0;
+  transition: transform 200ms ease, opacity 200ms ease;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  border-top: 1px solid var(--border);
+  will-change: transform, opacity;
+}
+.nav-mobile ul {
+  list-style: none;
+  margin: 0;
+  padding: 1rem;
+}
+.nav-link-mobile {
+  display: block;
+  padding: 0.75rem 1rem;
+  color: var(--text);
+  text-decoration: none;
+  border-bottom: 1px solid var(--border);
+}
+
+/* When menu is open */
+.site-header[data-menu-open="true"] .mobile-nav-wrap {
+  pointer-events: auto;
+}
+.site-header[data-menu-open="true"] .mobile-nav-overlay {
+  opacity: 1;
+}
+.site-header[data-menu-open="true"] .nav-mobile {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+/* ---------- Desktop breakpoint ---------- */
+@media (min-width: 768px) {
+  .menu-toggle {
+    display: none;
+  }
+  .nav-desktop {
+    display: block;
+  }
+  .nav-mobile,
+  .mobile-nav-wrap {
+    display: none;
+  }
+}

@@ -3,7 +3,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 import { Button, Text, Container } from "./ui";
-
+import "./hero.css";
 /**
  * Lazy-load <model-viewer> web component
  * - Loads only on client

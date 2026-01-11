@@ -1,0 +1,55 @@
+/* =========================
+   DOCUMENTATION STYLE
+========================= */
+
+.doc-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1rem;
+  line-height: 1.75;
+}
+
+.doc-header h1 {
+  font-size: clamp(2rem, 4vw, 2.6rem);
+  margin-bottom: 1rem;
+}
+
+.doc-header p {
+  color: #94a3b8;
+  font-size: 1.05rem;
+}
+
+.doc-section {
+  margin-top: 3rem;
+}
+
+.doc-section h2 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+.doc-section h3 {
+  font-size: 1.1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.4rem;
+}
+
+.doc-section p {
+  color: #cbd5f5;
+}
+
+.doc-section ul {
+  margin-top: 0.75rem;
+  padding-left: 1.25rem;
+}
+
+.doc-section ul li {
+  margin-bottom: 0.5rem;
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .doc-wrapper {
+    padding: 3rem 1.25rem;
+  }
+}

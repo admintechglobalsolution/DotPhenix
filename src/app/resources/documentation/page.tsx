@@ -1,3 +1,5 @@
+import "./docs.css";
+
 export default function DocumentationPage() {
   return (
     <main className="doc-wrapper">

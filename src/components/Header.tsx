@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-
+import "./header.css";
 const navItems = [
   { label: "Services", href: "/services" },
   { label: "Solutions", href: "/solutions" },

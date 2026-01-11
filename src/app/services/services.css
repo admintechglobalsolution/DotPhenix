@@ -1,0 +1,137 @@
+.services-wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 3.5rem 1.25rem;
+  color: #cbd5f5;
+}
+
+/* =====================
+   HEADER
+===================== */
+.services-header {
+  margin-bottom: 3.5rem;
+}
+
+.services-header h1 {
+  font-size: clamp(2rem, 4vw, 2.6rem);
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+}
+
+.services-header p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #94a3b8;
+}
+
+/* =====================
+   SERVICES
+===================== */
+.services-list {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+}
+
+.service-section {
+  padding-bottom: 3rem;
+  border-bottom: 1px solid #1e293b;
+  scroll-margin-top: 96px; /* offset for fixed header */
+}
+
+.service-section:last-child {
+  border-bottom: none;
+}
+
+.service-section h2 {
+  font-size: 1.45rem;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+}
+
+.service-intro {
+  font-size: 0.95rem;
+  color: #cbd5f5;
+  margin-bottom: 1rem;
+  line-height: 1.65;
+}
+
+.service-section h3 {
+  font-size: 0.95rem;
+  margin-top: 1.25rem;
+  margin-bottom: 0.4rem;
+  color: #e5e7eb;
+}
+
+.service-section ul {
+  padding-left: 1.1rem;
+}
+
+.service-section li {
+  font-size: 0.9rem;
+  color: #94a3b8;
+  margin-bottom: 0.35rem;
+}
+
+/* =====================
+   TOOLS
+===================== */
+.tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.6rem;
+  list-style: none;
+  padding-left: 0;
+}
+
+.tools li {
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  color: #fff;
+}
+
+/* =====================
+   CTA
+===================== */
+.services-cta {
+  margin-top: 4.5rem;
+  padding: 3rem 2rem;
+  border-radius: 14px;
+  border: 1px solid #1e293b;
+}
+
+.services-cta h2 {
+  font-size: clamp(1.6rem, 3vw, 2rem);
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+}
+
+.services-cta p {
+  font-size: 1rem;
+  color: #cbd5f5;
+  margin-bottom: 1.5rem;
+}
+
+.cta-button {
+  background-color: #ffffff;
+  color: #0e0f12;
+  border-radius: 0.8rem;
+  padding: 0.8rem 1.5rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+.cta-button:hover {
+  background-color: #f2f2f2;
+}
+/* =====================
+   MOBILE
+===================== */
+@media (max-width: 640px) {
+  .services-wrapper {
+    padding: 2.5rem 1rem;
+  }
+}
