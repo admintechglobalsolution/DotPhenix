@@ -20,15 +20,13 @@ function Footer() {
           <h4>Services</h4>
           <ul>
             <li>
-              <Link href="/services#web-app">Web & App Development</Link>
+              <Link href="/services">Web & App Development</Link>
             </li>
             <li>
-              <Link href="/services#saas">SaaS Product Development</Link>
+              <Link href="/services">SaaS Product Development</Link>
             </li>
             <li>
-              <Link href="/services#enterprise">
-                Payroll & Enterprise Systems
-              </Link>
+              <Link href="/services">Payroll & Enterprise Systems</Link>
             </li>
           </ul>
         </div>

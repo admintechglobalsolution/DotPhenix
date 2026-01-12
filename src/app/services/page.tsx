@@ -1,11 +1,63 @@
 import "./services.css";
+import { ReactNode } from "react";
 
+import WebVisual from "../service-visuals/WebVisual";
+import SaasVisual from "../service-visuals/SaasVisual";
+import MobileVisual from "../service-visuals/MobileVisual";
+import DigitalVisual from "../service-visuals/DigitalVisual";
+import PayrollVisual from "../service-visuals/PayrollVisual";
+import AiVisual from "../service-visuals/AiVisual";
+/* =====================
+   METADATA
+===================== */
 export const metadata = {
   title: "Services — Dot Phenix Solutions",
   description:
     "Enterprise digital services including Web, Mobile, SaaS, AI Automation, Digital Marketing, and Payroll & Enterprise Systems.",
 };
 
+/* =====================
+   SERVICE BLOCK
+===================== */
+type ServiceBlockProps = {
+  id: string;
+  title: string;
+  intro: string;
+  items: string[];
+  visual: ReactNode;
+};
+
+const ServiceBlock = ({
+  id,
+  title,
+  intro,
+  items,
+  visual,
+}: ServiceBlockProps) => {
+  return (
+    <section id={id} className="service-section service-split">
+      {/* LEFT — CONTENT */}
+      <div className="service-content">
+        <h2>{title}</h2>
+        <p className="service-intro">{intro}</p>
+
+        <h3>What We Do</h3>
+        <ul>
+          {items.map((item, idx) => (
+            <li key={idx}>{item}</li>
+          ))}
+        </ul>
+      </div>
+
+      {/* RIGHT — VISUAL */}
+      <div className="service-visual">{visual}</div>
+    </section>
+  );
+};
+
+/* =====================
+   PAGE
+===================== */
 export default function ServicesPage() {
   return (
     <main className="services-wrapper">
@@ -15,117 +67,99 @@ export default function ServicesPage() {
       <header className="services-header">
         <h1>Our Services</h1>
         <p>
-          Dot Phenix Solutions provides end-to-end digital services that enable
-          organizations to design, build, automate, and scale secure,
-          intelligent, and future-ready platforms.
+          Dot Phenix Solutions delivers secure, scalable, and intelligent
+          digital solutions engineered for modern enterprises and fast-growing
+          businesses.
         </p>
       </header>
 
       {/* =====================
-         SERVICES
+         SERVICES LIST
       ====================== */}
       <section className="services-list">
         {/* WEB */}
-        <section id="web" className="service-section">
-          <h2>Web Application Development</h2>
-          <p className="service-intro">
-            We build scalable, secure, and high-performance web platforms
-            tailored to modern business workflows and enterprise requirements.
-          </p>
-
-          <h3>What We Do</h3>
-          <ul>
-            <li>Custom enterprise web applications</li>
-            <li>Cloud-native and API-first architectures</li>
-            <li>Security, performance, and scalability optimization</li>
-            <li>Responsive and accessible UI/UX</li>
-          </ul>
-        </section>
+        <ServiceBlock
+          id="web"
+          title="Web Application Development"
+          intro="We build secure, high-performance web platforms designed for scalability and long-term maintainability."
+          items={[
+            "Custom enterprise web applications",
+            "Cloud-native & API-first architectures",
+            "Performance, security, and scalability optimization",
+            "Responsive and accessible UI/UX systems",
+          ]}
+          visual={<WebVisual />}
+        />
 
         {/* MOBILE */}
-        <section id="mobile" className="service-section">
-          <h2>Mobile Application Development</h2>
-          <p className="service-intro">
-            We create native and cross-platform mobile applications designed for
-            usability, performance, and long-term growth.
-          </p>
-
-          <h3>What We Do</h3>
-          <ul>
-            <li>Android and iOS application development</li>
-            <li>Cross-platform mobile solutions</li>
-            <li>Backend and API integrations</li>
-            <li>App lifecycle and store deployment</li>
-          </ul>
-        </section>
+        <ServiceBlock
+          id="mobile"
+          title="Mobile Application Development"
+          intro="We design and develop mobile applications optimized for usability, performance, and growth."
+          items={[
+            "Android & iOS native development",
+            "Cross-platform mobile solutions",
+            "Backend & API integrations",
+            "App lifecycle management & deployment",
+          ]}
+          visual={<MobileVisual />}
+        />
 
         {/* SAAS */}
-        <section id="saas" className="service-section">
-          <h2>SaaS Product Development</h2>
-          <p className="service-intro">
-            We help organizations build SaaS products from concept to deployment
-            with a focus on scalability, reliability, and business value.
-          </p>
-
-          <h3>What We Do</h3>
-          <ul>
-            <li>Product architecture and system design</li>
-            <li>Multi-tenant SaaS platforms</li>
-            <li>Subscription and billing systems</li>
-            <li>Scalable cloud deployment</li>
-          </ul>
-        </section>
+        <ServiceBlock
+          id="saas"
+          title="SaaS Product Development"
+          intro="From idea to launch, we build SaaS products focused on reliability, scalability, and business impact."
+          items={[
+            "SaaS architecture & system design",
+            "Multi-tenant platform development",
+            "Subscription & billing systems",
+            "Cloud deployment & scaling strategies",
+          ]}
+          visual={<SaasVisual />}
+        />
 
         {/* AI */}
-        <section id="ai" className="service-section">
-          <h2>AI & Intelligent Automation</h2>
-          <p className="service-intro">
-            We apply Artificial Intelligence to automate workflows, analyze
-            data, and drive intelligent decision-making.
-          </p>
+        <ServiceBlock
+          id="ai"
+          title="AI & Intelligent Automation"
+          intro="We leverage AI to automate workflows, extract insights, and improve decision-making."
+          items={[
+            "Workflow & process automation",
+            "Data intelligence & analytics",
+            "AI model integration",
+            "Operational efficiency optimization",
+          ]}
+          visual={<AiVisual />}
+        />
 
-          <h3>What We Do</h3>
-          <ul>
-            <li>Workflow and process automation</li>
-            <li>Data analysis and intelligence systems</li>
-            <li>AI model integration</li>
-            <li>Operational efficiency optimization</li>
-          </ul>
-        </section>
+        {/* DIGITAL MARKETING */}
+        <ServiceBlock
+          id="marketing"
+          title="Digital Marketing"
+          intro="Data-driven marketing strategies integrated with automation for consistent growth."
+          items={[
+            "Performance & growth marketing",
+            "SEO & analytics optimization",
+            "Marketing automation",
+            "Conversion-focused campaigns",
+          ]}
+          visual={<DigitalVisual />}
+        />
 
-        {/* MARKETING */}
-        <section id="marketing" className="service-section">
-          <h2>Digital Marketing</h2>
-          <p className="service-intro">
-            We deliver data-driven digital marketing strategies integrated with
-            automation for measurable business growth.
-          </p>
-
-          <h3>What We Do</h3>
-          <ul>
-            <li>Performance and growth marketing</li>
-            <li>SEO and analytics optimization</li>
-            <li>Marketing automation</li>
-            <li>Conversion-focused campaigns</li>
-          </ul>
-        </section>
-
-        {/* ENTERPRISE */}
-        <section id="enterprise" className="service-section">
-          <h2>Payroll & Enterprise Systems</h2>
-          <p className="service-intro">
-            We build enterprise-grade payroll and internal systems designed for
-            compliance, security, and operational efficiency.
-          </p>
-
-          <h3>What We Do</h3>
-          <ul>
-            <li>Payroll processing and compliance systems</li>
-            <li>Enterprise workflow automation</li>
-            <li>Reporting and analytics</li>
-            <li>Secure access control</li>
-          </ul>
-        </section>
+        {/* PAYROLL / ENTERPRISE */}
+        <ServiceBlock
+          id="enterprise"
+          title="Payroll & Enterprise Systems"
+          intro="Enterprise-grade systems designed for compliance, security, and operational efficiency."
+          items={[
+            "Payroll processing & compliance",
+            "Internal enterprise automation",
+            "Reporting & analytics dashboards",
+            "Secure role-based access control",
+          ]}
+          visual={<PayrollVisual />}
+        />
       </section>
 
       {/* =====================
@@ -135,7 +169,7 @@ export default function ServicesPage() {
         <h2>Let’s Work Together</h2>
         <p>
           Partner with Dot Phenix Solutions to build secure, scalable, and
-          intelligent digital platforms.
+          future-ready digital platforms.
         </p>
         <a href="/contact" className="cta-button">
           Request a Demo →
