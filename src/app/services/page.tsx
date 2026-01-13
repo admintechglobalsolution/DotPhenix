@@ -7,7 +7,7 @@ import MobileVisual from "../service-visuals/MobileVisual";
 import DigitalVisual from "../service-visuals/DigitalVisual";
 import PayrollVisual from "../service-visuals/PayrollVisual";
 import AiVisual from "../service-visuals/AiVisual";
-
+import WhyChoose from "@/components/WhyChoose";
 /* =====================
    METADATA
 ===================== */
@@ -173,18 +173,9 @@ Ensuring accurate, efficient, and timely payroll operations."
           visual={<PayrollVisual />}
         />
       </section>
-
-      {/* CTA */}
-      <section className="services-cta">
-        <h2>Let’s Build Something Scalable</h2>
-        <p>
-          Partner with Dot Phenix Solutions to design and deliver secure,
-          future-ready digital platforms that grow with your business.
-        </p>
-        <a href="/contact" className="cta-button">
-          Request a Demo →
-        </a>
-      </section>
+      <div>
+        <WhyChoose></WhyChoose>
+      </div>
     </main>
   );
 }

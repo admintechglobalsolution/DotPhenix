@@ -1,0 +1,156 @@
+:root {
+  --bg: #0e0f12;
+  --border: #1f2228;
+  --text: #ffffff;
+  --muted: #9aa0a6;
+}
+
+/* =====================
+   ROOT + SCROLL SNAP
+===================== */
+.solutions-wrapper {
+  background: var(--bg);
+  scroll-snap-type: y mandatory;
+  overflow-y: auto;
+  position: relative;
+}
+
+/* =====================
+   SCROLL RAIL
+===================== */
+.scroll-rail {
+  position: fixed;
+  left: 32px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2px;
+  height: 220px;
+  background: var(--border);
+  z-index: 10;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.scroll-indicator {
+  position: absolute;
+  width: 100%;
+  height: calc(220px / 8);
+  background: var(--text);
+  transition: transform 0.6s ease;
+}
+
+.hide-rail {
+  opacity: 0;
+  transform: translate(-8px, -50%);
+  pointer-events: none;
+}
+
+/* =====================
+   SLIDES (NO EMPTY SPACE)
+===================== */
+.solution-slide {
+  min-height: 100vh;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+
+  display: grid;
+  place-items: center;
+
+  opacity: 0.35;
+  transform: scale(0.96);
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.solution-slide.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* =====================
+   CONTENT
+===================== */
+.solution-content {
+  max-width: 900px;
+  width: 100%;
+  padding: 0 24px;
+}
+
+/* =====================
+   TYPOGRAPHY
+===================== */
+.solution-tag {
+  display: block;
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+.solution-headline {
+  font-size: clamp(28px, 4vw, 48px);
+  line-height: 1.15;
+  margin-bottom: 20px;
+  color: var(--text);
+}
+
+.solution-description {
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--muted);
+  margin-bottom: 28px;
+}
+
+/* =====================
+   POINTS
+===================== */
+.solution-points {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 32px;
+}
+
+.solution-points li {
+  position: relative;
+  padding-left: 16px;
+  margin-bottom: 12px;
+  font-size: 16px;
+  color: var(--text);
+}
+
+.solution-points li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--text);
+}
+
+/* =====================
+   EMPHASIS
+===================== */
+.solution-emphasis {
+  font-size: 15px;
+  color: var(--muted);
+  border-left: 2px solid var(--border);
+  padding-left: 16px;
+}
+
+/* =====================
+   RESPONSIVE
+===================== */
+@media (max-width: 768px) {
+  .scroll-rail {
+    display: none;
+  }
+
+  .solution-content {
+    padding: 0 20px;
+  }
+
+  .solution-description {
+    font-size: 16px;
+  }
+}

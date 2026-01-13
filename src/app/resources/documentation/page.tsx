@@ -196,7 +196,7 @@ export default function DocumentationPage() {
       <section className="doc-section">
         <h2>Proven Experience</h2>
         <ul>
-          <li>60+ successful projects delivered</li>
+          <li>200+ successful projects delivered</li>
           <li>7+ countries served globally</li>
           <li>9+ years of industry experience</li>
         </ul>

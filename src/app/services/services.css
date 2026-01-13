@@ -1,3 +1,10 @@
+:root {
+  --bg: #0e0f12;
+  --border: #1f2228;
+  --text: #ffffff;
+  --muted: #9aa0a6;
+}
+
 /* =====================
    WRAPPER
 ===================== */
@@ -106,45 +113,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-/* =====================
-   CTA
-===================== */
-.services-cta {
-  margin-top: 6rem;
-  padding: 3.5rem;
-  border-radius: 18px;
-  border: 1px solid #1e293b;
-}
-
-.services-cta h2 {
-  font-size: clamp(1.8rem, 3vw, 2.2rem);
-  color: #ffffff;
-  margin-bottom: 1.5rem;
-}
-
-.services-cta p {
-  max-width: 680px;
-  color: #cbd5f5;
-  margin-bottom: 2.5rem;
-  line-height: 1.7;
-}
-
-.cta-button {
-  background-color: #ffffff;
-  color: #0e0f12;
-  border-radius: 0.85rem;
-  padding: 0.85rem 1.8rem;
-  font-weight: 500;
-  text-decoration: none;
-  display: inline-block;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.cta-button:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.15);
 }
 
 /* =====================

@@ -1,7 +1,282 @@
-import React from "react";
+"use client";
 
-function page() {
-  return <div>Company page</div>;
+import React from "react";
+import Image from "next/image";
+import {
+  Quote,
+  ShieldCheck,
+  Users,
+  TrendingUp,
+  Globe,
+  Heart,
+  Wallet,
+  Stethoscope,
+  Utensils,
+  Train,
+  Calendar,
+  GraduationCap,
+  Baby,
+  Eye,
+  Target,
+  Compass,
+  LucideIcon,
+} from "lucide-react";
+
+import "./company.css";
+
+/* ================= TYPES ================= */
+
+type ValueProps = {
+  icon: LucideIcon;
+  title: string;
+  text: string;
+};
+
+type ReviewProps = {
+  quote: string;
+  author: string;
+  industry: string;
+};
+
+type BenefitProps = {
+  icon: LucideIcon;
+  title: string;
+  text: string;
+};
+
+/* ================= PAGE ================= */
+
+export default function CompanyPage() {
+  return (
+    <main className="company">
+      {/* ================= COMPANY INTRO ================= */}
+      <section className="company-story company-intro">
+        <div className="container">
+          <div className="company-intro-grid">
+            {/* LEFT */}
+            <div className="company-intro-text">
+              <h2>
+                Leading the Future of <br />
+                Intelligent Automation
+              </h2>
+
+              <p>
+                We build intelligent automation platforms that redefine
+                efficiency, reliability, and scale. Designed for high-impact
+                environments, our systems eliminate operational friction, unlock
+                continuous innovation, and empower businesses to move faster
+                with absolute confidence.
+              </p>
+            </div>
+
+            {/* RIGHT */}
+            <div className="company-intro-image">
+              <Image
+                src="/Phenix.svg"
+                alt="Dot Phenix Solutions"
+                width={320}
+                height={320}
+                priority
+                className="phenix-image"
+              />
+              <h2 className="phenix-title">Dot Phenix Solutions</h2>
+              <p className="phenix-tagline">
+                Powering the World’s Digital Evolution
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ================= VISION / MISSION / VALUES ================= */}
+      <section className="vmv-section">
+        <div className="container">
+          <h2 className="center">Vision, Mission & Values</h2>
+          <p className="section-subtitle center">
+            The principles that shape our thinking, engineering, and long-term
+            partnerships.
+          </p>
+
+          <div className="vmv-grid">
+            <article className="vmv-card">
+              <Eye className="vmv-icon" />
+              <h3>Vision</h3>
+              <p>
+                To be a globally trusted technology partner, enabling
+                organizations to build resilient digital systems that evolve
+                alongside industry demands.
+              </p>
+            </article>
+
+            <article className="vmv-card">
+              <Target className="vmv-icon" />
+              <h3>Mission</h3>
+              <p>
+                To design and deliver secure, scalable, and thoughtfully
+                engineered platforms by combining technical excellence with deep
+                business understanding.
+              </p>
+            </article>
+
+            <article className="vmv-card">
+              <Compass className="vmv-icon" />
+              <h3>Values</h3>
+              <p>
+                We value engineering quality, accountability, transparency, and
+                respect for people, time, and outcomes.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      {/* ================= WHAT SETS US APART ================= */}
+      <section className="company-offer">
+        <div className="container">
+          <h2 className="center">What Sets Us Apart</h2>
+          <p className="section-subtitle center">
+            We focus on outcomes, accountability, and long-term value — not
+            short-term delivery.
+          </p>
+
+          <div className="offer-grid">
+            <Value
+              icon={ShieldCheck}
+              title="Reliability by Design"
+              text="Systems engineered for stability, security, and predictable performance under real operational pressure."
+            />
+            <Value
+              icon={Users}
+              title="Partnership Mindset"
+              text="We collaborate as long-term partners, aligning closely with business priorities and internal teams."
+            />
+            <Value
+              icon={TrendingUp}
+              title="Future-Ready Thinking"
+              text="Architectures and processes designed to support growth, change, and innovation over time."
+            />
+            <Value
+              icon={Globe}
+              title="Global Perspective"
+              text="Experience delivering solutions across regions, industries, and regulatory environments."
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* ================= CLIENT REVIEWS ================= */}
+      <section className="company-reviews">
+        <div className="container">
+          <h2 className="center">Client Perspectives</h2>
+          <p className="section-subtitle center">
+            Built on trust. Driven by success.
+          </p>
+          <div className="reviews-grid">
+            <Review
+              quote="The team approached our platform with a clear understanding of scale, risk, and long-term maintainability."
+              author="Technology Director"
+              industry="Financial Services"
+            />
+            <Review
+              quote="Communication was clear, delivery was disciplined, and the final system exceeded our expectations."
+              author="Product Lead"
+              industry="SaaS Platform"
+            />
+            <Review
+              quote="A dependable partner who understands how technology supports real operational goals."
+              author="Operations Head"
+              industry="Healthcare Organization"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* ================= CULTURE & BENEFITS ================= */}
+      <section className="company-benefits">
+        <div className="container">
+          <h2 className="center">Our Culture & Benefits</h2>
+          <p className="section-subtitle center">
+            Sustainable teams build sustainable systems.{" "}
+          </p>
+
+          <div className="benefits-grid">
+            <Benefit
+              icon={Wallet}
+              title="Financial Security"
+              text="Retirement planning support with company-backed contribution programs."
+            />
+            <Benefit
+              icon={Stethoscope}
+              title="Health Coverage"
+              text="Comprehensive healthcare options supporting employees and their families."
+            />
+            <Benefit
+              icon={Utensils}
+              title="Daily Wellness"
+              text="Office-supported meals designed to promote convenience and well-being."
+            />
+            <Benefit
+              icon={Train}
+              title="Commute Support"
+              text="Monthly assistance to help offset commuting expenses."
+            />
+            <Benefit
+              icon={Calendar}
+              title="Flexible Time Off"
+              text="Generous paid time off policies that respect personal time and balance."
+            />
+            <Benefit
+              icon={GraduationCap}
+              title="Continuous Learning"
+              text="Ongoing support for professional development and skill advancement."
+            />
+            <Benefit
+              icon={Baby}
+              title="Family Support"
+              text="Paid parental leave programs supporting growing families."
+            />
+            <Benefit
+              icon={Heart}
+              title="People-First Culture"
+              text="An environment built on respect, inclusion, and shared ownership."
+            />
+          </div>
+        </div>
+      </section>
+    </main>
+  );
 }
 
-export default page;
+/* ================= SUB COMPONENTS ================= */
+
+function Value({ icon: Icon, title, text }: ValueProps) {
+  return (
+    <div className="offer-card">
+      <Icon className="offer-icon" />
+      <h3>{title}</h3>
+      <p>{text}</p>
+    </div>
+  );
+}
+
+function Review({ quote, author, industry }: ReviewProps) {
+  return (
+    <div className="review-card">
+      <Quote className="review-icon" />
+      <p className="review-text">“{quote}”</p>
+      <span className="review-author">
+        {author} · {industry}
+      </span>
+    </div>
+  );
+}
+
+function Benefit({ icon: Icon, title, text }: BenefitProps) {
+  return (
+    <div className="benefit-card">
+      <Icon className="benefit-icon" />
+      <h4>{title}</h4>
+      <p>{text}</p>
+    </div>
+  );
+}

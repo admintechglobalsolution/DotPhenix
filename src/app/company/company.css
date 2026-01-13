@@ -1,0 +1,195 @@
+/* ================= TOKENS ================= */
+:root {
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2rem;
+  --space-5: 3rem;
+
+  --radius-md: 1rem;
+  --radius-lg: 1.5rem;
+
+  --bg: #0e0f12;
+  --border: #1f2228;
+  --text: #ffffff;
+  --muted: #9aa0a6;
+
+  --content-max: 75rem;
+}
+
+/* ================= BASE ================= */
+.company {
+  background: var(--bg);
+  color: var(--text);
+}
+
+.container {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0 var(--space-3);
+}
+
+.center {
+  text-align: center;
+}
+
+.section-subtitle {
+  color: var(--muted);
+  max-width: 42rem;
+  margin: var(--space-2) auto var(--space-4);
+}
+
+/* ================= COMPANY INTRO ================= */
+.company-intro {
+  padding: calc(var(--space-5) * 2) 0;
+}
+
+.company-intro-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-5);
+  align-items: center;
+}
+
+.company-intro-text h2 {
+  font-size: clamp(2.2rem, 4vw, 3rem);
+  margin-bottom: var(--space-3);
+}
+
+.company-intro-text p {
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 34rem;
+}
+
+/* ================= VMV ================= */
+.vmv-section {
+  padding: var(--space-5) 0;
+}
+
+.vmv-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--space-4);
+}
+
+.vmv-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+}
+
+.vmv-icon {
+  width: 1.6rem;
+  height: 1.6rem;
+  color: var(--muted);
+  margin-bottom: var(--space-2);
+}
+
+/* ================= OFFER ================= */
+.company-offer {
+  padding: var(--space-5) 0;
+}
+
+.offer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--space-4);
+}
+
+.offer-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+}
+
+.offer-icon {
+  width: 1.6rem;
+  height: 1.6rem;
+  color: var(--muted);
+  margin-bottom: var(--space-2);
+}
+
+/* ================= REVIEWS ================= */
+.company-reviews {
+  padding: var(--space-5) 0;
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-4);
+}
+
+.review-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+}
+
+.review-text {
+  color: var(--muted);
+  font-style: italic;
+}
+
+/* ================= BENEFITS ================= */
+.company-benefits {
+  padding: var(--space-5) 0;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--space-4);
+}
+
+.benefit-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+}
+.benefit-card p,
+.offer-card p,
+.vmv-card p {
+  color: var(--muted);
+}
+
+.benefit-icon {
+  width: 1.4rem;
+  height: 1.4rem;
+  color: var(--muted);
+  margin-bottom: var(--space-2);
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .company-intro-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.company-intro-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.phenix-title {
+  margin: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.phenix-tagline {
+  margin: 0;
+  max-width: 280px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #a8b0c4;
+}
+.phenix-image {
+  max-width: 320px;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}

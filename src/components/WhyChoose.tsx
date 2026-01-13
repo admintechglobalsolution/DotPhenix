@@ -2,9 +2,10 @@
 
 import { useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
-import { Container, Text } from "./ui";
 import { loadSlim } from "tsparticles-slim";
 import type { Engine } from "tsparticles-engine";
+import { Button, Text, Container } from "./ui";
+
 import "./why-choose.css";
 
 const Particles = dynamic(() => import("react-tsparticles"), { ssr: false });
@@ -41,7 +42,7 @@ function WhyChoose() {
   useEffect(() => {
     if (!visible) return;
 
-    const targets = [60, 7, 9];
+    const targets = [200, 7, 9];
     const duration = 900;
 
     const step = (timestamp: number) => {
@@ -116,6 +117,14 @@ function WhyChoose() {
           helps organizations execute Digital Transformation by automating,
           optimizing, and scaling critical digital operations.
         </Text>
+        <div className="why-actions">
+          <span className="why-action-text">
+            We’re here to help — reach out anytime{" "}
+            <a href="#contact" className="why-action-link">
+              Connect with Experts
+            </a>
+          </span>
+        </div>
       </Container>
 
       {/* GRID */}

@@ -15,9 +15,8 @@ export default function CareersPage() {
       <header className="careers-header">
         <h1>Careers at Dot Phenix Solutions</h1>
         <p>
-          Join Dot Phenix Solutions and work on cutting-edge digital platforms,
-          AI-driven automation, and scalable enterprise systems that impact
-          businesses globally.
+          Dot Phenix Solutions is growing—join us to grow your career while
+          building impactful digital ecosystems for the world.
         </p>
       </header>
 
