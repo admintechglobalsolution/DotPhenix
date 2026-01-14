@@ -853,8 +853,18 @@
 
 /* CONNECTIONS */
 .ai-agent-network line {
-  stroke: rgba(99, 102, 241, 0.6);
-  stroke-width: 2;
+  stroke: #3b82f6;
+  stroke-width: 1.6;
+  fill: none;
+  stroke-dasharray: 8 6;
+  animation: flow 3s linear infinite;
+  opacity: 0.75;
+}
+
+@keyframes flow {
+  to {
+    stroke-dashoffset: -28;
+  }
 }
 
 /* NODES */

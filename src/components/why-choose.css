@@ -5,8 +5,7 @@
 .why-section {
   position: relative;
   min-height: 100vh;
-  padding: 120px 20px;
-  text-align: center;
+  padding: 0 20px 120px;
   overflow: hidden;
   background: #0e0f12;
 }
@@ -30,6 +29,7 @@
   font-size: clamp(2.5rem, 4vw, 3rem);
   font-weight: 600;
   margin-bottom: 24px;
+  text-align: center;
 }
 
 .why-description {
@@ -299,5 +299,14 @@
   .why-action-link {
     display: block; /* moves link to next line */
     margin-top: 0.35rem;
+  }
+}
+/* Hide particles on mobile & tablet */
+@media (max-width: 1023px) {
+  .particles-bg {
+    display: none !important;
+  }
+  .why-description {
+    text-align: left;
   }
 }

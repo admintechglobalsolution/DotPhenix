@@ -20,7 +20,7 @@
 ===================== */
 .services-header {
   max-width: 980px;
-  margin: 0 auto 6rem;
+  margin: auto;
   text-align: center;
 }
 
@@ -127,5 +127,8 @@
   .service-split {
     grid-template-columns: 1fr;
     gap: 3.5rem;
+  }
+  .services-header {
+    text-align: left;
   }
 }
