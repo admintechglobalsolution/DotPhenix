@@ -1,6 +1,3 @@
-"use client";
-
-import React from "react";
 import Image from "next/image";
 import {
   Quote,
@@ -91,7 +88,7 @@ export default function CompanyPage() {
       {/* ================= VISION / MISSION / VALUES ================= */}
       <section className="vmv-section">
         <div className="container">
-          <h2 className="center">Vision, Mission & Values</h2>
+          <h2 className="center">The Foundation of Everything We Build</h2>
           <p className="section-subtitle center">
             The principles that shape our thinking, engineering, and long-term
             partnerships.
@@ -122,8 +119,9 @@ export default function CompanyPage() {
               <Compass className="vmv-icon" />
               <h3>Values</h3>
               <p>
-                We value engineering quality, accountability, transparency, and
-                respect for people, time, and outcomes.
+                We believe great engineering is built on excellence,
+                accountability, and transparency paired with deep respect for
+                people, time, and outcomes.
               </p>
             </article>
           </div>

@@ -16,45 +16,54 @@ type Section = {
 };
 
 /* =====================
-   DATA (8 INDUSTRY SECTIONS)
+   DATA (ENTERPRISE STORYTELLING - 7 VALUE POINTS EACH)
 ===================== */
 const sections: Section[] = [
   {
     title: "Technology",
     headline: "Technology & Product Platforms",
     description:
-      "We design technology platforms that become the foundation of modern digital businesses — scalable, secure, and built for continuous growth.",
+      "We design core technology platforms that become the backbone of digital businesses — engineered for scale, resilience, and long-term growth.",
     valuePoints: [
-      "Accelerates product launches and iterations",
-      "Supports rapid scaling without re-architecture",
-      "Reduces long-term technical and operational costs",
-      "Transforms ideas into sustainable digital products",
+      "Future-proof architecture that reduces rework and accelerates feature delivery",
+      "CI/CD pipelines and automated testing for safe, frequent releases",
+      "Modular APIs and microservices to enable parallel development",
+      "Built-in observability (logs, metrics, tracing) for fast incident resolution",
+      "Security-by-design: identity, encryption, and least-privilege access",
+      "Cost optimization through autoscaling and resource governance",
+      "Developer experience (DX) tooling to increase team productivity",
     ],
     emphasisLine: "Strong platforms don’t support growth — they enable it.",
   },
   {
     title: "Business & Legal",
-    headline: "Business Process & Legal Solutions",
+    headline: "Business Process & Legal Systems",
     description:
-      "We design systems that simplify complex business and legal workflows, improving efficiency, compliance, and decision-making.",
+      "We simplify complex business and legal workflows with intelligent systems that improve efficiency, compliance, and visibility.",
     valuePoints: [
-      "Streamlined workflows across departments",
-      "Reduced manual effort and operational risk",
-      "Improved compliance and audit readiness",
-      "Faster approvals and process visibility",
+      "End-to-end workflow automation to remove manual handoffs",
+      "Role-based access and approvals for governance and security",
+      "Audit trails and tamper-evident logs for compliance readiness",
+      "Contract lifecycle management with automated expiry/renewal alerts",
+      "Business rules engine for fast policy changes without engineering",
+      "Operational dashboards for SLA, bottleneck, and exception tracking",
+      "Integration-ready connectors to ERPs, CRMs, and legal repositories",
     ],
     emphasisLine: "Efficiency is not optional — it’s a competitive advantage.",
   },
   {
     title: "FinTech",
-    headline: "Financial Services & FinTech Systems",
+    headline: "Financial Services & FinTech Platforms",
     description:
-      "We build FinTech platforms designed for trust, performance, and regulatory readiness in high-volume financial environments.",
+      "We build secure, high-performance financial platforms designed for trust, scale, and regulatory confidence.",
     valuePoints: [
-      "Secure transaction and data handling",
-      "High-performance systems for real-time operations",
-      "Compliance-ready architecture",
-      "Designed for rapid feature expansion",
+      "Low-latency, secure transaction processing for real-time operations",
+      "Robust reconciliation and ledger consistency across systems",
+      "KYC/KYB and AML integration for regulatory compliance",
+      "Fraud detection and anomaly scoring to protect revenue",
+      "High-availability design with disaster recovery and failover",
+      "Regulatory reporting automation to reduce audit overhead",
+      "Pluggable payments & settlement modules for rapid market entry",
     ],
     emphasisLine: "In finance, reliability defines reputation.",
   },
@@ -62,12 +71,15 @@ const sections: Section[] = [
     title: "Healthcare",
     headline: "Healthcare & Medical Systems",
     description:
-      "We design healthcare systems that improve operational efficiency while maintaining the highest standards of data security and reliability.",
+      "We design healthcare platforms that improve outcomes, streamline operations, and protect sensitive data.",
     valuePoints: [
-      "Improved patient data accessibility",
-      "Operational efficiency for medical teams",
-      "Secure handling of sensitive information",
-      "Systems designed for regulatory compliance",
+      "EHR/EMR integration for consolidated patient records",
+      "Secure patient portals and consent-managed data access",
+      "Telemedicine and asynchronous care workflows",
+      "Compliance-first design (HIPAA, GDPR where applicable)",
+      "Clinical decision support and outcome-focused analytics",
+      "Interoperability using standards (HL7/FHIR) for data exchange",
+      "Operational tooling for scheduling, resource allocation, and capacity planning",
     ],
     emphasisLine: "Healthcare systems must perform when it matters most.",
   },
@@ -75,25 +87,31 @@ const sections: Section[] = [
     title: "Insurance",
     headline: "Insurance Platforms",
     description:
-      "We design insurance platforms that handle complex policies, claims, and customer journeys with speed and accuracy.",
+      "We design insurance systems that simplify policy management, claims, and customer journeys at scale.",
     valuePoints: [
-      "Faster claims and policy processing",
-      "Improved customer experience",
-      "Scalable systems for growing portfolios",
-      "Reduced operational bottlenecks",
+      "End-to-end policy lifecycle and quoting automation",
+      "Claims intake, triage, and automated adjudication workflows",
+      "Underwriting engines with configurable rating rules",
+      "Customer self-service portals for faster issue resolution",
+      "Fraud detection and case-management integration",
+      "Broker & partner integrations for distribution scale",
+      "Regulatory compliance, audit trails, and reporting",
     ],
     emphasisLine: "Speed and trust define modern insurance.",
   },
   {
     title: "Retail",
-    headline: "Retail & E-commerce Solutions",
+    headline: "Retail & E-commerce Platforms",
     description:
-      "We design retail and e-commerce systems that convert traffic into revenue and customers into loyal brand advocates.",
+      "We build commerce platforms that convert traffic into revenue and customers into loyal advocates.",
     valuePoints: [
-      "Optimized user journeys and checkout flows",
-      "Scalable systems for peak traffic periods",
-      "Integrated inventory and order management",
-      "Data-driven insights for smarter decisions",
+      "Personalization and recommendations to lift conversion",
+      "Frictionless checkout and payment integrations",
+      "Real-time inventory sync across channels and warehouses",
+      "Omnichannel experiences for consistent brand journeys",
+      "Promotions & pricing engine for rapid campaign execution",
+      "Performance engineering to handle peak seasonal load",
+      "Customer analytics and CRM integration for retention",
     ],
     emphasisLine: "Every interaction is an opportunity to convert.",
   },
@@ -101,12 +119,15 @@ const sections: Section[] = [
     title: "Manufacturing",
     headline: "Manufacturing & Industrial Systems",
     description:
-      "We design industrial platforms that connect processes, data, and teams to improve productivity and operational visibility.",
+      "We connect industrial operations with intelligent platforms that deliver clarity, efficiency, and growth.",
     valuePoints: [
-      "Improved production visibility",
-      "Reduced downtime and inefficiencies",
-      "Integrated data across operations",
-      "Systems designed for long-term scalability",
+      "IIoT integrations for real-time equipment telemetry",
+      "Predictive maintenance to reduce unplanned downtime",
+      "MES/MRP integrations for production planning accuracy",
+      "Supply chain visibility and vendor collaboration tools",
+      "Automated quality-control workflows and traceability",
+      "Shopfloor scheduling optimization to increase throughput",
+      "Energy and resource monitoring for operational efficiency",
     ],
     emphasisLine: "Operational clarity drives industrial growth.",
   },
@@ -114,12 +135,15 @@ const sections: Section[] = [
     title: "Education",
     headline: "Education & Research Platforms",
     description:
-      "We design education and research systems that support digital learning, collaboration, and knowledge growth at scale.",
+      "We design digital learning platforms that support collaboration, engagement, and scale.",
     valuePoints: [
-      "Engaging digital learning experiences",
-      "Scalable platforms for growing audiences",
-      "Secure data and content management",
-      "Designed for continuous evolution",
+      "Scalable LMS with course authoring and delivery tools",
+      "Assessment, grading automation, and academic integrity checks",
+      "Collaborative learning spaces and group-workflows",
+      "Content management and versioning for curriculum teams",
+      "Learner analytics to track outcomes and personalize learning",
+      "Integrations with SIS, calendaring, and single-sign-on (SSO)",
+      "Offline-first and low-bandwidth support for wider reach",
     ],
     emphasisLine: "Education platforms shape future generations.",
   },
@@ -146,7 +170,7 @@ export default function Solutions() {
         });
       },
       {
-        threshold: 0.25,
+        threshold: 0.35,
         rootMargin: "0px 0px -30% 0px",
       }
     );
@@ -157,6 +181,17 @@ export default function Solutions() {
 
   return (
     <main>
+      {/* HEADER */}
+      <header className="solutionspage-header">
+        <h1>Dot Phenix Solutions</h1>
+        <p className="solutionspage-intro">
+          We design and deliver secure, scalable digital platforms that help
+          organizations operate efficiently, grow confidently, and adapt without
+          friction.
+        </p>
+      </header>
+
+      {/* SLIDES */}
       <section className="solutions-wrapper">
         {sections.map((item, index) => (
           <div
@@ -166,7 +201,7 @@ export default function Solutions() {
             }}
             data-index={index}
             className={`solution-slide ${
-              activeIndex === index ? "active" : "inactive"
+              activeIndex === index ? "active" : ""
             }`}
           >
             <div className="solution-content">
@@ -181,8 +216,18 @@ export default function Solutions() {
                   <li key={i}>{point}</li>
                 ))}
               </ul>
-
-              <p className="solution-emphasis">{item.emphasisLine}</p>
+              <div className="solutionspage-cta">
+                <button
+                  className="solutionspage-button"
+                  aria-label={`Request a demo for ${item.title}`}
+                  onClick={() => {
+                    // later: route, modal, analytics
+                    console.log(`Request Demo: ${item.title}`);
+                  }}
+                >
+                  Request a Demo →
+                </button>
+              </div>
             </div>
           </div>
         ))}
