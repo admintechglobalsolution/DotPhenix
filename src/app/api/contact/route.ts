@@ -1,20 +1,18 @@
-// src/app/api/contact/route.ts
 import { NextResponse } from "next/server";
 import { sendContactEmail } from "@/lib/email";
 
 /**
- * Explicit runtime (Node required for Resend)
+ * Node runtime required for Resend
  */
 export const runtime = "nodejs";
 
 /**
- * Disable caching for form submissions
+ * Disable caching for submissions
  */
 export const dynamic = "force-dynamic";
 
 /**
  * POST /api/contact
- * Handles sidebar + page contact forms
  */
 export async function POST(req: Request) {
   try {
@@ -23,60 +21,52 @@ export async function POST(req: Request) {
     if (!contentType?.includes("application/json")) {
       return NextResponse.json(
         { error: "Invalid content type" },
-        { status: 415 }
+        { status: 415 },
       );
     }
 
     const body = await req.json();
 
-    const name = sanitize(body.name);
-    const email = sanitize(body.email);
-    const message = sanitize(body.message);
-    const source = sanitize(body.source); // optional
+    const payload = {
+      email: sanitize(body.email),
+      phone: sanitize(body.phone),
+      requirement: sanitize(body.requirement),
+      subCategory: sanitize(body.subCategory),
+      message: sanitize(body.message),
+      source: sanitize(body.source),
+    };
 
-    // Basic validation
-    if (!name || !email || !message) {
+    // Required validation (NO name)
+    if (!payload.email || !payload.message) {
       return NextResponse.json(
         { error: "Missing required fields" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
-    if (!isValidEmail(email)) {
+    if (!isValidEmail(payload.email)) {
       return NextResponse.json(
         { error: "Invalid email address" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
-    // Send email
-    await sendContactEmail({
-      name,
-      email,
-      message,
-      source,
-    });
+    await sendContactEmail(payload);
 
     return NextResponse.json(
       { success: true },
-      {
-        status: 200,
-        headers: {
-          "Cache-Control": "no-store",
-        },
-      }
+      { status: 200, headers: { "Cache-Control": "no-store" } },
     );
   } catch (error) {
     console.error("Contact API error:", error);
-
     return NextResponse.json(
       { error: "Failed to send message" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
 
-/* ------------------ helpers ------------------ */
+/* ---------- helpers ---------- */
 
 function sanitize(value: unknown): string {
   if (typeof value !== "string") return "";
@@ -84,6 +74,5 @@ function sanitize(value: unknown): string {
 }
 
 function isValidEmail(email: string): boolean {
-  // RFC 5322 simplified
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
