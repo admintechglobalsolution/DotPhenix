@@ -8,7 +8,7 @@ import { parsePhoneNumberFromString, CountryCode } from "libphonenumber-js";
  */
 export function isValidPhoneNumber(
   phone: string,
-  countryCode: CountryCode
+  countryCode: CountryCode,
 ): boolean {
   try {
     const parsed = parsePhoneNumberFromString(phone, countryCode);
@@ -23,7 +23,7 @@ export function isValidPhoneNumber(
  */
 export function formatToE164(
   phone: string,
-  countryCode: CountryCode
+  countryCode: CountryCode,
 ): string | null {
   try {
     const parsed = parsePhoneNumberFromString(phone, countryCode);

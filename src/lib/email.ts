@@ -1,6 +1,6 @@
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+/* ------------------ types ------------------ */
 
 export interface ContactEmailPayload {
   email: string;
@@ -11,13 +11,30 @@ export interface ContactEmailPayload {
   source?: string;
 }
 
+/* ------------------ internal helpers ------------------ */
+
 /**
- * Send admin notification email
+ * Lazily create Resend client
+ * Prevents build-time crashes when env vars are missing
  */
-export async function sendContactEmail(data: ContactEmailPayload) {
-  if (!process.env.RESEND_API_KEY) {
+function getResendClient(): Resend {
+  const apiKey = process.env.RESEND_API_KEY;
+
+  if (!apiKey) {
     throw new Error("RESEND_API_KEY is not configured");
   }
+
+  return new Resend(apiKey);
+}
+
+/* ------------------ main function ------------------ */
+
+/**
+ * Send admin notification email
+ * Server-only (used by API routes)
+ */
+export async function sendContactEmail(data: ContactEmailPayload) {
+  const resend = getResendClient();
 
   await resend.emails.send({
     from: "Website Enquiry <no-reply@ntechglobalsolution.com>",
@@ -38,7 +55,7 @@ export async function sendContactEmail(data: ContactEmailPayload) {
 
         <div style="margin-top:16px">
           <strong>Message</strong>
-          <p style="white-space:pre-line">${escape(data.message)}</p>
+          <p style="white-space:pre-line">${escapeHtml(data.message)}</p>
         </div>
 
         <hr style="margin:24px 0" />
@@ -50,19 +67,19 @@ export async function sendContactEmail(data: ContactEmailPayload) {
   });
 }
 
-/* ---------- helpers ---------- */
+/* ------------------ rendering helpers ------------------ */
 
 function row(label: string, value?: string) {
   if (!value) return "";
   return `
     <tr>
       <td style="font-weight:600">${label}</td>
-      <td>${escape(value)}</td>
+      <td>${escapeHtml(value)}</td>
     </tr>
   `;
 }
 
-function escape(value: string) {
+function escapeHtml(value: string) {
   return value
     .replace(/&/g, "&amp;")
     .replace(/</g, "&lt;")

@@ -4,7 +4,8 @@ import Solutions from "@/components/Solutions";
 import WhyChoose from "@/components/WhyChoose";
 import Process from "../components/Process";
 import Digital from "@/components/Digital";
-function page() {
+
+export default function Page() {
   return (
     <div>
       <Hero />
@@ -16,5 +17,3 @@ function page() {
     </div>
   );
 }
-
-export default page;

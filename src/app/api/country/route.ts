@@ -1,8 +1,8 @@
 import { NextResponse } from "next/server";
 
-export const revalidate = 60 * 60 * 24 * 30; // 30 days
+/* ------------------ types ------------------ */
 
-// Raw API shape
+// Raw API response shape
 type RestCountry = {
   name?: {
     common?: string;
@@ -22,9 +22,11 @@ type CountryCodeItem = {
   label: string;
 };
 
+/* ------------------ helpers ------------------ */
+
 /**
  * Strong type guard
- * Fully guarantees required fields exist
+ * Ensures required country fields exist
  */
 function isValidCountry(c: RestCountry): c is {
   name: { common: string };
@@ -40,11 +42,20 @@ function isValidCountry(c: RestCountry): c is {
   );
 }
 
+/* ------------------ route ------------------ */
+
+/**
+ * GET /api/country
+ * Returns country calling codes
+ */
 export async function GET() {
   try {
     const response = await fetch(
       "https://restcountries.com/v3.1/all?fields=name,idd,cca2",
-      { next: { revalidate } }
+      {
+        // ✅ Correct caching strategy for API routes
+        next: { revalidate: 60 * 60 * 24 * 30 }, // 30 days
+      },
     );
 
     if (!response.ok) {
@@ -73,9 +84,16 @@ export async function GET() {
       })
       .sort((a, b) => a.country.localeCompare(b.country));
 
-    return NextResponse.json(countries);
-  } catch {
-    // Safe fallback
+    return NextResponse.json(countries, {
+      status: 200,
+      headers: {
+        "Cache-Control": "public, max-age=2592000",
+      },
+    });
+  } catch (error) {
+    console.error("Country API error:", error);
+
+    // Safe fallback — never break the form
     return NextResponse.json([], { status: 200 });
   }
 }
