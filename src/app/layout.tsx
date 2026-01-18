@@ -3,6 +3,8 @@ import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ClientLayout from "./client-layout";
+
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
@@ -24,7 +26,9 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <body className={spaceGrotesk.className}>
         <Header />
-        <main id="main-content">{children}</main>
+        <ClientLayout>
+          <main id="main-content">{children}</main>
+        </ClientLayout>
         <Footer />
       </body>
     </html>

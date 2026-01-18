@@ -71,9 +71,12 @@ export default function Hero() {
           Intelligence.
         </Text>
 
-        <div className="hero-actions">
-          <Button className="hero-button">Request a Demo →</Button>
-        </div>
+        <Button
+          className="hero-button"
+          onClick={() => window.dispatchEvent(new Event("open-sidebar"))}
+        >
+          Request a Demo →
+        </Button>
       </Container>
 
       {/* RIGHT VISUAL */}

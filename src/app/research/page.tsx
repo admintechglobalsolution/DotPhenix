@@ -2,6 +2,7 @@
 
 import React from "react";
 import "./research.css";
+import { ReactNode } from "react";
 
 export default function ResearchPage() {
   return (
@@ -25,7 +26,12 @@ export default function ResearchPage() {
       {/* SECTIONS */}
       <section className="research-sections">
         <ResearchBlock
-          title="NAVI AI"
+          title={
+            <span className="navi-title">
+              n<span className="navi-accent">A</span>v
+              <span className="navi-accent">I</span>
+            </span>
+          }
           description="A generative intelligence platform designed for reasoning, adaptation, and real-world execution."
           points={[
             "LLM orchestration and reasoning pipelines",
@@ -70,7 +76,7 @@ function ResearchBlock({
   points,
   variant,
 }: {
-  title: string;
+  title: ReactNode;
   description: string;
   points: string[];
   variant: "generative" | "agents" | "os";
@@ -86,7 +92,12 @@ function ResearchBlock({
             <li key={i}>{p}</li>
           ))}
         </ul>
-        <button className="research-btn">Request a Demo →</button>
+        <button
+          className="research-btn"
+          onClick={() => window.dispatchEvent(new Event("open-sidebar"))}
+        >
+          Request a Demo →
+        </button>
       </div>
 
       {/* RIGHT – MONITOR */}
@@ -161,7 +172,7 @@ function ResearchBlock({
                   <input
                     type="text"
                     className="navi-field"
-                    placeholder="Message NAVI…"
+                    placeholder="Message nAvI…"
                   />
 
                   <span className="navi-icon right">🎙</span>

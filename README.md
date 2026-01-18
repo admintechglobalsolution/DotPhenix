@@ -25,6 +25,8 @@ pnpm install
  pnpm dev -- --hostname 0.0.0.0
 pnpm dev
 pnpm add lucide-react
+pnpm add resend
+
 pnpm start for Deployment
 
 

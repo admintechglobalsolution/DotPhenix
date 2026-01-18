@@ -18,6 +18,7 @@ import {
   Compass,
   LucideIcon,
 } from "lucide-react";
+import WhyChoose from "@/components/WhyChoose";
 
 import "./company.css";
 
@@ -241,6 +242,9 @@ export default function CompanyPage() {
           </div>
         </div>
       </section>
+      <div>
+        <WhyChoose></WhyChoose>
+      </div>
     </main>
   );
 }

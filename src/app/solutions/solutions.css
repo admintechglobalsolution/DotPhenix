@@ -6,17 +6,63 @@
 }
 
 /* =====================
-   WRAPPER
+   PAGE LAYOUT
 ===================== */
-.solutions-wrapper {
+
+.solutionspage-wrapper {
   background: var(--bg);
-  scroll-snap-type: y mandatory;
-  overflow-y: auto;
+}
+
+.solutionspage-layout {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  align-items: start;
 }
 
 /* =====================
-   SLIDES
+   LEFT SCROLL RAIL
 ===================== */
+
+.solutionspage-rail {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.rail-line {
+  position: absolute;
+  width: 2px;
+  height: 70vh;
+  top: 15vh;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(255, 255, 255, 0.25),
+    transparent
+  );
+}
+
+.rail-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--text);
+  margin-top: 15vh;
+  transition: transform 0.1s linear;
+  will-change: transform;
+}
+
+/* =====================
+   CONTENT
+===================== */
+
+.solutions-wrapper {
+  scroll-snap-type: y mandatory;
+}
+
 .solution-slide {
   min-height: 100vh;
   scroll-snap-align: start;
@@ -24,7 +70,9 @@
   place-items: center;
   opacity: 0.3;
   transform: scale(0.96);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
 }
 
 .solution-slide.active {
@@ -32,9 +80,6 @@
   transform: scale(1);
 }
 
-/* =====================
-   CONTENT
-===================== */
 .solution-content {
   max-width: 920px;
   width: 100%;
@@ -44,6 +89,7 @@
 /* =====================
    TYPOGRAPHY
 ===================== */
+
 .solution-tag {
   font-size: 12px;
   letter-spacing: 0.18em;
@@ -57,6 +103,7 @@
   line-height: 1.15;
   margin-bottom: 22px;
   font-weight: 600;
+  color: var(--text);
 }
 
 .solution-description {
@@ -69,6 +116,7 @@
 /* =====================
    POINTS
 ===================== */
+
 .solution-points {
   list-style: none;
   padding: 0;
@@ -80,6 +128,7 @@
   padding-left: 18px;
   margin-bottom: 14px;
   font-size: 16px;
+  color: var(--text);
 }
 
 .solution-points li::before {
@@ -94,49 +143,8 @@
 }
 
 /* =====================
-   EMPHASIS
+   BUTTON
 ===================== */
-.solution-emphasis {
-  font-size: 15px;
-  color: var(--muted);
-  border-left: 3px solid var(--border);
-  padding-left: 18px;
-}
-
-/* =====================
-   HEADER
-===================== */
-.solutionspage-header {
-  max-width: 900px;
-  margin: 0 auto 80px;
-  text-align: center;
-  padding: 0 20px;
-}
-
-.solutionspage-header h1 {
-  font-size: clamp(2.6rem, 4.5vw, 3.6rem);
-  font-weight: 600;
-}
-
-.solutionspage-intro {
-  margin-top: 16px;
-  font-size: 1.05rem;
-  line-height: 1.8;
-  color: var(--muted);
-}
-
-/* =====================
-   MOBILE
-===================== */
-@media (max-width: 768px) {
-  .solution-description {
-    font-size: 16px;
-  }
-
-  .solution-points li {
-    font-size: 15px;
-  }
-}
 
 .solutionspage-button {
   background-color: #ffffff;
@@ -151,4 +159,54 @@
 
 .solutionspage-button:hover {
   background-color: #f2f2f2;
+}
+
+/* =====================
+   HEADER
+===================== */
+
+.solutionspage-header {
+  max-width: 900px;
+  margin: 0 auto 80px;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.solutionspage-header h1 {
+  font-size: clamp(2.6rem, 4.5vw, 3.6rem);
+  font-weight: 600;
+  color: var(--text);
+}
+
+.solutionspage-intro {
+  margin-top: 16px;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--muted);
+}
+
+/* =====================
+   MOBILE
+===================== */
+
+@media (max-width: 768px) {
+  .solutionspage-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .solutionspage-rail {
+    display: none;
+  }
+
+  .solution-description {
+    font-size: 16px;
+  }
+
+  .solution-points li {
+    font-size: 15px;
+  }
+
+  .solutions-wrapper {
+    scroll-snap-type: none;
+  }
 }

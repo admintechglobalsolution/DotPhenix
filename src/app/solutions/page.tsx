@@ -16,7 +16,7 @@ type Section = {
 };
 
 /* =====================
-   DATA (ENTERPRISE STORYTELLING - 7 VALUE POINTS EACH)
+   DATA
 ===================== */
 const sections: Section[] = [
   {
@@ -149,15 +149,30 @@ const sections: Section[] = [
   },
 ];
 
-/* =====================
-   COMPONENT
-===================== */
-export default function Solutions() {
+export default function SolutionsPage() {
   const sectionRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const [progress, setProgress] = useState(0);
   const [activeIndex, setActiveIndex] = useState(0);
 
   /* =====================
-     SCROLL OBSERVER
+     WINDOW SCROLL PROGRESS
+  ===================== */
+  useEffect(() => {
+    const handleScroll = () => {
+      const doc = document.documentElement;
+      const total = doc.scrollHeight - window.innerHeight;
+      const scrolled = window.scrollY;
+      setProgress(total > 0 ? scrolled / total : 0);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  /* =====================
+     ACTIVE SECTION
   ===================== */
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -170,9 +185,10 @@ export default function Solutions() {
         });
       },
       {
+        root: null,
         threshold: 0.35,
         rootMargin: "0px 0px -30% 0px",
-      }
+      },
     );
 
     sectionRefs.current.forEach((el) => el && observer.observe(el));
@@ -180,8 +196,7 @@ export default function Solutions() {
   }, []);
 
   return (
-    <main>
-      {/* HEADER */}
+    <main className="solutionspage">
       <header className="solutionspage-header">
         <h1>Dot Phenix Solutions</h1>
         <p className="solutionspage-intro">
@@ -191,46 +206,52 @@ export default function Solutions() {
         </p>
       </header>
 
-      {/* SLIDES */}
-      <section className="solutions-wrapper">
-        {sections.map((item, index) => (
-          <div
-            key={index}
-            ref={(el) => {
-              sectionRefs.current[index] = el;
-            }}
-            data-index={index}
-            className={`solution-slide ${
-              activeIndex === index ? "active" : ""
-            }`}
-          >
-            <div className="solution-content">
-              <span className="solution-tag">{item.title}</span>
+      <section className="solutionspage-wrapper">
+        <div className="solutionspage-layout">
+          {/* LEFT RAIL */}
+          <aside className="solutionspage-rail">
+            <div className="rail-line" />
+            <div
+              className="rail-indicator"
+              style={{ transform: `translateY(${progress * 60}vh)` }}
+            />
+          </aside>
 
-              <h2 className="solution-headline">{item.headline}</h2>
+          {/* CONTENT */}
+          <section className="solutions-wrapper">
+            {sections.map((item, index) => (
+              <div
+                key={index}
+                ref={(el) => (sectionRefs.current[index] = el)}
+                data-index={index}
+                className={`solution-slide ${
+                  activeIndex === index ? "active" : ""
+                }`}
+              >
+                <div className="solution-content">
+                  <span className="solution-tag">{item.title}</span>
+                  <h2 className="solution-headline">{item.headline}</h2>
+                  <p className="solution-description">{item.description}</p>
 
-              <p className="solution-description">{item.description}</p>
+                  <ul className="solution-points">
+                    {item.valuePoints.map((point, i) => (
+                      <li key={i}>{point}</li>
+                    ))}
+                  </ul>
 
-              <ul className="solution-points">
-                {item.valuePoints.map((point, i) => (
-                  <li key={i}>{point}</li>
-                ))}
-              </ul>
-              <div className="solutionspage-cta">
-                <button
-                  className="solutionspage-button"
-                  aria-label={`Request a demo for ${item.title}`}
-                  onClick={() => {
-                    // later: route, modal, analytics
-                    console.log(`Request Demo: ${item.title}`);
-                  }}
-                >
-                  Request a Demo →
-                </button>
+                  <button
+                    className="solutionspage-button"
+                    onClick={() =>
+                      window.dispatchEvent(new Event("open-sidebar"))
+                    }
+                  >
+                    Request a Demo →
+                  </button>
+                </div>
               </div>
-            </div>
-          </div>
-        ))}
+            ))}
+          </section>
+        </div>
       </section>
 
       <WhyChoose />

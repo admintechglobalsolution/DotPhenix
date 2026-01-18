@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 import { loadSlim } from "tsparticles-slim";
 import type { Engine } from "tsparticles-engine";
-import { Button, Text, Container } from "./ui";
+import { Text, Container } from "./ui";
 
 import "./why-choose.css";
 
@@ -120,7 +120,14 @@ function WhyChoose() {
         <div className="why-actions">
           <span className="why-action-text">
             We’re here to help — reach out anytime{" "}
-            <a href="#contact" className="why-action-link">
+            <a
+              href="#"
+              className="why-action-link"
+              onClick={(e) => {
+                e.preventDefault();
+                window.dispatchEvent(new Event("open-sidebar"));
+              }}
+            >
               Connect with Experts
             </a>
           </span>
