@@ -222,7 +222,9 @@ export default function SolutionsPage() {
             {sections.map((item, index) => (
               <div
                 key={index}
-                ref={(el) => (sectionRefs.current[index] = el)}
+                ref={(el) => {
+                  sectionRefs.current[index] = el;
+                }}
                 data-index={index}
                 className={`solution-slide ${
                   activeIndex === index ? "active" : ""
