@@ -36,8 +36,8 @@ export async function POST(req: Request) {
       source: sanitize(body.source),
     };
 
-    // Required validation (NO name)
-    if (!payload.email || !payload.message) {
+    // Required validation
+    if (!payload.email) {
       return NextResponse.json(
         { error: "Missing required fields" },
         { status: 400 },
@@ -51,7 +51,15 @@ export async function POST(req: Request) {
       );
     }
 
-    await sendContactEmail(payload);
+    try {
+      await sendContactEmail(payload);
+    } catch (err) {
+      console.error("Email error:", err);
+      return NextResponse.json(
+        { error: "Email service unavailable" },
+        { status: 503 },
+      );
+    }
 
     return NextResponse.json(
       { success: true },
