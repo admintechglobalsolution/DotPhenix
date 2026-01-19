@@ -103,24 +103,28 @@ export default function SidebarForm({ open, onClose }: SidebarFormProps) {
   useEffect(() => {
     if (!open || countryCodes.length > 0) return;
 
-    setCountryLoading(true);
+    const loadCountries = async () => {
+      setCountryLoading(true);
 
-    fetch("/api/country")
-      .then((res) => {
+      try {
+        const res = await fetch("/api/country");
         if (!res.ok) throw new Error();
-        return res.json();
-      })
-      .then((data: CountryCodeItem[]) => {
+
+        const data: CountryCodeItem[] = await res.json();
         setCountryCodes(data);
+
         const india = data.find((c) => c.iso === "IN");
         if (india) setSelectedCountryCode(india.code);
-      })
-      .catch(() => {
+      } catch {
         setCountryCodes([
           { country: "India", iso: "IN", code: "+91", label: "India (+91)" },
         ]);
-      })
-      .finally(() => setCountryLoading(false));
+      } finally {
+        setCountryLoading(false);
+      }
+    };
+
+    loadCountries();
   }, [open, countryCodes.length]);
 
   /* ------------------ submit ------------------ */
@@ -190,11 +194,19 @@ export default function SidebarForm({ open, onClose }: SidebarFormProps) {
         }),
       });
 
-      if (!res.ok) throw new Error();
+      // ✅ Safely parse JSON
+      const data = await res.json().catch(() => null);
 
-      setStatus("success");
-      e.currentTarget.reset();
-      setRequirement("All");
+      // ✅ BEST PRACTICE: HTTP + business success
+      if (res.ok && data?.success === true) {
+        setStatus("success");
+        e.currentTarget.reset();
+        setRequirement("All");
+        return;
+      }
+
+      // ❌ API responded but business logic failed
+      setStatus("serverError");
     } catch {
       setStatus("serverError");
     }
