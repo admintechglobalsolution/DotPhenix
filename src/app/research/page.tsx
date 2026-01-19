@@ -13,7 +13,7 @@ export default function ResearchPage() {
           <h1 className="research-title">
             Researching the Foundations of
             <br />
-            Next-Generation AI Systems
+            Networked Artificial Versatile Intelligence
           </h1>
           <p className="research-subtitle">
             We explore deep, systems-level artificial intelligence — from

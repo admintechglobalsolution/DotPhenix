@@ -62,14 +62,15 @@ interface SidebarFormProps {
 // Frontend sanitizer (UX + first-line defense only)
 const sanitizeInput = (value: string) =>
   value
-    .replace(/[<>]/g, "") // block HTML tags
-    .replace(/['"`;]/g, "") // block SQL/XSS chars
+    .replace(/[<>]/g, "")
+    .replace(/['"`;]/g, "")
     .trim();
 
 const isValidEmail = (email: string) =>
   /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email);
 
-const isValidPhone = (phone: string) => /^[0-9]{11}$/.test(phone);
+// Global generic phone validation (API is source of truth)
+const isValidPhone = (phone: string) => /^[0-9]{7,13}$/.test(phone);
 
 /* ------------------ component ------------------ */
 
@@ -81,7 +82,7 @@ export default function SidebarForm({ open, onClose }: SidebarFormProps) {
   const [countryLoading, setCountryLoading] = useState(false);
   const [selectedCountryCode, setSelectedCountryCode] = useState("+91");
 
-  const [lastSubmit, setLastSubmit] = useState(0); // rate-limit
+  const [lastSubmit, setLastSubmit] = useState(0);
 
   const [fieldError, setFieldError] = useState<{
     field: "email" | "phone" | null;
@@ -111,7 +112,6 @@ export default function SidebarForm({ open, onClose }: SidebarFormProps) {
       })
       .then((data: CountryCodeItem[]) => {
         setCountryCodes(data);
-
         const india = data.find((c) => c.iso === "IN");
         if (india) setSelectedCountryCode(india.code);
       })
@@ -128,14 +128,13 @@ export default function SidebarForm({ open, onClose }: SidebarFormProps) {
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
-    // ⏱ UI rate limit (5 seconds)
     const now = Date.now();
     if (now - lastSubmit < 5000) return;
     setLastSubmit(now);
 
     const formData = new FormData(e.currentTarget);
 
-    // 🤖 Honeypot (bot/zombie detection)
+    // Honeypot
     if (formData.get("company")) return;
 
     const email = sanitizeInput(formData.get("email")?.toString() || "");
@@ -157,13 +156,19 @@ export default function SidebarForm({ open, onClose }: SidebarFormProps) {
 
     /* ---- Phone validation ---- */
     if (!phone) {
-      setFieldError({ field: "phone", message: "Contact number is required." });
+      setFieldError({
+        field: "phone",
+        message: "Contact Number is required",
+      });
       phoneRef.current?.focus();
       return;
     }
 
     if (!isValidPhone(phone)) {
-      setFieldError({ field: "phone", message: "Enter exactly 11 digits." });
+      setFieldError({
+        field: "phone",
+        message: "Enter Valid Contact Number",
+      });
       phoneRef.current?.focus();
       return;
     }
@@ -208,20 +213,18 @@ export default function SidebarForm({ open, onClose }: SidebarFormProps) {
         aria-labelledby="sidebar-form-title"
       >
         <div className="sidebar-header">
-          {" "}
-          <h2 id="sidebar-form-title">We’re Here to Assist</h2>{" "}
+          <h2 id="sidebar-form-title">We’re Here to Assist</h2>
           <button
             className="close-btn"
             onClick={onClose}
             aria-label="Close sidebar"
           >
-            {" "}
-            ×{" "}
-          </button>{" "}
+            ×
+          </button>
         </div>
 
         <form onSubmit={handleSubmit} noValidate>
-          {/* Honeypot (hidden bot trap) */}
+          {/* Honeypot */}
           <input
             type="text"
             name="company"
@@ -249,7 +252,6 @@ export default function SidebarForm({ open, onClose }: SidebarFormProps) {
           <label>Contact Number</label>
           <div className="phone-group">
             <select
-              name="countryCode"
               value={selectedCountryCode}
               onChange={(e) => setSelectedCountryCode(e.target.value)}
               disabled={countryLoading || status === "loading"}
@@ -266,21 +268,23 @@ export default function SidebarForm({ open, onClose }: SidebarFormProps) {
               name="phone"
               type="tel"
               inputMode="numeric"
-              maxLength={11}
+              maxLength={13}
               autoComplete="new-password"
               className={fieldError.field === "phone" ? "input-error" : ""}
               onChange={(e) => {
-                e.target.value = e.target.value.replace(/\D/g, "").slice(0, 11);
+                e.target.value = e.target.value.replace(/\D/g, "").slice(0, 13);
                 clearFieldError("phone");
               }}
               disabled={status === "loading"}
             />
           </div>
-
+          {/* ✅ Phone error message */}
+          {fieldError.field === "phone" && (
+            <p className="field-error">{fieldError.message}</p>
+          )}
           {/* Requirement */}
           <label>Requirement Type</label>
           <select
-            name="requirement"
             value={requirement}
             onChange={(e) => setRequirement(e.target.value)}
             disabled={status === "loading"}
@@ -313,21 +317,19 @@ export default function SidebarForm({ open, onClose }: SidebarFormProps) {
               disabled={status === "loading"}
               aria-busy={status === "loading"}
             >
-              {" "}
-              {status === "loading" ? "Sending…" : "Submit"}{" "}
-            </button>{" "}
+              {status === "loading" ? "Sending…" : "Submit"}
+            </button>
+
             <button
               type="reset"
               className="clear-btn"
               disabled={status === "loading"}
               onClick={() => setRequirement("All")}
             >
-              {" "}
-              Clear{" "}
+              Clear
             </button>
           </div>
 
-          {/* Messages */}
           {status === "success" && (
             <p className="form-success">
               Thank you. Our team will contact you shortly.
@@ -335,9 +337,7 @@ export default function SidebarForm({ open, onClose }: SidebarFormProps) {
           )}
 
           {status === "serverError" && (
-            <p className="form-error">
-              Unable to submit. Please try again later.
-            </p>
+            <p className="form-error">Submission failed. Please try again. </p>
           )}
         </form>
       </aside>
