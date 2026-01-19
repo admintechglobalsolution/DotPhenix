@@ -11,9 +11,16 @@ export default function ResearchPage() {
       <section className="research-hero">
         <div className="research-hero-content">
           <h1 className="research-title">
-            Researching the Foundations of
+            Researching the Foundations
             <br />
-            Networked Artificial Versatile Intelligence
+            of
+            <br />
+            <span className="highlight-words">
+              <span className="word">Networked</span>{" "}
+              <span className="word">Artificial</span>{" "}
+              <span className="word">Versatile</span>{" "}
+              <span className="word">Intelligence</span>
+            </span>
           </h1>
           <p className="research-subtitle">
             We explore deep, systems-level artificial intelligence — from
