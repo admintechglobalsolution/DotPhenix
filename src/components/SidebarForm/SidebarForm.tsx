@@ -59,7 +59,6 @@ interface SidebarFormProps {
 
 /* ------------------ security helpers ------------------ */
 
-// Frontend sanitizer (UX + first-line defense only)
 const sanitizeInput = (value: string) =>
   value
     .replace(/[<>]/g, "")
@@ -69,7 +68,6 @@ const sanitizeInput = (value: string) =>
 const isValidEmail = (email: string) =>
   /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email);
 
-// Global generic phone validation (API is source of truth)
 const isValidPhone = (phone: string) => /^[0-9]{7,13}$/.test(phone);
 
 /* ------------------ component ------------------ */
@@ -91,6 +89,7 @@ export default function SidebarForm({ open, onClose }: SidebarFormProps) {
 
   const emailRef = useRef<HTMLInputElement>(null);
   const phoneRef = useRef<HTMLInputElement>(null);
+  const formRef = useRef<HTMLFormElement>(null);
 
   const clearFieldError = (field: "email" | "phone") => {
     if (fieldError.field === field) {
@@ -103,28 +102,24 @@ export default function SidebarForm({ open, onClose }: SidebarFormProps) {
   useEffect(() => {
     if (!open || countryCodes.length > 0) return;
 
-    const loadCountries = async () => {
-      setCountryLoading(true);
+    setCountryLoading(true);
 
-      try {
-        const res = await fetch("/api/country");
+    fetch("/api/country")
+      .then((res) => {
         if (!res.ok) throw new Error();
-
-        const data: CountryCodeItem[] = await res.json();
+        return res.json();
+      })
+      .then((data: CountryCodeItem[]) => {
         setCountryCodes(data);
-
         const india = data.find((c) => c.iso === "IN");
         if (india) setSelectedCountryCode(india.code);
-      } catch {
+      })
+      .catch(() => {
         setCountryCodes([
           { country: "India", iso: "IN", code: "+91", label: "India (+91)" },
         ]);
-      } finally {
-        setCountryLoading(false);
-      }
-    };
-
-    loadCountries();
+      })
+      .finally(() => setCountryLoading(false));
   }, [open, countryCodes.length]);
 
   /* ------------------ submit ------------------ */
@@ -136,7 +131,8 @@ export default function SidebarForm({ open, onClose }: SidebarFormProps) {
     if (now - lastSubmit < 5000) return;
     setLastSubmit(now);
 
-    const formData = new FormData(e.currentTarget);
+    const form = e.currentTarget;
+    const formData = new FormData(form);
 
     // Honeypot
     if (formData.get("company")) return;
@@ -145,33 +141,16 @@ export default function SidebarForm({ open, onClose }: SidebarFormProps) {
     const phone = sanitizeInput(formData.get("phone")?.toString() || "");
     const message = sanitizeInput(formData.get("message")?.toString() || "");
 
-    /* ---- Email validation ---- */
-    if (!email) {
-      setFieldError({ field: "email", message: "Email is required." });
-      emailRef.current?.focus();
-      return;
-    }
-
-    if (!isValidEmail(email)) {
+    if (!email || !isValidEmail(email)) {
       setFieldError({ field: "email", message: "Enter a valid email." });
       emailRef.current?.focus();
       return;
     }
 
-    /* ---- Phone validation ---- */
-    if (!phone) {
+    if (!phone || !isValidPhone(phone)) {
       setFieldError({
         field: "phone",
-        message: "Contact Number is required",
-      });
-      phoneRef.current?.focus();
-      return;
-    }
-
-    if (!isValidPhone(phone)) {
-      setFieldError({
-        field: "phone",
-        message: "Enter Valid Contact Number",
+        message: "Enter a valid contact number.",
       });
       phoneRef.current?.focus();
       return;
@@ -194,21 +173,17 @@ export default function SidebarForm({ open, onClose }: SidebarFormProps) {
         }),
       });
 
-      // ✅ Safely parse JSON
-      const data = await res.json().catch(() => null);
-
-      // ✅ BEST PRACTICE: HTTP + business success
-      if (res.ok && data?.success === true) {
-        setStatus("success");
-        e.currentTarget.reset();
-        setRequirement("All");
-        return;
-      }
-
-      // ❌ API responded but business logic failed
-      setStatus("serverError");
+      // ✅ ONLY HTTP STATUS CHECK
+      setStatus(res.ok ? "success" : "serverError");
     } catch {
       setStatus("serverError");
+    } finally {
+      // ✅ Clear form (same as Clear button)
+      formRef.current?.reset();
+      setRequirement("All");
+
+      // ✅ Hide message after 3 seconds
+      setTimeout(() => setStatus("idle"), 3000);
     }
   }
 
@@ -235,7 +210,7 @@ export default function SidebarForm({ open, onClose }: SidebarFormProps) {
           </button>
         </div>
 
-        <form onSubmit={handleSubmit} noValidate>
+        <form ref={formRef} onSubmit={handleSubmit} noValidate>
           {/* Honeypot */}
           <input
             type="text"
@@ -290,10 +265,10 @@ export default function SidebarForm({ open, onClose }: SidebarFormProps) {
               disabled={status === "loading"}
             />
           </div>
-          {/* ✅ Phone error message */}
           {fieldError.field === "phone" && (
             <p className="field-error">{fieldError.message}</p>
           )}
+
           {/* Requirement */}
           <label>Requirement Type</label>
           <select
@@ -319,7 +294,12 @@ export default function SidebarForm({ open, onClose }: SidebarFormProps) {
 
           {/* Message */}
           <label>Message</label>
-          <textarea name="message" rows={4} disabled={status === "loading"} />
+          <textarea
+            name="message"
+            rows={4}
+            placeholder="How can we assist you?"
+            disabled={status === "loading"}
+          />
 
           {/* Actions */}
           <div className="form-actions">
@@ -343,13 +323,11 @@ export default function SidebarForm({ open, onClose }: SidebarFormProps) {
           </div>
 
           {status === "success" && (
-            <p className="form-success">
-              Thank you. Our team will contact you shortly.
-            </p>
+            <p className="form-success">Our team will contact you shortly. </p>
           )}
 
           {status === "serverError" && (
-            <p className="form-error">Submission failed. Please try again. </p>
+            <p className="form-error">Submission failed. Please try again.</p>
           )}
         </form>
       </aside>

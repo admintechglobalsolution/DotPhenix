@@ -259,3 +259,9 @@ select {
   font-size: 0.85rem;
   text-align: center;
 }
+
+.form-success {
+  color: #22c55e;
+  font-size: 0.85rem;
+  text-align: center;
+}
