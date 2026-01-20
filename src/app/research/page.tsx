@@ -11,9 +11,7 @@ export default function ResearchPage() {
       <section className="research-hero">
         <div className="research-hero-content">
           <h1 className="research-title">
-            Researching the Foundations
-            <br />
-            of
+            Researching the Foundations of
             <br />
             <span className="highlight-words">
               <span className="word">Networked</span>{" "}
@@ -22,10 +20,12 @@ export default function ResearchPage() {
               <span className="word">Intelligence</span>
             </span>
           </h1>
+
           <p className="research-subtitle">
-            We explore deep, systems-level artificial intelligence — from
-            autonomous agent networks and generative reasoning to AI-native
-            operating systems built close to the kernel.
+            We conduct systems-level research in artificial intelligence,
+            spanning autonomous agent networks, generative reasoning
+            architectures, and AI-native operating systems engineered close to
+            the kernel.
           </p>
         </div>
       </section>
@@ -203,7 +203,7 @@ function ResearchBlock({
                     </div>
 
                     <div className="step-content">
-                      <span className="step-label">User request received:</span>
+                      <span className="step-label">User request:</span>
                       <span className="step-value">
                         “Book a flight from NYC to London”
                       </span>
@@ -239,7 +239,7 @@ function ResearchBlock({
                     <div className="step-content">
                       <span className="step-label">Evaluating:</span>
                       <span className="step-value">
-                        Fare rules, baggage, cancellation
+                        Fare rules and Cancellation
                       </span>
                     </div>
                   </div>
@@ -256,7 +256,7 @@ function ResearchBlock({
                     <div className="step-content">
                       <span className="step-label">Processing:</span>
                       <span className="step-value">
-                        Seat reservation & payment
+                        Your booking is in progress.
                       </span>
                     </div>
                   </div>

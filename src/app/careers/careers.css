@@ -1,66 +1,92 @@
-/* =====================
-   BASE
-===================== */
+/* =========================================================
+   ROOT (Design Tokens)
+========================================================= */
 
-.careers-wrapper {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 2.5rem 1.25rem;
-  color: #cbd5f5;
+:root {
+  --bg-dark: #0e0f12;
+  --text-primary: #ffffff;
+  --text-secondary: #cbd5f5;
+  --text-muted: #94a3b8;
+  --border-soft: #1e293b;
+  --accent: #ff8c28;
+  --card-bg: rgba(255, 255, 255, 0.02);
 }
 
-/* =====================
+/* =========================================================
+   BASE
+========================================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.careers-wrapper {
+  max-width: 60rem; /* 960px */
+  margin-inline: auto;
+  padding: 2.5rem 1.25rem;
+  color: var(--text-secondary);
+}
+
+/* =========================================================
    HEADER
-===================== */
+========================================================= */
 
 .careers-header {
-  margin-bottom: 3.5rem;
+  margin-bottom: 3rem;
 }
 
 .careers-header h1 {
-  font-size: clamp(2rem, 4vw, 2.6rem);
-  color: #ffffff;
+  font-size: clamp(1.9rem, 4vw, 2.6rem);
+  line-height: 1.15;
+  color: var(--text-primary);
 }
 
 .careers-header p {
-  font-size: 1.05rem;
+  margin-top: 0.75rem;
+  font-size: 1rem;
   line-height: 1.7;
-  color: #94a3b8;
+  color: var(--text-muted);
 }
 
 .careers-sub {
-  margin-top: 0.9rem;
+  max-width: 45rem;
   font-size: 0.95rem;
-  max-width: 720px;
 }
 
-/* =====================
-   ROLES
-===================== */
+/* =========================================================
+   CAREERS LIST
+========================================================= */
 
 .careers-list {
   display: flex;
   flex-direction: column;
-  gap: 3.8rem;
+  gap: 3rem;
 }
 
+/* =========================================================
+   ROLE CARD
+========================================================= */
+
 .career-role {
-  padding: 2.6rem 2.3rem;
-  border-radius: 18px;
-  border: 1px solid #1e293b;
+  padding: 2.25rem;
+  border-radius: 1.125rem;
+  background: var(--card-bg);
+  border: 1px solid var(--border-soft);
   transition:
     transform 0.35s ease,
     box-shadow 0.35s ease;
 }
 
 .career-role:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 26px 52px rgba(0, 0, 0, 0.4);
+  transform: translateY(-0.375rem);
+  box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.4);
 }
 
 .career-role h2 {
-  font-size: 1.45rem;
-  color: #ffffff;
+  font-size: 1.4rem;
+  color: var(--text-primary);
   position: relative;
 }
 
@@ -68,29 +94,40 @@
   content: "";
   position: absolute;
   left: 0;
-  bottom: -6px;
-  width: 40px;
-  height: 2px;
-  background: linear-gradient(90deg, #ff8c28, transparent);
+  bottom: -0.45rem;
+  width: 2.5rem;
+  height: 0.125rem;
+  background: linear-gradient(90deg, var(--accent), transparent);
 }
 
 .role-desc {
-  margin-top: 0.8rem;
+  margin-top: 0.75rem;
   line-height: 1.75;
+  max-width: 52rem;
 }
 
 .career-role h3 {
-  margin-top: 1.4rem;
+  margin-top: 1.3rem;
+  font-size: 1.05rem;
   color: #e5e7eb;
 }
 
-.career-role li::marker {
-  color: #ff8c28;
+.career-role ul {
+  margin-top: 0.5rem;
+  padding-left: 1.1rem;
 }
 
-/* =====================
-   SKILLS
-===================== */
+.career-role li {
+  line-height: 1.6;
+}
+
+.career-role li::marker {
+  color: var(--accent);
+}
+
+/* =========================================================
+   SKILLS TAGS
+========================================================= */
 
 .skills {
   display: flex;
@@ -98,38 +135,33 @@
   gap: 0.5rem;
   list-style: none;
   padding-left: 0;
+  margin-top: 0.75rem;
 }
 
 .skills li {
-  padding: 0.3rem 0.7rem;
-  border-radius: 999px;
+  padding: 0.2rem;
   font-size: 0.75rem;
-  background: rgba(255, 255, 255, 0.07);
-  color: #ffffff;
+  color: var(--text-primary);
 }
 
-/* =====================
-   HORIZONTAL FADE
-===================== */
+/* =========================================================
+   REVEAL ANIMATIONS
+========================================================= */
 
 .reveal {
   opacity: 0;
+  transform: translateY(1.25rem);
   transition:
     opacity 0.6s ease,
     transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-  will-change: opacity, transform;
 }
 
 .fade-up {
-  transform: translateY(24px);
+  transform: translateY(1.25rem);
 }
 
 .slide-left {
-  transform: translateX(-40px);
-}
-
-.slide-right {
-  transform: translateX(40px);
+  transform: translateX(-2rem);
 }
 
 .reveal.is-visible {
@@ -137,29 +169,14 @@
   transform: translate(0, 0);
 }
 
-/* =====================
-   MOBILE FALLBACK
-===================== */
-
-@media (max-width: 640px) {
-  .slide-left,
-  .slide-right {
-    transform: translateY(24px);
-  }
-
-  .role-desc {
-    max-width: 100%;
-  }
-}
-
-/* =====================
-   CTA
-===================== */
+/* =========================================================
+   CTA SECTION
+========================================================= */
 
 .careers-cta {
-  margin-top: 5rem;
-  padding: 3.2rem;
-  border-radius: 18px;
+  margin-top: 4rem;
+  padding: 2.5rem;
+  border-radius: 1.125rem;
   background: linear-gradient(
     135deg,
     rgba(255, 140, 40, 0.12),
@@ -167,78 +184,62 @@
   );
 }
 
-.careers-cta h2 {
-  color: #ffffff;
-}
-
-.careers-cta p a {
-  color: #ff8c28;
-}
-
-.cta-button {
-  margin-top: 1.5rem;
-  display: inline-block;
-  background: #ffffff;
-  color: #0e0f12;
-  padding: 0.85rem 1.6rem;
-  border-radius: 0.8rem;
-  text-decoration: none;
-  transition: transform 0.25s ease;
-}
-
-.cta-button:hover {
-  transform: translateY(-2px);
-}
-
-.careers-cta .cta-desc {
-  margin-top: 0.6rem;
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #cbd5f5;
-}
-/* CTA Columns */
-
 .careers-cols {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* 50 / 50 */
-  gap: 2.5rem;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
   align-items: center;
 }
 
 .careers-col h2 {
-  font-size: clamp(1.6rem, 3vw, 2rem);
-  color: #ffffff;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  color: var(--text-primary);
 }
 
 .careers-col p {
   font-size: 1rem;
-  color: #cbd5f5;
 }
 
 .careers-col-action {
   text-align: right;
 }
 
-.careers-col-action p {
-  margin-bottom: 1.2rem;
-}
-/* Single-line CTA text */
-
 .cta-inline {
-  white-space: nowrap;
   font-size: 1rem;
-  color: #cbd5f5;
+  color: var(--text-secondary);
 }
 
 .cta-inline a {
-  color: #ff8c28;
+  color: var(--accent);
   font-weight: 500;
   text-decoration: underline;
 }
 
-/* Mobile stack */
+.cta-button {
+  margin-top: 1.25rem;
+  display: inline-block;
+  padding: 0.85rem 1.6rem;
+  border-radius: 0.75rem;
+  background: var(--text-primary);
+  color: var(--bg-dark);
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.25s ease;
+}
 
-@media (max-width: 768px) {
+.cta-button:hover {
+  transform: translateY(-0.125rem);
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 48rem) {
+  .career-role {
+    padding: 1.75rem;
+  }
+
   .careers-cols {
     grid-template-columns: 1fr;
   }
@@ -246,11 +247,15 @@
   .careers-col-action {
     text-align: left;
   }
+
+  .cta-inline {
+    white-space: normal;
+  }
 }
 
-/* =====================
+/* =========================================================
    ACCESSIBILITY
-===================== */
+========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
   .reveal {

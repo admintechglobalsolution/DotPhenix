@@ -49,7 +49,7 @@ export default function CompanyPage() {
     <main className="company">
       {/* ================= COMPANY INTRO ================= */}
       <section className="company-story company-intro">
-        <div className="container">
+        <div className="company-container">
           <div className="company-intro-grid">
             {/* LEFT */}
             <div className="company-intro-text">
@@ -69,14 +69,17 @@ export default function CompanyPage() {
 
             {/* RIGHT */}
             <div className="company-intro-image">
-              <Image
-                src="/Phenix.svg"
-                alt="Dot Phenix Solutions"
-                width={320}
-                height={320}
-                priority
-                className="phenix-image"
-              />
+              <div className="phenix-image-wrapper">
+                <Image
+                  src="/Phenix.svg"
+                  alt="Dot Phenix Solutions logo"
+                  fill
+                  priority
+                  sizes="(max-width: 768px) 180px, 320px"
+                  className="phenix-image"
+                />
+              </div>
+
               <h2 className="phenix-title">Dot Phenix Solutions</h2>
               <p className="phenix-tagline">
                 Powering the World’s Digital Evolution
@@ -88,7 +91,7 @@ export default function CompanyPage() {
 
       {/* ================= VISION / MISSION / VALUES ================= */}
       <section className="vmv-section">
-        <div className="container">
+        <div className="company-container">
           <h2 className="center">The Foundation of Everything We Build</h2>
           <p className="section-subtitle center">
             The principles that shape our thinking, engineering, and long-term
@@ -131,7 +134,7 @@ export default function CompanyPage() {
 
       {/* ================= WHAT SETS US APART ================= */}
       <section className="company-offer">
-        <div className="container">
+        <div className="company-container">
           <h2 className="center">What Sets Us Apart</h2>
           <p className="section-subtitle center">
             We focus on outcomes, accountability, and long-term value — not
@@ -165,7 +168,7 @@ export default function CompanyPage() {
 
       {/* ================= CLIENT REVIEWS ================= */}
       <section className="company-reviews">
-        <div className="container">
+        <div className="company-container">
           <h2 className="center">Client Perspectives</h2>
           <p className="section-subtitle center">
             Built on trust. Driven by success.
@@ -192,7 +195,7 @@ export default function CompanyPage() {
 
       {/* ================= CULTURE & BENEFITS ================= */}
       <section className="company-benefits">
-        <div className="container">
+        <div className="company-container">
           <h2 className="center">Our Culture & Benefits</h2>
           <p className="section-subtitle center">
             Sustainable teams build sustainable systems.{" "}

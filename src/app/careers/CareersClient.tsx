@@ -9,11 +9,7 @@ export default function CareersClient() {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-          } else {
-            entry.target.classList.remove("is-visible");
-          }
+          entry.target.classList.toggle("is-visible", entry.isIntersecting);
         });
       },
       {
@@ -29,7 +25,7 @@ export default function CareersClient() {
   return (
     <main className="careers-wrapper">
       {/* =====================
-         HEADER
+          HEADER
       ====================== */}
       <header className="careers-header reveal fade-up">
         <h1>Careers at Dot Phenix Solutions</h1>
@@ -37,7 +33,6 @@ export default function CareersClient() {
           Dot Phenix Solutions is growing—join us to grow your career while
           building impactful digital ecosystems for the world.
         </p>
-
         <p className="careers-sub">
           We welcome experienced professionals, fresh graduates, and interns who
           are passionate about technology, innovation, and building real-world
@@ -46,177 +41,137 @@ export default function CareersClient() {
       </header>
 
       {/* =====================
-         OPEN POSITIONS
+          OPEN ROLES
       ====================== */}
       <section className="careers-list">
-        {/* Web */}
         <article className="career-role reveal slide-left">
           <h2>Web Application Developer</h2>
           <p className="role-desc">
             Design, build, and maintain scalable web applications that power
-            modern digital experiences. You will work across the full web stack
-            to deliver secure, high-performance solutions in collaboration with
-            cross-functional teams.
+            modern digital experiences.
           </p>
 
           <h3>Key Responsibilities</h3>
           <ul>
             <li>Develop modern, responsive web applications</li>
             <li>Translate UI/UX designs into reusable components</li>
-            <li>Integrate frontend applications with backend APIs</li>
+            <li>Integrate frontend with backend APIs</li>
             <li>Ensure performance, security, and scalability</li>
-            <li>Write clean, maintainable, and documented code</li>
-            <li>Debug and resolve functional and performance issues</li>
-            <li>Continuously improve existing systems</li>
           </ul>
 
           <h3>Tools & Technologies</h3>
           <ul className="skills">
-            <li>React, Next.js</li>
-            <li>TypeScript, JavaScript</li>
-            <li>HTML5, CSS3</li>
+            <li>React</li>
+            <li>TypeScript</li>
             <li>REST APIs</li>
-            <li>Git, CI/CD</li>
+            <li>Git</li>
           </ul>
         </article>
 
-        {/* Mobile */}
         <article className="career-role reveal slide-right">
           <h2>Mobile Application Developer</h2>
           <p className="role-desc">
-            Build high-quality mobile applications that deliver seamless user
-            experiences across Android and iOS platforms, focusing on
-            performance, security, and long-term scalability.
+            Build high-quality mobile applications for Android and iOS with
+            strong focus on performance and usability.
           </p>
 
           <h3>Key Responsibilities</h3>
           <ul>
-            <li>Develop native and cross-platform mobile applications</li>
-            <li>Convert UI/UX designs into responsive mobile interfaces</li>
-            <li>Integrate mobile apps with backend services</li>
-            <li>Optimize performance, memory usage, and responsiveness</li>
-            <li>Implement secure authentication and data protection</li>
-            <li>Fix crashes and production issues</li>
-            <li>Participate in testing and release cycles</li>
+            <li>Develop native or cross-platform mobile apps</li>
+            <li>Integrate apps with backend services</li>
+            <li>Optimize performance and memory usage</li>
           </ul>
 
           <h3>Tools & Technologies</h3>
           <ul className="skills">
-            <li>React Native / Flutter</li>
-            <li>Android SDK / iOS SDK</li>
-            <li>REST & GraphQL APIs</li>
+            <li>React Native</li>
+            <li>Java</li>
             <li>Firebase</li>
-            <li>App deployment tools</li>
+            <li>Git</li>
           </ul>
         </article>
 
-        {/* SaaS */}
         <article className="career-role reveal slide-left">
           <h2>SaaS Product Engineer</h2>
           <p className="role-desc">
-            Build and scale SaaS platforms that serve global customers. This
-            role focuses on designing robust architectures, developing core
-            services, and ensuring reliability across the product lifecycle.
+            Build and scale SaaS platforms used by global customers with
+            reliability and performance in mind.
           </p>
 
           <h3>Key Responsibilities</h3>
           <ul>
-            <li>Design scalable, multi-tenant SaaS architectures</li>
-            <li>Develop backend services and APIs</li>
-            <li>Implement authentication and authorization</li>
-            <li>Build subscription and billing systems</li>
-            <li>Ensure system reliability and uptime</li>
-            <li>Optimize database performance</li>
-            <li>Collaborate across engineering teams</li>
+            <li>Design scalable architectures</li>
+            <li>Build backend services and APIs</li>
+            <li>Ensure uptime and system reliability</li>
           </ul>
 
           <h3>Tools & Technologies</h3>
           <ul className="skills">
-            <li>Node.js</li>
-            <li>AWS / GCP / Azure</li>
-            <li>PostgreSQL / MongoDB</li>
+            <li>Next.js</li>
+            <li>MySQL</li>
+            <li>Highcharts</li>
             <li>Docker</li>
-            <li>Monitoring tools</li>
           </ul>
         </article>
 
-        {/* AI */}
         <article className="career-role reveal slide-right">
           <h2>AI & Intelligent Automation Engineer</h2>
           <p className="role-desc">
-            Design and implement AI-powered automation systems that streamline
-            workflows, analyze data, and enable intelligent decision-making for
-            real-world business challenges.
+            Design and implement AI-powered automation systems to solve
+            real-world business problems.
           </p>
 
           <h3>Key Responsibilities</h3>
           <ul>
-            <li>Develop AI-driven automation pipelines</li>
-            <li>Build data processing workflows</li>
-            <li>Integrate machine-learning models into applications</li>
-            <li>Monitor and improve model performance</li>
-            <li>Deploy AI systems to cloud platforms</li>
-            <li>Ensure ethical and secure AI usage</li>
-            <li>Collaborate with engineering teams</li>
+            <li>Develop AI automation pipelines</li>
+            <li>Deploy ML models to production</li>
+            <li>Monitor model performance</li>
           </ul>
 
           <h3>Tools & Technologies</h3>
           <ul className="skills">
             <li>Python</li>
-            <li>Machine-learning frameworks</li>
-            <li>Data pipelines</li>
-            <li>APIs</li>
-            <li>Cloud AI services</li>
+            <li>Frameworks</li>
+            <li>AI Services</li>
           </ul>
         </article>
 
-        {/* Marketing */}
         <article className="career-role reveal slide-left">
           <h2>Digital Marketing Specialist</h2>
           <p className="role-desc">
-            Drive measurable business growth through data-driven digital
-            marketing strategies, combining creativity, analytics, and
-            automation to build scalable campaigns.
+            Drive growth through data-driven digital marketing strategies.
           </p>
 
           <h3>Key Responsibilities</h3>
           <ul>
-            <li>Plan and execute multi-channel marketing campaigns</li>
-            <li>Analyze campaign performance and metrics</li>
-            <li>Optimize SEO, SEM, and content strategies</li>
-            <li>Manage marketing automation workflows</li>
-            <li>Collaborate with design and product teams</li>
-            <li>Create brand-aligned content</li>
-            <li>Continuously improve marketing ROI</li>
+            <li>Run SEO and paid campaigns</li>
+            <li>Analyze performance metrics</li>
+            <li>Optimize conversion funnels</li>
           </ul>
 
           <h3>Tools & Technologies</h3>
           <ul className="skills">
-            <li>Google Analytics</li>
-            <li>SEO tools</li>
-            <li>Marketing automation platforms</li>
-            <li>CMS</li>
+            <li>Analytics</li>
+            <li>SEO Tools</li>
+            <li>Automation</li>
           </ul>
         </article>
       </section>
 
       {/* =====================
-         APPLY
+          CTA
       ====================== */}
       <section className="careers-cta reveal fade-up">
         <div className="careers-cols">
-          {/* Left column */}
           <div className="careers-col">
             <h2>Ready to Build the Future With Us?</h2>
           </div>
 
-          {/* Right column */}
           <div className="careers-col careers-col-action">
             <p className="cta-inline">
-              Send your resume and portfolio to{" "}
+              Send your resume to{" "}
               <a href="mailto:info@dotphenix.com">info@dotphenix.com</a>
             </p>
-
             <a href="mailto:info@dotphenix.com" className="cta-button">
               Apply Now
             </a>
