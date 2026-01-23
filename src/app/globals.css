@@ -11,8 +11,8 @@
   --radius-lg: 1.5rem;
   --bg: #0e0f12;
   --border: #1f2228;
-  --text: #ffffff;
-  --muted: #9aa0a6;
+  --text: #e6e8eb;
+  --muted: #b0b6bf;
   --header-h: 4rem;
   --content-max: 75rem;
 }
@@ -24,26 +24,55 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial;
+
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial;
+
   overscroll-behavior: none;
   scroll-padding-top: var(--header-h);
+  text-shadow: 0 0.25px 0 rgba(0, 0, 0, 0.45);
 }
 
-/* =========================
-   UI CARD (REUSABLE)
-========================= */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
 
-.ui-card {
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.06),
-    rgba(255, 255, 255, 0.02)
+  background: radial-gradient(
+    1000px circle at 50% -20%,
+    rgba(255, 255, 255, 0.04),
+    transparent 45%
   );
-  border: 0.0625rem solid rgba(255, 255, 255, 0.08);
-  border-radius: 1.125rem;
-  box-shadow: inset 0 0.0625rem 0 rgba(255, 255, 255, 0.05),
-    0 0.625rem 1.875rem rgba(0, 0, 0, 0.45);
+}
+h1,
+h2,
+h3 {
+  text-shadow:
+    0 1px 1px rgba(0, 0, 0, 0.9),
+    0 0 14px var(--glow-soft);
+}
+
+p,
+span,
+li {
+  color: var(--muted);
+  text-shadow: 0 0.5px 0 rgba(0, 0, 0, 0.7);
+  line-height: 1.75;
+}
+
+@media (max-width: 768px) {
+  body {
+    text-shadow: 0 0.75px 0 rgba(0, 0, 0, 0.75);
+  }
 }

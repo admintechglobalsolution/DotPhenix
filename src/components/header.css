@@ -49,7 +49,9 @@
   font-size: 0.85rem;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  transition: color 160ms ease, transform 160ms ease;
+  transition:
+    color 160ms ease,
+    transform 160ms ease;
   display: inline-block;
   padding: 6px 0;
 }
@@ -101,7 +103,9 @@
   background: var(--bg);
   transform: translateY(-8px) scale(0.995);
   opacity: 0;
-  transition: transform 200ms ease, opacity 200ms ease;
+  transition:
+    transform 200ms ease,
+    opacity 200ms ease;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
   border-top: 1px solid var(--border);
   will-change: transform, opacity;

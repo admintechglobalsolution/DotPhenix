@@ -11,6 +11,7 @@
 .research-page {
   background: var(--bg);
   color: var(--text);
+  text-shadow: 0 0.5px 0 rgba(0, 0, 0, 0.65);
 }
 
 /* ================= HERO ================= */
@@ -28,6 +29,9 @@
   font-size: clamp(2.2rem, 3.8vw, 2.8rem);
   font-weight: 600;
   line-height: 1.2;
+  text-shadow:
+    0 1px 1px rgba(0, 0, 0, 0.9),
+    0 0 18px var(--glow-soft);
 }
 
 .highlight-words .word {
@@ -93,7 +97,9 @@
 
 .research-btn:hover {
   transform: translateY(-0.1rem);
-  box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.35);
+  box-shadow:
+    0 6px 18px rgba(255, 255, 255, 0.12),
+    0 8px 28px rgba(0, 0, 0, 0.5);
 }
 
 /* ================= MONITOR ================= */
@@ -103,7 +109,6 @@
   border: 1px solid var(--border);
   border-radius: 1.125rem;
   overflow: hidden;
-  box-shadow: 0 2.5rem 7.5rem rgba(0, 0, 0, 0.7);
 }
 
 .monitor-header {
@@ -406,7 +411,7 @@
   }
 
   .research-sections {
-    padding: 3rem 1.25rem;
-    gap: 5rem;
+    padding: 7.5rem 1.5rem;
+    gap: 8.75rem;
   }
 }
