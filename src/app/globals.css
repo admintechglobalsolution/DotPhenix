@@ -11,11 +11,13 @@
   --radius-lg: 1.5rem;
   --bg: #0e0f12;
   --border: #1f2228;
-  --text: #e6e8eb;
-  --muted: #b0b6bf;
+  --text: #e9ebef;
+  --muted: #c3c8d1;
   --header-h: 4rem;
   --content-max: 75rem;
+  --glow-soft: rgba(255, 255, 255, 0.08);
 }
+
 html {
   scroll-behavior: smooth;
 }
@@ -24,10 +26,7 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
+  font-size: 16.5px;
   font-family:
     Inter,
     system-ui,
@@ -36,13 +35,56 @@ body {
     Roboto,
     "Helvetica Neue",
     Arial;
-
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   overscroll-behavior: none;
   scroll-padding-top: var(--header-h);
-  text-shadow: 0 0.25px 0 rgba(0, 0, 0, 0.45);
+  text-shadow: 0 0.25px 0 rgba(0, 0, 0, 0.4);
 }
 
-body::before {
+h1,
+h2,
+h3 {
+  color: var(--text);
+  line-height: 1.25;
+  text-shadow:
+    0 1px 1px rgba(0, 0, 0, 0.85),
+    0 0 18px var(--glow-soft);
+}
+
+p,
+span,
+li {
+  color: var(--muted);
+  line-height: 1.75;
+  text-shadow: none;
+}
+
+@media (max-width: 1024px) {
+  body {
+    text-shadow: 0 0.35px 0 rgba(0, 0, 0, 0.45);
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    text-shadow: none;
+  }
+
+  p,
+  li {
+    line-height: 1.8;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+body::after {
   content: "";
   position: fixed;
   inset: 0;
@@ -50,29 +92,8 @@ body::before {
   z-index: 0;
 
   background: radial-gradient(
-    1000px circle at 50% -20%,
-    rgba(255, 255, 255, 0.04),
-    transparent 45%
+    1200px circle at 50% -25%,
+    rgba(255, 255, 255, 0.06),
+    transparent 55%
   );
-}
-h1,
-h2,
-h3 {
-  text-shadow:
-    0 1px 1px rgba(0, 0, 0, 0.9),
-    0 0 14px var(--glow-soft);
-}
-
-p,
-span,
-li {
-  color: var(--muted);
-  text-shadow: 0 0.5px 0 rgba(0, 0, 0, 0.7);
-  line-height: 1.75;
-}
-
-@media (max-width: 768px) {
-  body {
-    text-shadow: 0 0.75px 0 rgba(0, 0, 0, 0.75);
-  }
 }

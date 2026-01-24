@@ -4,6 +4,9 @@
 
 .digital-marketing-section {
   padding: 0 1rem;
+  max-width: var(--content-max);
+  margin-inline: auto;
+  padding: var(--space-5) var(--space-4);
 }
 
 .digital-marketing-title {
@@ -22,12 +25,13 @@
 
 /* Card */
 .digital-marketing-card {
-  cursor: default;
-  padding: var(--space-4);
-  border-radius: var(--radius-lg);
+  padding: 1.7rem;
+  text-align: left;
   transition:
     transform 0.25s ease,
     box-shadow 0.25s ease;
+  cursor: default;
+  border-radius: var(--radius-lg);
 }
 
 /* Icon + title row */
@@ -83,5 +87,13 @@
 
   .digital-marketing-title {
     margin-bottom: 2rem;
+  }
+
+  .digital-marketing-card {
+    transform: translateY(-6px);
+    box-shadow:
+      0 14px 36px rgba(0, 0, 0, 0.55),
+      0 0 0 1px rgba(255, 140, 40, 0.12),
+      inset 0 1px 0 rgba(255, 255, 255, 0.04);
   }
 }

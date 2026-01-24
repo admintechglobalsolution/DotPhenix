@@ -27,8 +27,8 @@ function Digital() {
               <h3>Search Engine Optimization (SEO)</h3>
             </div>
             <p>
-              Content strategies designed to improve search visibility, keyword
-              rankings, site performance.
+              We plan and execute strategic SEO initiatives that improve search
+              visibility, keyword rankings, and site performance.
             </p>
           </Card>
 
@@ -38,8 +38,8 @@ function Digital() {
               <h3>Pay-Per-Click Advertising (PPC)</h3>
             </div>
             <p>
-              ROI-focused paid campaigns with smart targeting, bidding, and
-              conversion tracking.
+              ROI-focused paid advertising campaigns designed with precise
+              targeting, optimized bidding, and conversion tracking.
             </p>
           </Card>
 
@@ -49,8 +49,8 @@ function Digital() {
               <h3>Social Media Marketing</h3>
             </div>
             <p>
-              Strategic content and campaigns across social platforms to grow
-              engagement and brand trust.
+              Strategic social media content and campaigns built to increase
+              engagement, consistency, and long-term brand trust.
             </p>
           </Card>
 
@@ -60,8 +60,8 @@ function Digital() {
               <h3>Email Marketing</h3>
             </div>
             <p>
-              Automated email campaigns and lead nurturing flows that increase
-              retention and conversions.
+              Automated email marketing campaigns and lead nurturing workflows
+              that improve retention and drive conversions.
             </p>
           </Card>
 
@@ -71,8 +71,8 @@ function Digital() {
               <h3>Affiliate Marketing</h3>
             </div>
             <p>
-              Performance-based affiliate programs to scale reach and revenue
-              through trusted partners.
+              Performance-driven affiliate marketing programs designed to scale
+              reach, partnerships, revenue, and growth fast.
             </p>
           </Card>
 
@@ -82,8 +82,8 @@ function Digital() {
               <h3>Online Reputation Management</h3>
             </div>
             <p>
-              Brand monitoring, review management, and credibility-building
-              strategies.
+              Brand monitoring and review management strategies that strengthen
+              credibility, trust, and online presence today.
             </p>
           </Card>
         </div>
