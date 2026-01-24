@@ -1,26 +1,12 @@
-:root {
-  --bg: #0e0f12;
-  --border: #1f2228;
-  --text: #ffffff;
-  --muted: #9aa0a6;
-}
-
-/* =====================
-   WRAPPER
-===================== */
 .services-wrapper {
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 1.5rem;
+  width: 100%;
   color: #cbd5f5;
 }
 
-/* =====================
-   HEADER
-===================== */
 .services-header {
-  max-width: 980px;
-  margin: auto;
+  max-width: 60rem; /* 960px */
+  margin: 0 auto 5rem;
+  padding: 0 1.5rem;
   text-align: center;
 }
 
@@ -36,34 +22,31 @@
   color: #94a3b8;
 }
 
-/* =====================
-   SERVICES LIST
-===================== */
 .services-list {
   display: flex;
   flex-direction: column;
 }
 
-/* =====================
-   SERVICE SECTION
-===================== */
 .service-section {
   min-height: 100vh;
   display: flex;
   align-items: center;
 }
 
-.service-split {
+.service-inner {
   width: 100%;
+  max-width: 75rem; /* 1200px */
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.service-split {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 5rem;
   align-items: center;
 }
 
-/* =====================
-   CONTENT
-===================== */
 .service-content h2 {
   font-size: clamp(1.9rem, 3vw, 2.3rem);
   color: #ffffff;
@@ -74,7 +57,7 @@
   font-size: 1rem;
   line-height: 1.8;
   color: #e2e8f0;
-  max-width: 680px;
+  max-width: 42.5rem; /* 680px */
   margin-bottom: 1.2rem;
 }
 
@@ -82,7 +65,7 @@
   font-size: 0.95rem;
   line-height: 1.75;
   color: #94a3b8;
-  max-width: 680px;
+  max-width: 42.5rem; /* 680px */
   margin-bottom: 2.2rem;
 }
 
@@ -90,7 +73,6 @@
   font-size: 0.75rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #64748b;
   margin-bottom: 1rem;
 }
 
@@ -105,20 +87,14 @@
   line-height: 1.6;
 }
 
-/* =====================
-   VISUAL
-===================== */
 .service-visual {
-  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* =====================
-   RESPONSIVE
-===================== */
-@media (max-width: 900px) {
+@media (max-width: 56.25rem) {
+  /* 900px */
   .service-section {
     min-height: auto;
     padding: 4rem 0;
@@ -128,6 +104,7 @@
     grid-template-columns: 1fr;
     gap: 3.5rem;
   }
+
   .services-header {
     text-align: left;
   }

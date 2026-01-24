@@ -1,78 +1,74 @@
 import Link from "next/link";
+import Container from "@/components/ui/Container";
 import "./footer.css";
-function Footer() {
+
+export default function Footer() {
   return (
     <footer className="footer">
-      <div className="footer-container">
-        {/* Company Info */}
-        <div className="footer-column">
-          <h3>🐦‍🔥 Dot Phenix Solutions</h3>
-          <p>
-            {" "}
-            Trusted Digital Transformation Partner Helping Global Organizations
-            Design, Modernize, Optimize, and Scale Digital Solutions With
-            Reliability & Precision.{" "}
-          </p>
+      <Container>
+        <div className="footer-container">
+          <div className="footer-column">
+            <h3>🐦‍🔥 Dot Phenix Solutions</h3>
+            <p>
+              Trusted Digital Transformation Partner Helping Global
+              Organizations Design, Modernize, Optimize, and Scale Digital
+              Solutions With Reliability & Precision.
+            </p>
+          </div>
+
+          <div className="footer-column">
+            <h3>Services</h3>
+            <ul>
+              <li>
+                <Link href="/services#web">Web & App Development</Link>
+              </li>
+              <li>
+                <Link href="/services#saas">SaaS Product Development</Link>
+              </li>
+              <li>
+                <Link href="/services#enterprise">
+                  Payroll & Enterprise Systems
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div className="footer-column">
+            <h3>Resources</h3>
+            <ul>
+              <li>
+                <Link href="/resources/privacy-policy">Privacy Policy</Link>
+              </li>
+              <li>
+                <Link href="/resources/terms-and-conditions">
+                  Terms and Conditions
+                </Link>
+              </li>
+              <li>
+                <Link href="/resources/documentation">Documentation</Link>
+              </li>
+            </ul>
+          </div>
+
+          <div className="footer-column">
+            <h3>Contact</h3>
+            <ul className="footer-contact">
+              <li>
+                <span>Email:</span> info@dotphenix.com
+              </li>
+              <li>
+                <span>Phone:</span> +91 9346622679
+              </li>
+              <li>Bangalore, Karnataka, India</li>
+            </ul>
+          </div>
         </div>
 
-        {/* Services */}
-        <div className="footer-column">
-          <h4>Services</h4>
-          <ul>
-            <li>
-              <Link href="/services#web">Web & App Development</Link>
-            </li>
-            <li>
-              <Link href="/services#saas">SaaS Product Development</Link>
-            </li>
-            <li>
-              <Link href="/services#enterprise">
-                Payroll & Enterprise Systems
-              </Link>
-            </li>
-          </ul>
+        <div className="footer-bottom">
+          © {new Date().getFullYear()} Dot Phenix Solutions. All Rights
+          Reserved.
         </div>
-
-        {/* Resources */}
-        <div className="footer-column">
-          <h4>Resources</h4>
-          <ul>
-            <li>
-              <Link href="/resources/privacy-policy">Privacy Policy</Link>
-            </li>
-            <li>
-              <Link href="/resources/terms-and-conditions">
-                Terms and Conditions
-              </Link>
-            </li>
-            <li>
-              <Link href="/resources/documentation">Documentation</Link>
-            </li>
-          </ul>
-        </div>
-
-        {/* Contact */}
-        <div className="footer-column">
-          <ul className="footer-contact">
-            <h4>Contact</h4>
-
-            <li>
-              <span>Email:</span> info@dotphenix.com
-            </li>
-            <li>
-              <span>Phone:</span> +91 9346622679
-            </li>
-            <li>Bangalore, Karnataka, India</li>
-          </ul>
-        </div>
-      </div>
-
-      {/* Bottom Bar */}
-      <div className="footer-bottom">
-        © {new Date().getFullYear()} Dot Phenix Solutions. All Rights Reserved.
-      </div>
+      </Container>
     </footer>
   );
 }
-
-export default Footer;

@@ -35,16 +35,12 @@ export default function WebVisual() {
         <div className="web-visual-features">
           <div className="web-visual-feature">
             <span className="web-visual-feature-title">Scalable</span>
-            <span className="web-visual-feature-desc">
-              Cloud-native architectures
-            </span>
+            <span className="web-visual-feature-desc">Cloud-native</span>
           </div>
 
           <div className="web-visual-feature">
             <span className="web-visual-feature-title">Secure</span>
-            <span className="web-visual-feature-desc">
-              Enterprise-grade security
-            </span>
+            <span className="web-visual-feature-desc">Enterprise security</span>
           </div>
 
           <div className="web-visual-feature">

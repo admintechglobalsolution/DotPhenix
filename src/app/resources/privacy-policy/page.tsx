@@ -15,9 +15,6 @@ export default function PrivacyPolicyPage() {
         Skip to content
       </a>
 
-      {/* =====================
-         HEADER
-      ====================== */}
       <header className="policy-header">
         <h1>Privacy Policy</h1>
         <p className="muted">
@@ -59,10 +56,6 @@ export default function PrivacyPolicyPage() {
           except where such liability is required by applicable law.
         </p>
       </header>
-
-      {/* =====================
-         TABLE OF CONTENTS
-      ====================== */}
 
       <article id="policy-content" className="policy-content">
         <section id="collection" className="policy-section">
@@ -272,9 +265,7 @@ export default function PrivacyPolicyPage() {
             </li>
           </ul>
         </section>
-        {/* =====================
-   16. CATEGORIES OF DATA
-====================== */}
+
         <section id="data-categories" className="policy-section">
           <h2>16. Categories of Data We May Process</h2>
           <p>
@@ -292,9 +283,6 @@ export default function PrivacyPolicyPage() {
           </p>
         </section>
 
-        {/* =====================
-   17. CLIENT & BUSINESS DATA
-====================== */}
         <section id="client-data" className="policy-section">
           <h2>17. Client-Provided & Business Data</h2>
           <p>
@@ -312,9 +300,6 @@ export default function PrivacyPolicyPage() {
           </p>
         </section>
 
-        {/* =====================
-   18. AI & AUTOMATION DISCLAIMER
-====================== */}
         <section id="ai-disclaimer" className="policy-section">
           <h2>18. AI, Automation & Analytics Disclaimer</h2>
           <p>
@@ -333,9 +318,6 @@ export default function PrivacyPolicyPage() {
           </p>
         </section>
 
-        {/* =====================
-   19. SENSITIVE DATA DISCLAIMER
-====================== */}
         <section id="sensitive-data" className="policy-section">
           <h2>19. Sensitive Personal Data</h2>
           <p>
@@ -353,9 +335,6 @@ export default function PrivacyPolicyPage() {
           </p>
         </section>
 
-        {/* =====================
-   20. DATA BREACH RESPONSE
-====================== */}
         <section id="breach-response" className="policy-section">
           <h2>20. Data Breach Response & Notification</h2>
           <p>

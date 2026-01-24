@@ -5,12 +5,11 @@ import dynamic from "next/dynamic";
 import { loadSlim } from "tsparticles-slim";
 import type { Engine } from "tsparticles-engine";
 import { Text, Container } from "./ui";
-
 import "./why-choose.css";
 
 const Particles = dynamic(() => import("react-tsparticles"), { ssr: false });
 
-function WhyChoose() {
+export default function WhyChoose() {
   const sectionRef = useRef<HTMLElement>(null);
   const [visible, setVisible] = useState(false);
   const [stats, setStats] = useState<[number, number, number]>([0, 0, 0]);
@@ -22,7 +21,6 @@ function WhyChoose() {
     await loadSlim(engine);
   };
 
-  /* Reveal section once */
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -31,14 +29,13 @@ function WhyChoose() {
           observer.disconnect();
         }
       },
-      { threshold: 0.25 }
+      { threshold: 0.25 },
     );
 
     if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();
   }, []);
 
-  /* Animated counters */
   useEffect(() => {
     if (!visible) return;
 
@@ -48,8 +45,7 @@ function WhyChoose() {
     const step = (timestamp: number) => {
       if (startRef.current === null) startRef.current = timestamp;
 
-      const elapsed = timestamp - startRef.current;
-      const progress = Math.min(elapsed / duration, 1);
+      const progress = Math.min((timestamp - startRef.current) / duration, 1);
 
       setStats([
         Math.round(targets[0] * progress),
@@ -62,8 +58,8 @@ function WhyChoose() {
       } else {
         if (animationRef.current !== null) {
           cancelAnimationFrame(animationRef.current);
+          animationRef.current = null;
         }
-        animationRef.current = null;
         startRef.current = null;
       }
     };
@@ -83,7 +79,6 @@ function WhyChoose() {
       className="why-section"
       aria-labelledby="why-choose-title"
     >
-      {/* Decorative particles */}
       {visible &&
         typeof window !== "undefined" &&
         !window.matchMedia("(prefers-reduced-motion: reduce)").matches && (
@@ -106,7 +101,6 @@ function WhyChoose() {
           </div>
         )}
 
-      {/* HEADER */}
       <Container>
         <h1 id="why-choose-title">
           <Text as="span">Your One-Stop Solution</Text>
@@ -117,6 +111,7 @@ function WhyChoose() {
           helps organizations execute Digital Transformation by automating,
           optimizing, and scaling critical digital operations.
         </Text>
+
         <div className="why-actions">
           <span className="why-action-text">
             We’re here to help — reach out anytime{" "}
@@ -132,87 +127,82 @@ function WhyChoose() {
             </a>
           </span>
         </div>
+
+        <div className="why-grid">
+          <div className={`why-stats reveal ${visible ? "visible" : ""}`}>
+            <span className="trust-line">
+              Trusted by startups and enterprises worldwide.
+            </span>
+
+            <dl className="stats-grid">
+              <div className="stat-card">
+                <dt className="stat-label">Successful Projects Delivered</dt>
+                <dd className="stat-number">{stats[0]}+</dd>
+              </div>
+
+              <div className="stat-card">
+                <dt className="stat-label">Countries Served Globally</dt>
+                <dd className="stat-number">{stats[1]}+</dd>
+              </div>
+
+              <div className="stat-card">
+                <dt className="stat-label">Years of Industry Experience</dt>
+                <dd className="stat-number">{stats[2]}+</dd>
+              </div>
+            </dl>
+          </div>
+
+          <div
+            className={`why-left reveal ${visible ? "visible" : ""}`}
+            role="group"
+            aria-label="Key advantages"
+          >
+            <div className="why-card">
+              <span className="index">01</span>
+              <h2>
+                Uncompromised
+                <br />
+                Quality
+              </h2>
+              <p>
+                High-quality solutions built with precision and best practices.
+              </p>
+            </div>
+
+            <div className="why-card">
+              <span className="index">02</span>
+              <h2>
+                Cost-Effective
+                <br />
+                Solutions
+              </h2>
+              <p>
+                Smart automation that reduces cost without sacrificing results.
+              </p>
+            </div>
+
+            <div className="why-card">
+              <span className="index">03</span>
+              <h2>
+                Scalable
+                <br />
+                Architecture
+              </h2>
+              <p>Solutions designed to grow seamlessly with your business.</p>
+            </div>
+
+            <div className="why-card">
+              <span className="index">04</span>
+              <h2>
+                Faster
+                <br />
+                Time-to-Market
+              </h2>
+              <p>Streamlined execution for quicker deployment and impact.</p>
+            </div>
+          </div>
+        </div>
       </Container>
-
-      {/* GRID */}
-      <div className="why-grid">
-        {/* STATS */}
-        <div className={`why-stats reveal ${visible ? "visible" : ""}`}>
-          <span className="trust-line">
-            Trusted by startups and enterprises worldwide.
-          </span>
-
-          <dl className="stats-grid">
-            <div className="stat-card">
-              <dt className="stat-label">Successful Projects Delivered</dt>
-              <dd className="stat-number">{stats[0]}+</dd>
-            </div>
-
-            <div className="stat-card">
-              <dt className="stat-label">Countries Served Globally</dt>
-              <dd className="stat-number">{stats[1]}+</dd>
-            </div>
-
-            <div className="stat-card">
-              <dt className="stat-label">Years of Industry Experience</dt>
-              <dd className="stat-number">{stats[2]}+</dd>
-            </div>
-          </dl>
-        </div>
-
-        {/* FEATURES — UI-FIRST, ACCESSIBLE GROUP */}
-        <div
-          className={`why-left reveal ${visible ? "visible" : ""}`}
-          role="group"
-          aria-label="Key advantages"
-        >
-          <div className="why-card">
-            <span className="index">01</span>
-            <h2 className="why-card-title">
-              Uncompromised
-              <br />
-              Quality
-            </h2>
-            <p>
-              High-quality solutions built with precision and best practices.
-            </p>
-          </div>
-
-          <div className="why-card">
-            <span className="index">02</span>
-            <h2 className="why-card-title">
-              Cost-Effective
-              <br />
-              Solutions
-            </h2>
-            <p>
-              Smart automation that reduces cost without sacrificing results.
-            </p>
-          </div>
-
-          <div className="why-card">
-            <span className="index">03</span>
-            <h2 className="why-card-title">
-              Scalable
-              <br />
-              Architecture
-            </h2>
-            <p>Solutions designed to grow seamlessly with your business.</p>
-          </div>
-
-          <div className="why-card">
-            <span className="index">04</span>
-            <h2 className="why-card-title">
-              Faster
-              <br />
-              Time-to-Market
-            </h2>
-            <p>Streamlined execution for quicker deployment and impact.</p>
-          </div>
-        </div>
-      </div>
     </section>
   );
 }
-
-export default WhyChoose;

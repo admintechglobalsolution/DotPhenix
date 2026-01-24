@@ -1,57 +1,42 @@
-/* ===============================
-   SOLUTIONS SECTION
-================================ */
 .solutions-section {
-  padding-bottom: 2rem;
+  padding-block: var(--space-5);
   text-align: center;
 }
 
 .solutions-title {
-  margin-bottom: 2.5rem;
+  margin-bottom: var(--space-4);
 }
 
-/* ===============================
-   GRID LAYOUT
-================================ */
 .solutions-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 280px minmax(0, 1fr);
-  gap: 2rem;
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 18rem)
+    minmax(0, 1fr);
+  gap: clamp(2rem, 1.8rem + 0.6vw, 2.5rem);
   align-items: center;
-
-  /* 🔑 PROFESSIONAL CONSTRAINT */
-  max-width: 1100px; /* controls overall width */
-  margin: 0 auto; /* centers layout */
-  padding-inline: 1.5rem; /* safe spacing on small screens */
 }
 
-/* ===============================
-   CENTER CARD (FOCAL)
-================================ */
 .solutions-center {
   padding: 1.5rem 1.75rem;
-  border-radius: 14px;
-  border: 1px solid rgba(255, 140, 40, 0.5);
+  border-radius: 0.875rem;
+  border: 0.0625rem solid rgba(255, 140, 40, 0.5);
   background: rgba(14, 15, 18, 0.7);
-  box-shadow: 0 0 10px rgba(255, 120, 0, 0.35), 0 0 22px rgba(255, 80, 0, 0.22),
-    inset 0 0 6px rgba(255, 200, 120, 0.18);
+  box-shadow:
+    0 0 0.625rem rgba(255, 120, 0, 0.35),
+    0 0 1.375rem rgba(255, 80, 0, 0.22),
+    inset 0 0 0.375rem rgba(255, 200, 120, 0.18);
 }
 
-/* ===============================
-   SIDE LISTS
-================================ */
 .solutions-list {
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
 }
 
-/* ===============================
-   SIDE CARDS (REFINED)
-================================ */
 .solution-item {
   padding: 0.7rem 1.1rem;
-  min-height: 48px;
+  min-height: 3rem;
 
   display: flex;
   align-items: center;
@@ -61,55 +46,36 @@
   line-height: 1.35;
   text-align: center;
 
-  border-radius: 12px;
+  border-radius: 0.75rem;
   background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  border: 0.0625rem solid rgba(255, 255, 255, 0.06);
 
   white-space: normal;
   word-break: break-word;
 
-  transition: transform 180ms ease, box-shadow 180ms ease;
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
 }
 
 .solution-item:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+  transform: translateY(-0.125rem);
+  box-shadow: 0 0.375rem 1.125rem rgba(0, 0, 0, 0.35);
 }
 
-/* ===============================
-   TABLET
-================================ */
-@media (max-width: 1024px) {
+@media (max-width: 64rem) {
   .solutions-layout {
     grid-template-columns: 1fr;
-    gap: 2.5rem;
+    gap: var(--space-4);
   }
 
   .solutions-center {
     order: -1;
-    margin-bottom: 1rem;
   }
 }
 
-/* ===============================
-   MOBILE
-================================ */
-@media (max-width: 600px) {
-  .solutions-section {
-    padding: 3rem 0;
-  }
-
-  .solutions-layout {
-    padding-inline: 1rem; /* tighter but breathable */
-  }
-
+@media (max-width: 37.5rem) {
   .solution-item {
     font-size: 0.88rem;
-  }
-}
-/* Tablet + Mobile */
-@media (max-width: 1024px) {
-  .solutions-section {
-    display: none;
   }
 }

@@ -15,9 +15,6 @@ export default function TermsAndConditionsPage() {
         Skip to content
       </a>
 
-      {/* =====================
-         HEADER
-      ====================== */}
       <header className="terms-header">
         <h1>Terms &amp; Conditions</h1>
         <p className="muted">
@@ -70,13 +67,7 @@ export default function TermsAndConditionsPage() {
         </p>
       </header>
 
-      {/* =====================
-         TABLE OF CONTENTS
-      ====================== */}
       <article id="terms-content" className="terms-content">
-        {/* =====================
-           ACCEPTANCE
-        ====================== */}
         <section id="acceptance" className="terms-section">
           <h2>1. Acceptance of Terms</h2>
           <p>
@@ -87,9 +78,6 @@ export default function TermsAndConditionsPage() {
           </p>
         </section>
 
-        {/* =====================
-           SERVICES
-        ====================== */}
         <section id="services" className="terms-section">
           <h2>2. Scope of Services</h2>
           <p>
@@ -101,9 +89,6 @@ export default function TermsAndConditionsPage() {
           </p>
         </section>
 
-        {/* =====================
-           USER RESPONSIBILITY
-        ====================== */}
         <section id="user" className="terms-section">
           <h2>3. User Responsibilities</h2>
           <ul>
@@ -117,9 +102,6 @@ export default function TermsAndConditionsPage() {
           </ul>
         </section>
 
-        {/* =====================
-           ACCOUNTS & SECURITY
-        ====================== */}
         <section id="accounts" className="terms-section">
           <h2>4. Accounts &amp; Security</h2>
           <p>
@@ -131,9 +113,6 @@ export default function TermsAndConditionsPage() {
           </p>
         </section>
 
-        {/* =====================
-           INTELLECTUAL PROPERTY
-        ====================== */}
         <section id="ip" className="terms-section">
           <h2>5. Intellectual Property</h2>
           <p>
@@ -144,9 +123,6 @@ export default function TermsAndConditionsPage() {
           </p>
         </section>
 
-        {/* =====================
-           PAYMENTS
-        ====================== */}
         <section id="payments" className="terms-section">
           <h2>6. Payments &amp; Billing</h2>
           <p>
@@ -156,9 +132,6 @@ export default function TermsAndConditionsPage() {
           </p>
         </section>
 
-        {/* =====================
-           LIMITATION OF LIABILITY
-        ====================== */}
         <section id="liability" className="terms-section">
           <h2>7. Limitation of Liability &amp; User Risk</h2>
           <p>
@@ -175,9 +148,6 @@ export default function TermsAndConditionsPage() {
           </p>
         </section>
 
-        {/* =====================
-           DISCLAIMER
-        ====================== */}
         <section id="disclaimer" className="terms-section">
           <h2>8. Disclaimer of Warranties</h2>
           <p>
@@ -189,9 +159,6 @@ export default function TermsAndConditionsPage() {
           </p>
         </section>
 
-        {/* =====================
-           TERMINATION
-        ====================== */}
         <section id="termination" className="terms-section">
           <h2>9. Termination</h2>
           <p>
@@ -201,9 +168,6 @@ export default function TermsAndConditionsPage() {
           </p>
         </section>
 
-        {/* =====================
-           GOVERNING LAW
-        ====================== */}
         <section id="law" className="terms-section">
           <h2>10. Governing Law</h2>
           <p>
@@ -213,9 +177,6 @@ export default function TermsAndConditionsPage() {
           </p>
         </section>
 
-        {/* =====================
-           CHANGES
-        ====================== */}
         <section id="changes" className="terms-section">
           <h2>11. Changes to Terms</h2>
           <p>
@@ -225,9 +186,6 @@ export default function TermsAndConditionsPage() {
           </p>
         </section>
 
-        {/* =====================
-           CONTACT
-        ====================== */}
         <section id="contact" className="terms-section">
           <h2>12. Contact Information</h2>
           <ul>

@@ -2,16 +2,16 @@
 
 import { Card, Container, Text } from "./ui";
 import "./solutions.css";
+
 export default function Solutions() {
   return (
     <section className="solutions-section">
-      <Text as="h2" className="solutions-title">
-        Do More With Us
-      </Text>
-
       <Container>
+        <Text as="h2" className="solutions-title">
+          Do More With Us
+        </Text>
+
         <div className="solutions-layout">
-          {/* LEFT */}
           <div className="solutions-list">
             <Card className="solution-item">
               Technology & Product Platforms
@@ -25,12 +25,10 @@ export default function Solutions() {
             <Card className="solution-item">Healthcare & Medical Systems</Card>
           </div>
 
-          {/* CENTER */}
           <div className="solutions-center">
             <Text as="h3">🐦‍🔥 Dot Phenix Solutions</Text>
           </div>
 
-          {/* RIGHT */}
           <div className="solutions-list">
             <Card className="solution-item">Insurance Platforms</Card>
             <Card className="solution-item">Retail & E-commerce Solutions</Card>

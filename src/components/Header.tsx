@@ -2,7 +2,9 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import Container from "@/components/ui/Container";
 import "./header.css";
+
 const navItems = [
   { label: "Services", href: "/services" },
   { label: "Solutions", href: "/solutions" },
@@ -14,7 +16,6 @@ const navItems = [
 export default function Header() {
   const [open, setOpen] = useState(false);
 
-  // lock body scroll when mobile menu is open
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
     return () => {
@@ -24,14 +25,13 @@ export default function Header() {
 
   return (
     <header className="site-header" data-menu-open={open ? "true" : "false"}>
-      <div className="header-inner">
+      <Container className="header-inner">
         <div className="brand">
-          <Link href="/" className="logo" aria-label="DotPhenix home">
+          <Link href="/" className="logo" aria-label="Dot Phenix home">
             🐦‍🔥 Dot Phenix
           </Link>
         </div>
 
-        {/* Desktop nav */}
         <nav className="nav-desktop" aria-label="Primary navigation">
           <ul className="nav-list">
             {navItems.map((item) => (
@@ -44,7 +44,6 @@ export default function Header() {
           </ul>
         </nav>
 
-        {/* Mobile toggle button */}
         <button
           className="menu-toggle"
           aria-label={open ? "Close menu" : "Open menu"}
@@ -55,9 +54,8 @@ export default function Header() {
             {open ? "✕" : "☰"}
           </span>
         </button>
-      </div>
+      </Container>
 
-      {/* Mobile overlay + nav */}
       <div
         className="mobile-nav-wrap"
         role="dialog"

@@ -1,9 +1,9 @@
 export default function Container({
   children,
-  className,
+  className = "",
 }: {
   children: React.ReactNode;
   className?: string;
 }) {
-  return <div className={`container ${className || ""}`}>{children}</div>;
+  return <div className={`section-inner ${className}`}>{children}</div>;
 }

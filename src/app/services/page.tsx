@@ -8,18 +8,13 @@ import DigitalVisual from "../service-visuals/DigitalVisual";
 import PayrollVisual from "../service-visuals/PayrollVisual";
 import AiVisual from "../service-visuals/AiVisual";
 import WhyChoose from "@/components/WhyChoose";
-/* =====================
-   METADATA
-===================== */
+
 export const metadata = {
   title: "Services — Dot Phenix Solutions",
   description:
     "Enterprise digital services including Web, Mobile, SaaS, AI Automation, Digital Marketing, and Payroll & Enterprise Systems.",
 };
 
-/* =====================
-   SERVICE BLOCK
-===================== */
 type ServiceBlockProps = {
   id: string;
   title: string;
@@ -29,48 +24,44 @@ type ServiceBlockProps = {
   visual: ReactNode;
 };
 
-const ServiceBlock = ({
+function ServiceBlock({
   id,
   title,
   intro,
   description,
   items,
   visual,
-}: ServiceBlockProps) => {
+}: ServiceBlockProps) {
   return (
     <section id={id} className="service-section">
-      <div className="service-split">
-        {/* CONTENT */}
-        <div className="service-content">
-          <h2>{title}</h2>
+      <div className="service-inner">
+        <div className="service-split">
+          <div className="service-content">
+            <h2>{title}</h2>
 
-          <p className="service-intro">{intro}</p>
+            <p className="service-intro">{intro}</p>
 
-          <p className="service-description">{description}</p>
+            <p className="service-description">{description}</p>
 
-          <h3>Core Capabilities</h3>
+            <h3>Core Capabilities</h3>
 
-          <ul className="service-list">
-            {items.map((item, idx) => (
-              <li key={idx}>{item}</li>
-            ))}
-          </ul>
+            <ul className="service-list">
+              {items.map((item, idx) => (
+                <li key={idx}>{item}</li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="service-visual">{visual}</div>
         </div>
-
-        {/* VISUAL */}
-        <div className="service-visual">{visual}</div>
       </div>
     </section>
   );
-};
+}
 
-/* =====================
-   PAGE
-===================== */
 export default function ServicesPage() {
   return (
     <main className="services-wrapper">
-      {/* HEADER */}
       <header className="services-header">
         <h1>Our Services</h1>
         <p>
@@ -81,7 +72,6 @@ export default function ServicesPage() {
         </p>
       </header>
 
-      {/* SERVICES */}
       <section className="services-list">
         <ServiceBlock
           id="web"
@@ -173,9 +163,8 @@ Ensuring accurate, efficient, and timely payroll operations."
           visual={<PayrollVisual />}
         />
       </section>
-      <div>
-        <WhyChoose></WhyChoose>
-      </div>
+
+      <WhyChoose />
     </main>
   );
 }

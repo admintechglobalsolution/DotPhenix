@@ -32,10 +32,9 @@ export default function MobileVisual() {
 
         {/* Categories */}
         <div className="categories">
-          <div className="category active">🛍️ Shop</div>
+          <div className="category">🏠 Home</div>
           <div className="category">👕 Fashion</div>
           <div className="category">📱 Tech</div>
-          <div className="category">🏠 Home</div>
         </div>
 
         {/* Featured Card */}

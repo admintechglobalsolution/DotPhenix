@@ -2,7 +2,6 @@ import Image from "next/image";
 import {
   Quote,
   ShieldCheck,
-  Users,
   TrendingUp,
   Globe,
   Heart,
@@ -22,8 +21,6 @@ import WhyChoose from "@/components/WhyChoose";
 
 import "./company.css";
 
-/* ================= TYPES ================= */
-
 type ValueProps = {
   icon: LucideIcon;
   title: string;
@@ -42,12 +39,9 @@ type BenefitProps = {
   text: string;
 };
 
-/* ================= PAGE ================= */
-
 export default function CompanyPage() {
   return (
     <main className="company">
-      {/* ================= COMPANY INTRO ================= */}
       <section className="company-story company-intro">
         <div className="company-container">
           <div className="company-intro-grid">
@@ -89,7 +83,6 @@ export default function CompanyPage() {
         </div>
       </section>
 
-      {/* ================= VISION / MISSION / VALUES ================= */}
       <section className="vmv-section">
         <div className="company-container">
           <h2 className="center">The Foundation of Everything We Build</h2>
@@ -132,7 +125,6 @@ export default function CompanyPage() {
         </div>
       </section>
 
-      {/* ================= WHAT SETS US APART ================= */}
       <section className="company-offer">
         <div className="company-container">
           <h2 className="center">What Sets Us Apart</h2>
@@ -148,11 +140,6 @@ export default function CompanyPage() {
               text="Systems engineered for stability, security, and predictable performance under real operational pressure."
             />
             <Value
-              icon={Users}
-              title="Partnership Mindset"
-              text="We collaborate as long-term partners, aligning closely with business priorities and internal teams."
-            />
-            <Value
               icon={TrendingUp}
               title="Future-Ready Thinking"
               text="Architectures and processes designed to support growth, change, and innovation over time."
@@ -166,7 +153,6 @@ export default function CompanyPage() {
         </div>
       </section>
 
-      {/* ================= CLIENT REVIEWS ================= */}
       <section className="company-reviews">
         <div className="company-container">
           <h2 className="center">Client Perspectives</h2>
@@ -193,7 +179,6 @@ export default function CompanyPage() {
         </div>
       </section>
 
-      {/* ================= CULTURE & BENEFITS ================= */}
       <section className="company-benefits">
         <div className="company-container">
           <h2 className="center">Our Culture & Benefits</h2>
@@ -251,8 +236,6 @@ export default function CompanyPage() {
     </main>
   );
 }
-
-/* ================= SUB COMPONENTS ================= */
 
 function Value({ icon: Icon, title, text }: ValueProps) {
   return (

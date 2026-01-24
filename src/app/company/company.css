@@ -1,4 +1,3 @@
-/* ================= TOKENS ================= */
 :root {
   --space-1: 0.5rem;
   --space-2: 1rem;
@@ -17,7 +16,6 @@
   --content-max: 75rem;
 }
 
-/* ================= BASE ================= */
 .company {
   background: var(--bg);
   color: var(--text);
@@ -39,7 +37,6 @@
   margin: var(--space-2) auto var(--space-4);
 }
 
-/* ================= COMPANY INTRO ================= */
 .company-intro {
   padding: calc(var(--space-5) * 2) 0;
 }
@@ -49,7 +46,7 @@
   grid-template-columns: 1fr 1fr;
   gap: var(--space-5);
   align-items: center;
-  min-height: 420px;
+  min-height: 26.25rem;
 }
 
 .company-intro-text h2 {
@@ -63,14 +60,13 @@
   max-width: 34rem;
 }
 
-/* ================= VMV ================= */
 .vmv-section {
   padding: var(--space-5) 0;
 }
 
 .vmv-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(16.25rem, 1fr));
   gap: var(--space-4);
 }
 
@@ -81,44 +77,42 @@
 }
 
 .vmv-icon {
-  width: 1.6rem;
-  height: 1.6rem;
+  width: 1.6em;
+  height: 1.6em;
   color: var(--muted);
   margin-bottom: var(--space-2);
 }
 
-/* ================= OFFER ================= */
 .company-offer {
   padding: var(--space-5) 0;
 }
 
 .offer-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
   gap: var(--space-4);
 }
 
 .offer-card {
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  padding: var(--space-4);
+  padding: var(--space-3);
 }
 
 .offer-icon {
-  width: 1.6rem;
-  height: 1.6rem;
+  width: 1.6em;
+  height: 1.6em;
   color: var(--muted);
   margin-bottom: var(--space-2);
 }
 
-/* ================= REVIEWS ================= */
 .company-reviews {
   padding: var(--space-5) 0;
 }
 
 .reviews-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(17.5rem, 1fr));
   gap: var(--space-4);
 }
 
@@ -133,14 +127,13 @@
   font-style: italic;
 }
 
-/* ================= BENEFITS ================= */
 .company-benefits {
   padding: var(--space-5) 0;
 }
 
 .benefits-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(16.25rem, 1fr));
   gap: var(--space-4);
 }
 
@@ -149,6 +142,7 @@
   border-radius: var(--radius-md);
   padding: var(--space-4);
 }
+
 .benefit-card p,
 .offer-card p,
 .vmv-card p {
@@ -156,18 +150,10 @@
 }
 
 .benefit-icon {
-  width: 1.4rem;
-  height: 1.4rem;
+  width: 1.4em;
+  height: 1.4em;
   color: var(--muted);
   margin-bottom: var(--space-2);
-}
-
-/* ================= RESPONSIVE ================= */
-@media (max-width: 768px) {
-  .company-intro-grid {
-    grid-template-columns: 1fr;
-    min-height: auto;
-  }
 }
 
 .company-intro-image {
@@ -176,6 +162,7 @@
   justify-content: center;
   flex-direction: column;
 }
+
 .phenix-title {
   margin: 0.5rem;
   font-size: 1.5rem;
@@ -185,11 +172,12 @@
 
 .phenix-tagline {
   margin: 0;
-  max-width: 280px;
+  max-width: 17.5rem;
   font-size: 0.9rem;
   line-height: 1.5;
   color: #a8b0c4;
 }
+
 .phenix-image {
   object-fit: contain;
   opacity: 0;
@@ -202,17 +190,18 @@
 
 .phenix-image-wrapper {
   position: relative;
-  width: 320px;
+  width: 20rem;
   aspect-ratio: 1 / 1;
   margin-inline: auto;
 }
 
-@media (max-width: 768px) {
-  .phenix-image-wrapper {
-    width: 180px;
+@media (max-width: 48rem) {
+  .company-intro-grid {
+    grid-template-columns: 1fr;
+    min-height: auto;
   }
-}
 
-.phenix-image {
-  object-fit: contain;
+  .phenix-image-wrapper {
+    width: 11.25rem;
+  }
 }

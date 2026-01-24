@@ -1,33 +1,84 @@
-# 🐦‍🔥 Dot Phenix Web Application
-
-This is the official web application for **Dot Phenix**, built using **Next.js App Router**, **Material UI**, and **pnpm**.
-
----
-
-## 🚀 Tech Stack
-
-- **Next.js** (App Router)
-- **React**
-- **Material UI (MUI)**
-- **Emotion**
-- **pnpm**
-- **Node.js**
-
----
-
-## 📦 Project Setup
-
-### 1. Create the Next.js application
-
-```bash
-pnpm create next-app dotphenix
-pnpm install
- pnpm dev -- --hostname 0.0.0.0
-pnpm dev
-pnpm add lucide-react
-pnpm add resend
-
-pnpm start for Deployment
-
-
+```
+└── 📁src
+    └── 📁app
+        └── 📁api
+            └── 📁contact
+                ├── route.ts
+            └── 📁country
+                ├── route.ts
+        └── 📁careers
+            ├── careers.css
+            ├── CareersClient.tsx
+            ├── page.tsx
+        └── 📁company
+            ├── company.css
+            ├── page.tsx
+        └── 📁research
+            ├── page.tsx
+            ├── research.css
+        └── 📁resources
+            └── 📁documentation
+                ├── docs.css
+                ├── page.tsx
+            └── 📁privacy-policy
+                ├── page.tsx
+                ├── policy.css
+            └── 📁terms-and-conditions
+                ├── page.tsx
+                ├── terms.css
+        └── 📁service-visuals
+            ├── AiVisual.tsx
+            ├── DigitalVisual.tsx
+            ├── MobileVisual.tsx
+            ├── PayrollVisual.tsx
+            ├── SaasVisual.tsx
+            ├── servicevisuals.css
+            ├── WebVisual.tsx
+        └── 📁services
+            ├── page.tsx
+            ├── services.css
+        └── 📁solutions
+            ├── page.tsx
+            ├── solutions.css
+        ├── favicon.ico
+        ├── favicona.ico
+        ├── globals.css
+        ├── layout.tsx
+        ├── page.tsx
+        ├── robots.ts
+        ├── sitemap.ts
+    └── 📁components
+        └── 📁SidebarForm
+            ├── index.ts
+            ├── SidebarForm.css
+            ├── SidebarForm.tsx
+        └── 📁ui
+            ├── Button.tsx
+            ├── Card.tsx
+            ├── chartData.tsx
+            ├── Container.tsx
+            ├── index.ts
+            ├── Text.tsx
+        ├── ClientLayout.tsx
+        ├── Contact.tsx
+        ├── digital.css
+        ├── Digital.tsx
+        ├── footer.css
+        ├── Footer.tsx
+        ├── header.css
+        ├── Header.tsx
+        ├── hero.css
+        ├── Hero.tsx
+        ├── process.css
+        ├── Process.tsx
+        ├── services.css
+        ├── Services.tsx
+        ├── solutions.css
+        ├── Solutions.tsx
+        ├── why-choose.css
+        ├── WhyChoose.tsx
+    └── 📁lib
+        ├── email.ts
+        ├── phone.ts
+    └── model-viewer.d.ts
 ```

@@ -4,13 +4,13 @@ import { useEffect } from "react";
 
 export default function CareersClient() {
   useEffect(() => {
-    const elements = document.querySelectorAll(".reveal");
+    const elements = document.querySelectorAll<HTMLElement>(".reveal");
 
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry) => {
+        for (const entry of entries) {
           entry.target.classList.toggle("is-visible", entry.isIntersecting);
-        });
+        }
       },
       {
         threshold: 0.2,
@@ -19,14 +19,12 @@ export default function CareersClient() {
     );
 
     elements.forEach((el) => observer.observe(el));
+
     return () => observer.disconnect();
   }, []);
 
   return (
     <main className="careers-wrapper">
-      {/* =====================
-          HEADER
-      ====================== */}
       <header className="careers-header reveal fade-up">
         <h1>Careers at Dot Phenix Solutions</h1>
         <p>
@@ -40,9 +38,6 @@ export default function CareersClient() {
         </p>
       </header>
 
-      {/* =====================
-          OPEN ROLES
-      ====================== */}
       <section className="careers-list">
         <article className="career-role reveal slide-left">
           <h2>Web Application Developer</h2>
@@ -158,9 +153,6 @@ export default function CareersClient() {
         </article>
       </section>
 
-      {/* =====================
-          CTA
-      ====================== */}
       <section className="careers-cta reveal fade-up">
         <div className="careers-cols">
           <div className="careers-col">

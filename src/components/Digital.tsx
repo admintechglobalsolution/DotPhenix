@@ -9,10 +9,9 @@ import {
   Users,
   Star,
 } from "lucide-react";
-
 import "./digital.css";
 
-function Digital() {
+export default function Digital() {
   return (
     <section className="digital-marketing-section">
       <Container>
@@ -91,5 +90,3 @@ function Digital() {
     </section>
   );
 }
-
-export default Digital;
