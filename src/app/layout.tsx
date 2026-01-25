@@ -13,34 +13,39 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://dotphenix.com"),
+
   title: {
-    default: "Dot Phenix Solutions – AI & Digital Automation Company",
+    default:
+      "Dot Phenix Solutions – AI Company in India & Digital Automation Experts",
     template: "%s | Dot Phenix Solutions",
   },
+
   description:
-    "Dot Phenix Solutions is an AI-driven digital automation company delivering scalable web, mobile, SaaS, and intelligent software solutions for modern businesses.",
-  keywords: [
-    "Dot Phenix Solutions",
-    "AI digital automation company",
-    "software development company",
-    "web application development",
-    "mobile app development",
-    "SaaS development",
-    "AI solutions company",
-  ],
-  authors: [{ name: "Dot Phenix Solutions" }],
-  creator: "Dot Phenix Solutions",
-  publisher: "Dot Phenix Solutions",
-  metadataBase: new URL("https://dotphenix.com"),
+    "Dot Phenix Solutions is an AI company in India delivering digital automation, SaaS platforms, and scalable software solutions for modern enterprises.",
+
+  alternates: {
+    canonical: "/",
+  },
+
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://dotphenix.com",
     siteName: "Dot Phenix Solutions",
-    title: "Dot Phenix Solutions – AI & Digital Automation",
+    title:
+      "AI Company in India | Digital Automation & SaaS – Dot Phenix Solutions",
     description:
-      "AI-powered digital automation platforms engineered for performance, scalability, and measurable business growth.",
+      "AI-powered digital automation and SaaS solutions engineered for performance, scalability, and long-term growth.",
   },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Dot Phenix Solutions – AI Company in India & Digital Automation",
+    description:
+      "AI-driven automation and SaaS platforms built for enterprise scale.",
+  },
+
   robots: {
     index: true,
     follow: true,
@@ -56,9 +61,13 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <body className={spaceGrotesk.className}>
         <Header />
+
         <ClientLayout>
-          <main id="main-content">{children}</main>
+          <main id="main-content" role="main">
+            {children}
+          </main>
         </ClientLayout>
+
         <Footer />
       </body>
     </html>

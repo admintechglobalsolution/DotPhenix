@@ -41,13 +41,17 @@
             ├── page.tsx
             ├── solutions.css
         ├── favicon.ico
-        ├── favicona.ico
         ├── globals.css
         ├── layout.tsx
         ├── page.tsx
         ├── robots.ts
         ├── sitemap.ts
     └── 📁components
+        └── 📁research
+            ├── AgentsDemo.tsx
+            ├── AIOsDemo.tsx
+            ├── GenerativeDemo.tsx
+            ├── research-demos.css
         └── 📁SidebarForm
             ├── index.ts
             ├── SidebarForm.css

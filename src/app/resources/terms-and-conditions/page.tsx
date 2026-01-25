@@ -195,7 +195,7 @@ export default function TermsAndConditionsPage() {
             <li>
               Phone: <a href="tel:+919346622679">+91 9346622679</a>
             </li>
-            <li>Address: Bangalore, Karnataka, India</li>
+            <li>Address: Tirupati, Andhra Pradesh, India</li>
           </ul>
         </section>
         <section className="terms-section">

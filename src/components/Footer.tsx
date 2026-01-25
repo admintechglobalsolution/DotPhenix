@@ -59,7 +59,7 @@ export default function Footer() {
               <li>
                 <span>Phone:</span> +91 9346622679
               </li>
-              <li>Bangalore, Karnataka, India</li>
+              <li>Address: Tirupati, AP, India</li>
             </ul>
           </div>
         </div>
