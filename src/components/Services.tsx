@@ -10,7 +10,8 @@ import {
   Building2,
 } from "lucide-react";
 import "./services.css";
-function Services() {
+
+export default function Services() {
   return (
     <section className="services-section">
       <Container>
@@ -19,9 +20,9 @@ function Services() {
         </Text>
 
         <div className="services-grid">
-          <Card className="service-card">
-            <div className="service-row">
-              <Globe className="service-icon" />
+          <Card className="services-card">
+            <div className="services-row">
+              <Globe className="services-icon" />
               <h3>Web Application Development</h3>
             </div>
             <p>
@@ -30,9 +31,9 @@ function Services() {
             </p>
           </Card>
 
-          <Card className="service-card">
-            <div className="service-row">
-              <Smartphone className="service-icon" />
+          <Card className="services-card">
+            <div className="services-row">
+              <Smartphone className="services-icon" />
               <h3>Mobile Application Development</h3>
             </div>
             <p>
@@ -41,9 +42,9 @@ function Services() {
             </p>
           </Card>
 
-          <Card className="service-card">
-            <div className="service-row">
-              <Layers className="service-icon" />
+          <Card className="services-card">
+            <div className="services-row">
+              <Layers className="services-icon" />
               <h3>SaaS Product Development</h3>
             </div>
             <p>
@@ -52,9 +53,9 @@ function Services() {
             </p>
           </Card>
 
-          <Card className="service-card">
-            <div className="service-row">
-              <BrainCircuit className="service-icon" />
+          <Card className="services-card">
+            <div className="services-row">
+              <BrainCircuit className="services-icon" />
               <h3>AI & Intelligent Automation</h3>
             </div>
             <p>
@@ -63,9 +64,9 @@ function Services() {
             </p>
           </Card>
 
-          <Card className="service-card">
-            <div className="service-row">
-              <Megaphone className="service-icon" />
+          <Card className="services-card">
+            <div className="services-row">
+              <Megaphone className="services-icon" />
               <h3>Digital Marketing</h3>
             </div>
             <p>
@@ -74,9 +75,9 @@ function Services() {
             </p>
           </Card>
 
-          <Card className="service-card">
-            <div className="service-row">
-              <Building2 className="service-icon" />
+          <Card className="services-card">
+            <div className="services-row">
+              <Building2 className="services-icon" />
               <h3>Payroll & Enterprise Systems</h3>
             </div>
             <p>
@@ -89,5 +90,3 @@ function Services() {
     </section>
   );
 }
-
-export default Services;

@@ -129,10 +129,8 @@ export default function CompanyPage() {
         <div className="company-container">
           <h2 className="center">What Sets Us Apart</h2>
           <p className="section-subtitle center">
-            We focus on outcomes, accountability, and long-term value — not
-            short-term delivery.
+            Outcome-driven, accountable, and focused on long-term value
           </p>
-
           <div className="offer-grid">
             <Value
               icon={ShieldCheck}
@@ -157,7 +155,7 @@ export default function CompanyPage() {
         <div className="company-container">
           <h2 className="center">Client Perspectives</h2>
           <p className="section-subtitle center">
-            Built on trust. Driven by success.
+            Built on trust and long-term partnerships, driven by shared success.
           </p>
           <div className="reviews-grid">
             <Review
@@ -183,7 +181,7 @@ export default function CompanyPage() {
         <div className="company-container">
           <h2 className="center">Our Culture & Benefits</h2>
           <p className="section-subtitle center">
-            Sustainable teams build sustainable systems.{" "}
+            Sustainable teams are the foundation of sustainable systems.
           </p>
 
           <div className="benefits-grid">
