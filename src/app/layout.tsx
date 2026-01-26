@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 
   title: {
     default:
-      "Dot Phenix Solutions – AI Company in India & Digital Automation Experts",
+      "Dot Phenix Solutions | AI-Driven Digital Automation Company in India",
     template: "%s | Dot Phenix Solutions",
   },
 
@@ -34,9 +34,9 @@ export const metadata: Metadata = {
     url: "https://dotphenix.com",
     siteName: "Dot Phenix Solutions",
     title:
-      "AI Company in India | Digital Automation & SaaS – Dot Phenix Solutions",
+      "Dot Phenix Solutions | AI-Driven Digital Automation Company in India",
     description:
-      "AI-powered digital automation and SaaS solutions engineered for performance, scalability, and long-term growth.",
+      "Dot Phenix Solutions is an AI-Driven Digital Automation and SaaS Company in India, Delivering Scalable, Secure, and Performance-Focused Technology Solutions for Modern Enterprises.",
   },
 
   twitter: {
