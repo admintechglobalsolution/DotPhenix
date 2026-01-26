@@ -16,13 +16,12 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://dotphenix.com"),
 
   title: {
-    default:
-      "Dot Phenix Solutions | AI-Driven Digital Automation Company in India",
+    default: "Dot Phenix Solutions | AI-Driven Digital Automation",
     template: "%s | Dot Phenix Solutions",
   },
 
   description:
-    "Dot Phenix Solutions is an AI company in India delivering digital automation, SaaS platforms, and scalable software solutions for modern enterprises.",
+    "Dot Phenix Solutions is an AI-Driven Digital Automation Company delivering scalable, secure, and intelligent technology solutions for modern enterprises.",
 
   alternates: {
     canonical: "/",
@@ -33,17 +32,16 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://dotphenix.com",
     siteName: "Dot Phenix Solutions",
-    title:
-      "Dot Phenix Solutions | AI-Driven Digital Automation Company in India",
+    title: "Dot Phenix Solutions | AI-Driven Digital Automation",
     description:
-      "Dot Phenix Solutions is an AI-Driven Digital Automation and SaaS Company in India, Delivering Scalable, Secure, and Performance-Focused Technology Solutions for Modern Enterprises.",
+      "Dot Phenix Solutions is an AI-Driven Digital Automation Company delivering scalable, secure, and intelligent technology solutions for modern enterprises.",
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "Dot Phenix Solutions – AI Company in India & Digital Automation",
+    title: "Dot Phenix Solutions | AI-Driven Digital Automation",
     description:
-      "AI-driven automation and SaaS platforms built for enterprise scale.",
+      "Dot Phenix Solutions is an AI-Driven Digital Automation Company delivering scalable, secure, and intelligent technology solutions for modern enterprises.",
   },
 
   robots: {
