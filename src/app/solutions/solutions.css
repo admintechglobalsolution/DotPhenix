@@ -5,6 +5,10 @@
   --muted: #9aa0a6;
 }
 
+.solutionspage {
+  padding-top: var(--header-h);
+}
+
 .solutionspage-wrapper {
   background: var(--bg);
 }

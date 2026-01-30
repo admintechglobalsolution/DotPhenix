@@ -63,8 +63,8 @@ export default function ServicesPage() {
   return (
     <main className="services-wrapper">
       <header className="services-header">
-        <h1>Our Services</h1>
-        <p>
+        <h1 className="fade-in-left">Our Services</h1>
+        <p className="fade-in-right" style={{ animationDelay: "0.12s" }}>
           Dot Phenix Solutions delivers secure, scalable, and intelligent
           digital solutions built for modern enterprises, with performance,
           compliance, and long-term sustainability at the core of every platform

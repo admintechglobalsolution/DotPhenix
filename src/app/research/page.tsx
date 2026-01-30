@@ -21,7 +21,7 @@ export default function ResearchPage() {
     <main className="research-page">
       <section className="research-hero">
         <div className="research-hero-content">
-          <h1 className="research-title">
+          <h1 className="research-title fade-in-left">
             Researching the Foundations of
             <br />
             <span className="highlight-words">
@@ -32,7 +32,7 @@ export default function ResearchPage() {
             </span>
           </h1>
 
-          <p className="research-subtitle">
+          <p className="research-subtitle fade-in-right">
             We conduct systems-level research in artificial intelligence,
             spanning autonomous agent networks, generative reasoning
             architectures, and AI-native operating systems engineered close to

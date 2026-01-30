@@ -47,12 +47,12 @@ export default function CompanyPage() {
           <div className="company-intro-grid">
             {/* LEFT */}
             <div className="company-intro-text">
-              <h2>
+              <h2 className="fade-in-left">
                 Leading the Future of <br />
                 Intelligent Automation
               </h2>
 
-              <p>
+              <p className="fade-in-left">
                 We build intelligent automation platforms that redefine
                 efficiency, reliability, and scale. Designed for high-impact
                 environments, our systems eliminate operational friction, unlock
@@ -74,8 +74,10 @@ export default function CompanyPage() {
                 />
               </div>
 
-              <h2 className="phenix-title">Dot Phenix Solutions</h2>
-              <p className="phenix-tagline">
+              <h2 className="phenix-title fade-in-right">
+                Dot Phenix Solutions
+              </h2>
+              <p className="phenix-tagline fade-in-right">
                 Powering the World’s Digital Evolution
               </p>
             </div>

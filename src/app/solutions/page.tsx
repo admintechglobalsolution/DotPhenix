@@ -180,8 +180,11 @@ export default function SolutionsPage() {
   return (
     <main className="solutionspage">
       <header className="solutionspage-header">
-        <h1>Dot Phenix Solutions</h1>
-        <p className="solutionspage-intro">
+        <h1 className="fade-in-left">Dot Phenix Solutions</h1>
+        <p
+          className="solutionspage-intro fade-in-right"
+          style={{ animationDelay: "0.12s" }}
+        >
           We design and deliver secure, scalable digital platforms that help
           organizations operate efficiently, grow confidently, and adapt without
           friction.

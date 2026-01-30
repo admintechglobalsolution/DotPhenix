@@ -33,6 +33,7 @@ html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
+  overflow-y: scroll;
 }
 
 body {
@@ -187,4 +188,34 @@ body::after {
     animation: none !important;
     transition: none !important;
   }
+}
+
+@keyframes fadeInLeftSoft {
+  from {
+    opacity: 0.85;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRightSoft {
+  from {
+    opacity: 0.85;
+    transform: translateX(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.fade-in-left {
+  animation: fadeInLeftSoft 0.35s ease-out both;
+}
+
+.fade-in-right {
+  animation: fadeInRightSoft 0.35s ease-out both;
 }
