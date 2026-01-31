@@ -7,7 +7,7 @@ export default function DocumentationPage() {
          HEADER
       ====================== */}
       <header className="doc-header">
-        <h1>Dot Phenix Solutions – Documentation</h1>
+        <h1 className="fade-in-left">Documentation</h1>
         <p>
           Dot Phenix Solutions is an AI-driven digital automation platform that
           enables organizations to design, modernize, automate, and scale
@@ -196,7 +196,7 @@ export default function DocumentationPage() {
       <section className="doc-section">
         <h2>Proven Experience</h2>
         <ul>
-          <li>200+ successful projects delivered</li>
+          <li>500+ successful projects delivered</li>
           <li>7+ countries served globally</li>
           <li>9+ years of industry experience</li>
         </ul>

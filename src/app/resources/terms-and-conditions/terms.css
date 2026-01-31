@@ -47,6 +47,7 @@
   font-weight: 600;
   margin-bottom: 0.25rem;
   color: var(--terms-heading);
+  padding-top: var(--header-h);
 }
 
 .muted {

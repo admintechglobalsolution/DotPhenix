@@ -16,7 +16,7 @@ export default function PrivacyPolicyPage() {
       </a>
 
       <header className="policy-header">
-        <h1>Privacy Policy</h1>
+        <h1 className="fade-in-left">Privacy Policy</h1>
         <p className="muted">
           Effective date: <strong>{effectiveDate}</strong>
         </p>

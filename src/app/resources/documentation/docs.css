@@ -27,6 +27,7 @@
   font-weight: 600;
   margin-bottom: 1rem;
   color: var(--doc-heading);
+  padding-top: var(--header-h);
 }
 
 .doc-header p {

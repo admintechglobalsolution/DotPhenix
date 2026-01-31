@@ -39,7 +39,7 @@ export default function WhyChoose() {
   useEffect(() => {
     if (!visible) return;
 
-    const targets = [200, 7, 9];
+    const targets = [500, 7, 9];
     const duration = 900;
 
     const step = (timestamp: number) => {

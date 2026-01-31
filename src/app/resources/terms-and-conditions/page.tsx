@@ -16,7 +16,7 @@ export default function TermsAndConditionsPage() {
       </a>
 
       <header className="terms-header">
-        <h1>Terms &amp; Conditions</h1>
+        <h1 className="fade-in-left">Terms &amp; Conditions</h1>
         <p className="muted">
           Effective date: <strong>{effectiveDate}</strong>
         </p>
