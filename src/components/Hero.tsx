@@ -55,7 +55,7 @@ export default function Hero() {
             </Text>
 
             <Text className="hero-description">
-              Dot Phenix Solutions is a platform that applies Artificial
+              Dot Phoenix Solutions is a platform that applies Artificial
               Intelligence to automate and scale digital operations, enabling
               organizations to move from Idea to Deployment with Speed, Scale,
               and Intelligence.

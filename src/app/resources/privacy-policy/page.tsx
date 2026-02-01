@@ -1,9 +1,9 @@
 import "./policy.css";
 
 export const metadata = {
-  title: "Privacy Policy — Dot Phenix Solutions",
+  title: "Privacy Policy — Dot Phoenix Solutions",
   description:
-    "Privacy Policy for Dot Phenix Solutions explaining how personal data is collected, used, shared, and protected.",
+    "Privacy Policy for Dot Phoenix Solutions explaining how personal data is collected, used, shared, and protected.",
 };
 
 export default function PrivacyPolicyPage() {
@@ -21,15 +21,15 @@ export default function PrivacyPolicyPage() {
           Effective date: <strong>{effectiveDate}</strong>
         </p>
         <p>
-          Welcome, and thank you for your interest in Dot Phenix Solutions
-          (&quot;Dot Phenix&quot;, &quot;we&quot;, &quot;us&quot;, or
-          &quot;our&quot;) and our website located at https://www.dotphenix.com,
-          including any subdomains, mobile versions, and related services
-          (collectively, the &quot;Site&quot;).
+          Welcome, and thank you for your interest in Dot Phoenix Solutions
+          (&quot;Dot phoenix&quot;, &quot;we&quot;, &quot;us&quot;, or
+          &quot;our&quot;) and our website located at
+          https://www.dotphoenix.com, including any subdomains, mobile versions,
+          and related services (collectively, the &quot;Site&quot;).
         </p>
 
         <p>
-          This Privacy Policy explains how Dot Phenix Solutions collects, uses,
+          This Privacy Policy explains how Dot Phoenix Solutions collects, uses,
           discloses, and safeguards personal information when you access or use
           the Site. By using the Site, you acknowledge that you have read and
           understood this Privacy Policy.
@@ -42,7 +42,7 @@ export default function PrivacyPolicyPage() {
         </p>
 
         <p>
-          Dot Phenix Solutions implements reasonable administrative, technical,
+          Dot Phoenix Solutions implements reasonable administrative, technical,
           and organizational measures to protect personal information. However,
           no digital platform or method of transmission over the internet can be
           guaranteed to be completely secure.
@@ -50,10 +50,10 @@ export default function PrivacyPolicyPage() {
 
         <p>
           By using the Site, you acknowledge that you do so at your own risk.
-          Dot Phenix Solutions shall not be responsible for unauthorized access,
-          hacking attempts, data breaches, misuse, loss, or damage to personal
-          information resulting from factors beyond our reasonable control,
-          except where such liability is required by applicable law.
+          Dot Phoenix Solutions shall not be responsible for unauthorized
+          access, hacking attempts, data breaches, misuse, loss, or damage to
+          personal information resulting from factors beyond our reasonable
+          control, except where such liability is required by applicable law.
         </p>
       </header>
 
@@ -169,7 +169,7 @@ export default function PrivacyPolicyPage() {
         <section id="no-sale" className="policy-section">
           <h2>10. Sale of Personal Information</h2>
           <p>
-            Dot Phenix Solutions does not sell or rent personal information and
+            Dot Phoenix Solutions does not sell or rent personal information and
             does not engage in cross-context behavioral advertising.
           </p>
         </section>
@@ -193,7 +193,7 @@ export default function PrivacyPolicyPage() {
           <h2>Limitation of Liability & User Responsibility</h2>
 
           <p>
-            While Dot Phenix Solutions implements industry-standard security
+            While Dot Phoenix Solutions implements industry-standard security
             measures to protect its systems and data, no digital platform can be
             completely secure. By using our services, you acknowledge and accept
             the inherent risks associated with online systems and digital
@@ -201,7 +201,7 @@ export default function PrivacyPolicyPage() {
           </p>
 
           <p>
-            Dot Phenix Solutions shall not be held responsible for any loss,
+            Dot Phoenix Solutions shall not be held responsible for any loss,
             damage, unauthorized access, data breach, hacking incident, or
             misuse of information resulting from factors beyond our reasonable
             control, including but not limited to user negligence, compromised
@@ -218,7 +218,7 @@ export default function PrivacyPolicyPage() {
           </p>
 
           <p>
-            To the maximum extent permitted by applicable law, Dot Phenix
+            To the maximum extent permitted by applicable law, Dot phoenix
             Solutions disclaims liability for indirect, incidental,
             consequential, or punitive damages arising from the use of, or
             inability to use, our services.
@@ -230,7 +230,7 @@ export default function PrivacyPolicyPage() {
             Our website and services may integrate with or link to third-party
             tools, platforms, or services such as analytics providers, cloud
             infrastructure, payment processors, or communication tools. Dot
-            Phenix Solutions does not control and is not responsible for the
+            Phoenix Solutions does not control and is not responsible for the
             privacy practices, security, or content of such third-party
             services.
           </p>
@@ -242,7 +242,7 @@ export default function PrivacyPolicyPage() {
         <section className="policy-section">
           <h2>14. No Sale or Misuse of Personal Information</h2>
           <p>
-            Dot Phenix Solutions does not sell, rent, trade, or monetize
+            Dot Phoenix Solutions does not sell, rent, trade, or monetize
             personal information. We do not engage in cross-context behavioral
             advertising or unauthorized profiling of users.
           </p>
@@ -261,7 +261,10 @@ export default function PrivacyPolicyPage() {
           </p>
           <ul>
             <li>
-              Email: <a href="mailto:info@dotphenix.com">info@dotphenix.com</a>
+              Email:{" "}
+              <a href="mailto:info@dotphoenixsolutions.com">
+                info@dotphoenixsolutions.com
+              </a>
             </li>
           </ul>
         </section>
@@ -269,7 +272,7 @@ export default function PrivacyPolicyPage() {
         <section id="data-categories" className="policy-section">
           <h2>16. Categories of Data We May Process</h2>
           <p>
-            Depending on the nature of the services provided, Dot Phenix
+            Depending on the nature of the services provided, Dot phoenix
             Solutions may process different categories of personal,
             professional, and business-related data. This may include, but is
             not limited to, user information, client data, employee-related
@@ -279,7 +282,7 @@ export default function PrivacyPolicyPage() {
           <p>
             The specific categories of data processed vary based on the service,
             solution, or platform being used and the contractual relationship
-            between Dot Phenix Solutions and its clients.
+            between Dot Phoenix Solutions and its clients.
           </p>
         </section>
 
@@ -287,14 +290,14 @@ export default function PrivacyPolicyPage() {
           <h2>17. Client-Provided & Business Data</h2>
           <p>
             In the course of providing enterprise, SaaS, automation, payroll,
-            analytics, or dashboard services, Dot Phenix Solutions may process
+            analytics, or dashboard services, Dot Phoenix Solutions may process
             data on behalf of business clients as a data processor or service
             provider.
           </p>
           <p>
             Such data is processed strictly in accordance with client
             instructions, applicable agreements, and relevant data protection
-            laws. Dot Phenix Solutions does not control the content, accuracy,
+            laws. Dot Phoenix Solutions does not control the content, accuracy,
             or legality of client- provided data and shall not be responsible
             for such data beyond its contractual obligations.
           </p>
@@ -309,7 +312,7 @@ export default function PrivacyPolicyPage() {
             operational purposes only.
           </p>
           <p>
-            While reasonable efforts are made to ensure accuracy, Dot Phenix
+            While reasonable efforts are made to ensure accuracy, Dot phoenix
             Solutions does not guarantee that AI-generated outputs will be
             error-free, complete, or suitable for any specific purpose. Users
             are responsible for reviewing, validating, and verifying outputs
@@ -329,7 +332,7 @@ export default function PrivacyPolicyPage() {
           </p>
           <p>
             Any submission of sensitive data outside agreed service scopes is
-            done at the user’s own risk. Dot Phenix Solutions shall not be
+            done at the user’s own risk. Dot Phoenix Solutions shall not be
             responsible for the unauthorized disclosure or misuse of such data
             beyond its reasonable control.
           </p>
@@ -339,9 +342,9 @@ export default function PrivacyPolicyPage() {
           <h2>20. Data Breach Response & Notification</h2>
           <p>
             In the event of a data breach affecting personal information, Dot
-            Phenix Solutions will take reasonable steps to investigate, contain,
-            and mitigate the incident in accordance with applicable laws and
-            internal security procedures.
+            Phoenix Solutions will take reasonable steps to investigate,
+            contain, and mitigate the incident in accordance with applicable
+            laws and internal security procedures.
           </p>
           <p>
             Where legally required, affected individuals and relevant

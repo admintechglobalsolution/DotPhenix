@@ -1,9 +1,9 @@
 import "./terms.css";
 
 export const metadata = {
-  title: "Terms & Conditions — Dot Phenix Solutions",
+  title: "Terms & Conditions — Dot Phoenix Solutions",
   description:
-    "Terms and Conditions governing the use of Dot Phenix Solutions website, products, and services.",
+    "Terms and Conditions governing the use of Dot Phoenix Solutions website, products, and services.",
 };
 
 export default function TermsAndConditionsPage() {
@@ -21,17 +21,17 @@ export default function TermsAndConditionsPage() {
           Effective date: <strong>{effectiveDate}</strong>
         </p>
         <p>
-          Welcome, and thank you for your interest in Dot Phenix Solutions
-          (&quot;Dot Phenix&quot;, &quot;we&quot;, &quot;us&quot;, or
-          &quot;our&quot;) and our website located at https://www.dotphenix.com,
-          including any subdomains, mobile versions, and related services
-          (collectively, the &quot;Site&quot;).
+          Welcome, and thank you for your interest in Dot Phoenix Solutions
+          (&quot;Dot phoenix&quot;, &quot;we&quot;, &quot;us&quot;, or
+          &quot;our&quot;) and our website located at
+          https://www.dotphoenix.com, including any subdomains, mobile versions,
+          and related services (collectively, the &quot;Site&quot;).
         </p>
 
         <p>
           These Terms of Use (&quot;Terms & Conditions &quot;) constitute a
           legally binding agreement between you (&quot;you&quot; or
-          &quot;user&quot;) and Dot Phenix Solutions governing your access to
+          &quot;user&quot;) and Dot Phoenix Solutions governing your access to
           and use of the Site.
         </p>
 
@@ -46,7 +46,7 @@ export default function TermsAndConditionsPage() {
         <p>
           Your access to and use of the Site is provided on an &quot;as is&quot;
           and &quot;as available&quot; basis and is conditioned upon your
-          compliance with these Terms. Dot Phenix Solutions reserves the right,
+          compliance with these Terms. Dot Phoenix Solutions reserves the right,
           at its sole discretion, to modify, suspend, or discontinue any part of
           the Site or these Terms at any time without prior notice. Continued
           use of the Site following any changes constitutes your acceptance of
@@ -54,14 +54,14 @@ export default function TermsAndConditionsPage() {
         </p>
         <p>
           You acknowledge that your use of the Site is at your own risk. Dot
-          Phenix Solutions shall not be responsible or liable for any
+          Phoenix Solutions shall not be responsible or liable for any
           unauthorized access, hacking attempts, data breaches, misuse, loss, or
           damage arising from your use of the Site, except to the extent
           required by applicable law.
         </p>
         <p className="lead">
           These Terms &amp; Conditions govern your access to and use of the
-          website, products, platforms, and services provided by Dot Phenix
+          website, products, platforms, and services provided by Dot phoenix
           Solutions. By accessing or using our services, you agree to be bound
           by these terms.
         </p>
@@ -71,7 +71,7 @@ export default function TermsAndConditionsPage() {
         <section id="acceptance" className="terms-section">
           <h2>1. Acceptance of Terms</h2>
           <p>
-            By accessing, browsing, or using any part of the Dot Phenix
+            By accessing, browsing, or using any part of the Dot phoenix
             Solutions website or services, you acknowledge that you have read,
             understood, and agree to be bound by these Terms &amp; Conditions
             and all applicable laws and regulations.
@@ -81,7 +81,7 @@ export default function TermsAndConditionsPage() {
         <section id="services" className="terms-section">
           <h2>2. Scope of Services</h2>
           <p>
-            Dot Phenix Solutions provides digital transformation, software
+            Dot Phoenix Solutions provides digital transformation, software
             development, AI-driven automation, SaaS platforms, and related
             technology services. The scope, deliverables, timelines, and pricing
             for specific services may be governed by separate written agreements
@@ -107,7 +107,7 @@ export default function TermsAndConditionsPage() {
           <p>
             You are responsible for maintaining the confidentiality of your
             account credentials and for all activities conducted under your
-            account. Dot Phenix Solutions shall not be responsible for
+            account. Dot Phoenix Solutions shall not be responsible for
             unauthorized access resulting from user negligence, compromised
             credentials, or third-party actions beyond our reasonable control.
           </p>
@@ -117,7 +117,7 @@ export default function TermsAndConditionsPage() {
           <h2>5. Intellectual Property</h2>
           <p>
             All content, software, trademarks, logos, and intellectual property
-            associated with Dot Phenix Solutions are owned by or licensed to us
+            associated with Dot Phoenix Solutions are owned by or licensed to us
             and are protected by applicable intellectual property laws. No
             rights are granted except as expressly stated in writing.
           </p>
@@ -135,12 +135,12 @@ export default function TermsAndConditionsPage() {
         <section id="liability" className="terms-section">
           <h2>7. Limitation of Liability &amp; User Risk</h2>
           <p>
-            While Dot Phenix Solutions employs industry-standard security and
+            While Dot Phoenix Solutions employs industry-standard security and
             operational safeguards, no digital system can be entirely secure.
             Use of our services is at your own risk.
           </p>
           <p>
-            To the maximum extent permitted by law, Dot Phenix Solutions shall
+            To the maximum extent permitted by law, Dot Phoenix Solutions shall
             not be liable for any direct, indirect, incidental, consequential,
             or punitive damages arising from unauthorized access, hacking, data
             loss, service interruptions, or misuse of the platform, whether
@@ -162,7 +162,7 @@ export default function TermsAndConditionsPage() {
         <section id="termination" className="terms-section">
           <h2>9. Termination</h2>
           <p>
-            Dot Phenix Solutions reserves the right to suspend or terminate
+            Dot Phoenix Solutions reserves the right to suspend or terminate
             access to services at its discretion for violations of these terms,
             non-payment, or unlawful activity.
           </p>
@@ -190,7 +190,10 @@ export default function TermsAndConditionsPage() {
           <h2>12. Contact Information</h2>
           <ul>
             <li>
-              Email: <a href="mailto:info@dotphenix.com">info@dotphenix.com</a>
+              Email:{" "}
+              <a href="mailto:info@dotphoenixsolutions.com">
+                info@dotphoenixsolutions.com
+              </a>
             </li>
             <li>
               Phone: <a href="tel:+919346622679">+91 9346622679</a>
@@ -202,7 +205,7 @@ export default function TermsAndConditionsPage() {
           <h2>13. Third-Party Links & Services</h2>
           <p>
             The Site may contain links to third-party websites, platforms,
-            tools, or services that are not owned or controlled by Dot Phenix
+            tools, or services that are not owned or controlled by Dot phoenix
             Solutions. We do not endorse, control, or assume responsibility for
             the content, availability, security practices, or privacy policies
             of any third-party websites or services.
@@ -217,7 +220,7 @@ export default function TermsAndConditionsPage() {
         <section className="terms-section">
           <h2>14. Indemnification</h2>
           <p>
-            You agree to indemnify, defend, and hold harmless Dot Phenix
+            You agree to indemnify, defend, and hold harmless Dot phoenix
             Solutions, its directors, officers, employees, affiliates, and
             partners from and against any claims, damages, losses, liabilities,
             costs, and expenses (including reasonable legal fees) arising out of
@@ -234,8 +237,8 @@ export default function TermsAndConditionsPage() {
         <section className="terms-section">
           <h2>15. Force Majeure</h2>
           <p>
-            Dot Phenix Solutions shall not be liable for any failure or delay in
-            performance caused by events beyond its reasonable control,
+            Dot Phoenix Solutions shall not be liable for any failure or delay
+            in performance caused by events beyond its reasonable control,
             including but not limited to natural disasters, acts of government,
             cyber-attacks, internet or infrastructure failures, system outages,
             labor disputes, or other force majeure events.
@@ -266,7 +269,7 @@ export default function TermsAndConditionsPage() {
             remain in full force and effect.
           </p>
           <p>
-            The failure of Dot Phenix Solutions to enforce any right or
+            The failure of Dot Phoenix Solutions to enforce any right or
             provision of these Terms shall not constitute a waiver of such right
             or provision.
           </p>
@@ -275,14 +278,15 @@ export default function TermsAndConditionsPage() {
         <section className="terms-section">
           <h2>18. Assignment</h2>
           <p>
-            Dot Phenix Solutions may assign or transfer these Terms &amp;
+            Dot Phoenix Solutions may assign or transfer these Terms &amp;
             Conditions, in whole or in part, without restriction, including in
             connection with a merger, acquisition, restructuring, or sale of
             assets.
           </p>
           <p>
             You may not assign or transfer your rights or obligations under
-            these Terms without prior written consent from Dot Phenix Solutions.
+            these Terms without prior written consent from Dot phoenix
+            Solutions.
           </p>
         </section>
       </article>

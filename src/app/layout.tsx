@@ -13,15 +13,15 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://dotphenix.com"),
+  metadataBase: new URL("https://dotphoenix.com"),
 
   title: {
-    default: "Dot Phenix Solutions | AI-Driven Digital Automation",
-    template: "%s | Dot Phenix Solutions",
+    default: "Dot Phoenix Solutions | AI-Driven Digital Automation",
+    template: "%s | Dot Phoenix Solutions",
   },
 
   description:
-    "Dot Phenix Solutions is an AI-Driven Digital Automation Company delivering scalable, secure, and intelligent technology solutions for modern enterprises.",
+    "Dot Phoenix Solutions is an AI-Driven Digital Automation Company delivering scalable, secure, and intelligent technology solutions for modern enterprises.",
 
   alternates: {
     canonical: "/",
@@ -30,18 +30,18 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://dotphenix.com",
-    siteName: "Dot Phenix Solutions",
-    title: "Dot Phenix Solutions | AI-Driven Digital Automation",
+    url: "https://dotphoenix.com",
+    siteName: "Dot Phoenix Solutions",
+    title: "Dot Phoenix Solutions | AI-Driven Digital Automation",
     description:
-      "Dot Phenix Solutions is an AI-Driven Digital Automation Company delivering scalable, secure, and intelligent technology solutions for modern enterprises.",
+      "Dot Phoenix Solutions is an AI-Driven Digital Automation Company delivering scalable, secure, and intelligent technology solutions for modern enterprises.",
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "Dot Phenix Solutions | AI-Driven Digital Automation",
+    title: "Dot Phoenix Solutions | AI-Driven Digital Automation",
     description:
-      "Dot Phenix Solutions is an AI-Driven Digital Automation Company delivering scalable, secure, and intelligent technology solutions for modern enterprises.",
+      "Dot Phoenix Solutions is an AI-Driven Digital Automation Company delivering scalable, secure, and intelligent technology solutions for modern enterprises.",
   },
 
   robots: {

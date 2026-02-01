@@ -24,7 +24,7 @@ export default function Process() {
             </h2>
 
             <p className="process-description">
-              Dot Phenix helps organizations visualize, automate, and scale
+              Dot Phoenix helps organizations visualize, automate, and scale
               their digital operations using intelligent, enterprise-grade
               dashboards.
             </p>

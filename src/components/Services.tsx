@@ -16,7 +16,7 @@ export default function Services() {
     <section className="services-section">
       <Container>
         <Text as="h2" className="services-title">
-          Dot Phenix Services
+          Dot Phoenix Services
         </Text>
 
         <div className="services-grid">

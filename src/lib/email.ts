@@ -37,8 +37,8 @@ export async function sendContactEmail(data: ContactEmailPayload) {
   const resend = getResendClient();
 
   await resend.emails.send({
-    from: "Website Enquiry <no-reply@dotphenix.com>",
-    to: ["info@dotphenix.com"],
+    from: "Website Enquiry <no-reply@dotphoenixsolutions.com>",
+    to: ["info@dotphoenixsolutions.com"],
     replyTo: data.email,
     subject: "New Website Contact Submission",
     html: `

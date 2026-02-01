@@ -63,21 +63,21 @@ export default function CompanyPage() {
 
             {/* RIGHT */}
             <div className="company-intro-image">
-              <div className="phenix-image-wrapper">
+              <div className="phoenix-image-wrapper">
                 <Image
-                  src="/Phenix.svg"
-                  alt="Dot Phenix Solutions logo"
+                  src="/phoenix.svg"
+                  alt="Dot Phoenix Solutions logo"
                   fill
                   priority
                   sizes="(max-width: 768px) 180px, 320px"
-                  className="phenix-image"
+                  className="phoenix-image"
                 />
               </div>
 
-              <h2 className="phenix-title fade-in-right">
-                Dot Phenix Solutions
+              <h2 className="phoenix-title fade-in-right">
+                Dot Phoenix Solutions
               </h2>
-              <p className="phenix-tagline fade-in-right">
+              <p className="phoenix-tagline fade-in-right">
                 Powering the World’s Digital Evolution
               </p>
             </div>

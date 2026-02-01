@@ -27,8 +27,8 @@ export default function Header() {
     <header className="site-header" data-menu-open={open ? "true" : "false"}>
       <Container className="header-inner">
         <div className="brand">
-          <Link href="/" className="logo" aria-label="Dot Phenix home">
-            🐦‍🔥 Dot Phenix
+          <Link href="/" className="logo" aria-label="Dot Phoenix home">
+            🐦‍🔥 Dot Phoenix
           </Link>
         </div>
 

@@ -9,7 +9,7 @@ export default function DocumentationPage() {
       <header className="doc-header">
         <h1 className="fade-in-left">Documentation</h1>
         <p>
-          Dot Phenix Solutions is an AI-driven digital automation platform that
+          Dot Phoenix Solutions is an AI-driven digital automation platform that
           enables organizations to design, modernize, automate, and scale
           digital operations with speed, intelligence, and reliability.
         </p>
@@ -21,7 +21,7 @@ export default function DocumentationPage() {
       <section className="doc-section">
         <h2>AI-Driven Digital Automation</h2>
         <p>
-          Dot Phenix Solutions applies Artificial Intelligence to automate and
+          Dot Phoenix Solutions applies Artificial Intelligence to automate and
           scale digital operations, enabling organizations to move seamlessly
           from idea to deployment with precision, speed, and intelligence.
         </p>
@@ -45,7 +45,7 @@ export default function DocumentationPage() {
          SERVICES
       ====================== */}
       <section className="doc-section">
-        <h2>Dot Phenix Services</h2>
+        <h2>Dot Phoenix Services</h2>
 
         <h3>Web Application Development</h3>
         <p>
@@ -90,7 +90,7 @@ export default function DocumentationPage() {
       <section className="doc-section">
         <h2>Intelligent Dashboards for Modern Digital Operations</h2>
         <p>
-          Dot Phenix enables organizations to visualize, automate, and scale
+          Dot Phoenix enables organizations to visualize, automate, and scale
           their digital operations using secure, enterprise-grade intelligent
           dashboards.
         </p>
@@ -123,7 +123,7 @@ export default function DocumentationPage() {
       <section className="doc-section">
         <h2>Security & Compliance</h2>
         <p>
-          Dot Phenix Solutions follows industry best practices to ensure data
+          Dot Phoenix Solutions follows industry best practices to ensure data
           protection, system integrity, and regulatory compliance.
         </p>
         <ul>
@@ -184,7 +184,7 @@ export default function DocumentationPage() {
       <section className="doc-section">
         <h2>Your One-Stop Digital Transformation Partner</h2>
         <p>
-          Dot Phenix Solutions helps organizations execute digital
+          Dot Phoenix Solutions helps organizations execute digital
           transformation by automating, optimizing, and scaling critical digital
           operations using AI-driven platforms.
         </p>
@@ -206,7 +206,7 @@ export default function DocumentationPage() {
          WHY CHOOSE
       ====================== */}
       <section className="doc-section">
-        <h2>Why Choose Dot Phenix Solutions</h2>
+        <h2>Why Choose Dot Phoenix Solutions</h2>
 
         <h3>Uncompromised Quality</h3>
         <p>

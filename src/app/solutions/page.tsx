@@ -180,7 +180,7 @@ export default function SolutionsPage() {
   return (
     <main className="solutionspage">
       <header className="solutionspage-header">
-        <h1 className="fade-in-left">Dot Phenix Solutions</h1>
+        <h1 className="fade-in-left">Dot Phoenix Solutions</h1>
         <p
           className="solutionspage-intro fade-in-right"
           style={{ animationDelay: "0.12s" }}

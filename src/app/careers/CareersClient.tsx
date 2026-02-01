@@ -26,9 +26,9 @@ export default function CareersClient() {
   return (
     <main className="careers-wrapper">
       <header className="careers-header reveal fade-up">
-        <h1>Careers at Dot Phenix Solutions</h1>
+        <h1>Careers at Dot Phoenix Solutions</h1>
         <p>
-          Dot Phenix Solutions is growing—join us to grow your career while
+          Dot Phoenix Solutions is growing—join us to grow your career while
           building impactful digital ecosystems for the world.
         </p>
         <p className="careers-sub">
@@ -162,9 +162,14 @@ export default function CareersClient() {
           <div className="careers-col careers-col-action">
             <p className="cta-inline">
               Send your resume to{" "}
-              <a href="mailto:info@dotphenix.com">info@dotphenix.com</a>
+              <a href="mailto:info@dotphoenixsolutions.com">
+                info@dotphoenixsolutions.com
+              </a>
             </p>
-            <a href="mailto:info@dotphenix.com" className="cta-button">
+            <a
+              href="mailto:info@dotphoenixsolutions.com"
+              className="cta-button"
+            >
               Apply Now
             </a>
           </div>

@@ -3,7 +3,7 @@ import type { MetadataRoute } from "next";
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl =
     process.env.NODE_ENV === "production"
-      ? "https://www.dotphenix.com"
+      ? "https://www.dotphoenix.com"
       : "http://localhost:3000";
 
   return [

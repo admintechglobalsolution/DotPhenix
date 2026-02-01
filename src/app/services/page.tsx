@@ -10,7 +10,7 @@ import AiVisual from "../service-visuals/AiVisual";
 import WhyChoose from "@/components/WhyChoose";
 
 export const metadata = {
-  title: "Services — Dot Phenix Solutions",
+  title: "Services — Dot Phoenix Solutions",
   description:
     "Enterprise digital services including Web, Mobile, SaaS, AI Automation, Digital Marketing, and Payroll & Enterprise Systems.",
 };
@@ -65,7 +65,7 @@ export default function ServicesPage() {
       <header className="services-header">
         <h1 className="fade-in-left">Our Services</h1>
         <p className="fade-in-right" style={{ animationDelay: "0.12s" }}>
-          Dot Phenix Solutions delivers secure, scalable, and intelligent
+          Dot Phoenix Solutions delivers secure, scalable, and intelligent
           digital solutions built for modern enterprises, with performance,
           compliance, and long-term sustainability at the core of every platform
           we engineer.

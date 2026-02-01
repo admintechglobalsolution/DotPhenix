@@ -107,7 +107,7 @@ export default function WhyChoose() {
         </h1>
 
         <Text className="why-description">
-          Dot Phenix Solutions is an AI-driven Digital Automation platform that
+          Dot Phoenix Solutions is an AI-driven Digital Automation platform that
           helps organizations execute Digital Transformation by automating,
           optimizing, and scaling critical digital operations.
         </Text>

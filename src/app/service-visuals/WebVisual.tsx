@@ -8,7 +8,7 @@ export default function WebVisual() {
       <div className="web-visual-frame">
         {/* HERO BAR */}
         <div className="web-visual-header">
-          <div className="web-visual-brand">DotPhenix</div>
+          <div className="web-visual-brand">Dotphoenix</div>
           <nav className="web-visual-nav">
             <span>Home</span>
             <span>About</span>

@@ -8,7 +8,7 @@ export default function Footer() {
       <Container>
         <div className="footer-container">
           <div className="footer-column">
-            <h3>🐦‍🔥 Dot Phenix Solutions</h3>
+            <h3>🐦‍🔥 Dot Phoenix Solutions</h3>
             <p>
               Trusted Digital Transformation Partner Helping Global
               Organizations Design, Modernize, Optimize, and Scale Digital
@@ -54,7 +54,7 @@ export default function Footer() {
             <h3>Contact</h3>
             <ul className="footer-contact">
               <li>
-                <span>Email:</span> info@dotphenix.com
+                <span>Email:</span> info@dotphoenixsolutions.com
               </li>
               <li>
                 <span>Phone:</span> +91 9346622679
@@ -65,7 +65,7 @@ export default function Footer() {
         </div>
 
         <div className="footer-bottom">
-          © {new Date().getFullYear()} Dot Phenix Solutions. All Rights
+          © {new Date().getFullYear()} Dot Phoenix Solutions. All Rights
           Reserved.
         </div>
       </Container>
