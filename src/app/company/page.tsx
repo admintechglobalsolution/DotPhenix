@@ -61,7 +61,6 @@ export default function CompanyPage() {
               </p>
             </div>
 
-            {/* RIGHT */}
             <div className="company-intro-image">
               <div className="phoenix-image-wrapper">
                 <Image
