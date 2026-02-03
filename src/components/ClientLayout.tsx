@@ -1,14 +1,18 @@
 "use client";
 
-import { useEffect, useState, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
+import Lenis from "lenis";
+
 import SidebarForm from "@/components/SidebarForm";
 
 export default function ClientLayout({ children }: { children: ReactNode }) {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const pathname = usePathname();
+  const lenisRef = useRef<Lenis | null>(null);
 
+  // Sidebar open / close events
   useEffect(() => {
     const handleOpen = () => setIsSidebarOpen(true);
     const handleClose = () => setIsSidebarOpen(false);
@@ -22,6 +26,29 @@ export default function ClientLayout({ children }: { children: ReactNode }) {
     };
   }, []);
 
+  // Lenis smooth scrolling
+  useEffect(() => {
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smoothWheel: true,
+    });
+
+    lenisRef.current = lenis;
+
+    const raf = (time: number) => {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    };
+
+    requestAnimationFrame(raf);
+
+    return () => {
+      lenis.destroy();
+      lenisRef.current = null;
+    };
+  }, []);
+
   return (
     <>
       <SidebarForm
@@ -29,7 +56,7 @@ export default function ClientLayout({ children }: { children: ReactNode }) {
         onClose={() => setIsSidebarOpen(false)}
       />
 
-      {/* ENTER-ONLY animation (no blink) */}
+      {/* Page transition wrapper */}
       <motion.div
         key={pathname}
         initial={{ opacity: 0 }}
