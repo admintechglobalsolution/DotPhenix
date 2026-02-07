@@ -136,10 +136,6 @@
   transform: translateX(-2rem);
 }
 
-.slide-right {
-  transform: translateX(2rem);
-}
-
 .reveal.is-visible {
   opacity: 1;
   transform: translate(0, 0);

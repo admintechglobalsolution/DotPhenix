@@ -59,11 +59,10 @@ export default function CareersClient() {
             <li>React</li>
             <li>TypeScript</li>
             <li>REST APIs</li>
-            <li>Git</li>
           </ul>
         </article>
 
-        <article className="career-role reveal slide-right">
+        <article className="career-role reveal slide-left">
           <h2>Mobile Application Developer</h2>
           <p className="role-desc">
             Build high-quality mobile applications for Android and iOS with
@@ -82,7 +81,6 @@ export default function CareersClient() {
             <li>React Native</li>
             <li>Java</li>
             <li>Firebase</li>
-            <li>Git</li>
           </ul>
         </article>
 
@@ -105,11 +103,10 @@ export default function CareersClient() {
             <li>Next.js</li>
             <li>MySQL</li>
             <li>Highcharts</li>
-            <li>Docker</li>
           </ul>
         </article>
 
-        <article className="career-role reveal slide-right">
+        <article className="career-role reveal slide-left">
           <h2>AI & Intelligent Automation Engineer</h2>
           <p className="role-desc">
             Design and implement AI-powered automation systems to solve
@@ -147,7 +144,7 @@ export default function CareersClient() {
           <h3>Tools & Technologies</h3>
           <ul className="skills">
             <li>Analytics</li>
-            <li>SEO Tools</li>
+            <li>Tools</li>
             <li>Automation</li>
           </ul>
         </article>
