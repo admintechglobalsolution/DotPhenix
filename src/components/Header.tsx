@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import Container from "@/components/ui/Container";
 import "./header.css";
 
@@ -15,27 +16,42 @@ const navItems = [
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
-    document.body.style.overflow = open ? "hidden" : "";
+    if (!open) return;
+
+    const y = window.scrollY;
+    document.body.style.position = "fixed";
+    document.body.style.top = `-${y}px`;
+    document.body.style.width = "100%";
+
     return () => {
-      document.body.style.overflow = "";
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.width = "";
+      window.scrollTo(0, y);
     };
   }, [open]);
+
+  const handleNavigate = (href: string) => {
+    setOpen(false);
+    setTimeout(() => {
+      router.push(href);
+    }, 120);
+  };
 
   return (
     <header className="site-header" data-menu-open={open ? "true" : "false"}>
       <Container className="header-inner">
-        <div className="brand">
-          <Link href="/" className="logo" aria-label="Dot Phoenix home">
-            🐦‍🔥 Dot Phoenix
-          </Link>
-        </div>
+        <Link href="/" className="logo">
+          🐦‍🔥 Dot Phoenix
+        </Link>
 
-        <nav className="nav-desktop" aria-label="Primary navigation">
+        <nav className="nav-desktop">
           <ul className="nav-list">
             {navItems.map((item) => (
-              <li key={item.href} className="nav-item">
+              <li key={item.href}>
                 <Link href={item.href} className="nav-link">
                   {item.label}
                 </Link>
@@ -44,40 +60,33 @@ export default function Header() {
           </ul>
         </nav>
 
-        <button
-          className="menu-toggle"
-          aria-label={open ? "Close menu" : "Open menu"}
-          aria-expanded={open}
-          onClick={() => setOpen((v) => !v)}
-        >
-          <span className="menu-icon" aria-hidden>
-            {open ? "✕" : "☰"}
-          </span>
+        <button className="menu-toggle" onClick={() => setOpen(true)}>
+          ☰
         </button>
       </Container>
 
-      <div
-        className="mobile-nav-wrap"
-        role="dialog"
-        aria-modal="true"
-        aria-hidden={!open}
-      >
-        <div className="mobile-nav-overlay" onClick={() => setOpen(false)} />
-        <nav className="nav-mobile" aria-label="Mobile navigation">
-          <ul>
+      <div className="mobile-nav-wrap">
+        <div className="nav-mobile">
+          <div className="mobile-nav-header">
+            <span className="mobile-logo">🐦‍🔥 Dot Phoenix</span>
+            <button className="mobile-close" onClick={() => setOpen(false)}>
+              ✕
+            </button>
+          </div>
+
+          <ul className="mobile-nav-list">
             {navItems.map((item) => (
-              <li key={item.href}>
-                <Link
-                  href={item.href}
+              <li key={item.href} className="mobile-nav-item">
+                <button
                   className="nav-link-mobile"
-                  onClick={() => setOpen(false)}
+                  onClick={() => handleNavigate(item.href)}
                 >
                   {item.label}
-                </Link>
+                </button>
               </li>
             ))}
           </ul>
-        </nav>
+        </div>
       </div>
     </header>
   );

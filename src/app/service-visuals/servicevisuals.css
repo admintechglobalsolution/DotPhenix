@@ -101,7 +101,7 @@
 }
 
 .saas-visual-chart {
-  height: 135px;
+  height: 12rem;
   background: #020617;
   border-radius: 12px;
   padding: 0.5rem;
@@ -146,7 +146,7 @@
   }
 
   .saas-visual-chart {
-    height: 110px;
+    height: 12rem;
   }
 }
 

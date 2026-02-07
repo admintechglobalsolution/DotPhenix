@@ -7,12 +7,18 @@ import Lenis from "lenis";
 
 import SidebarForm from "@/components/SidebarForm";
 
+declare global {
+  interface Window {
+    scrollToSection?: (target: string | HTMLElement) => void;
+  }
+}
+
 export default function ClientLayout({ children }: { children: ReactNode }) {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const pathname = usePathname();
   const lenisRef = useRef<Lenis | null>(null);
 
-  // Sidebar open / close events
+  /* ---------------- Sidebar events ---------------- */
   useEffect(() => {
     const handleOpen = () => setIsSidebarOpen(true);
     const handleClose = () => setIsSidebarOpen(false);
@@ -26,7 +32,7 @@ export default function ClientLayout({ children }: { children: ReactNode }) {
     };
   }, []);
 
-  // Lenis smooth scrolling
+  /* ---------------- Lenis init ---------------- */
   useEffect(() => {
     const lenis = new Lenis({
       duration: 1.2,
@@ -43,11 +49,37 @@ export default function ClientLayout({ children }: { children: ReactNode }) {
 
     requestAnimationFrame(raf);
 
+    /* Global scrollTo helper */
+    window.scrollToSection = (target) => {
+      if (!lenisRef.current) return;
+
+      if (typeof target === "string") {
+        const el = document.querySelector(target);
+        if (el instanceof HTMLElement) {
+          lenisRef.current.scrollTo(el);
+        }
+      } else {
+        lenisRef.current.scrollTo(target);
+      }
+    };
+
     return () => {
       lenis.destroy();
       lenisRef.current = null;
+      delete window.scrollToSection;
     };
   }, []);
+
+  /* ---------------- Pause Lenis on sidebar ---------------- */
+  useEffect(() => {
+    if (!lenisRef.current) return;
+
+    if (isSidebarOpen) {
+      lenisRef.current.stop();
+    } else {
+      lenisRef.current.start();
+    }
+  }, [isSidebarOpen]);
 
   return (
     <>
