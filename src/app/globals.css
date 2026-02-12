@@ -192,6 +192,18 @@ body::after {
   );
 }
 
+.phoenixlogo {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.phoenix-logo {
+  object-fit: contain;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

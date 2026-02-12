@@ -1,6 +1,8 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
+
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Container from "@/components/ui/Container";
@@ -44,8 +46,16 @@ export default function Header() {
   return (
     <header className="site-header" data-menu-open={open ? "true" : "false"}>
       <Container className="header-inner">
-        <Link href="/" className="logo">
-          🐦‍🔥 Dot Phoenix
+        <Link href="/" className="phoenixlogo flex items-center gap-2">
+          <Image
+            src="/phoenixlogo.svg"
+            alt="Dot Phoenix Solutions logos"
+            width={50}
+            height={50}
+            priority
+            className="phoenix-logo"
+          />
+          <span>Dot Phoenix Solutions</span>
         </Link>
 
         <nav className="nav-desktop">
@@ -68,7 +78,7 @@ export default function Header() {
       <div className="mobile-nav-wrap">
         <div className="nav-mobile">
           <div className="mobile-nav-header">
-            <span className="mobile-logo">🐦‍🔥 Dot Phoenix</span>
+            <span className="mobile-logo"> Dot Phoenix</span>
             <button className="mobile-close" onClick={() => setOpen(false)}>
               ✕
             </button>

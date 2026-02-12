@@ -8,7 +8,7 @@ export default function Footer() {
       <Container>
         <div className="footer-container">
           <div className="footer-column">
-            <h3>🐦‍🔥 Dot Phoenix Solutions</h3>
+            <h3>Dot Phoenix Solutions</h3>
             <p>
               Trusted Digital Transformation Partner Helping Global
               Organizations Design, Modernize, Optimize, and Scale Digital
@@ -59,7 +59,10 @@ export default function Footer() {
               <li>
                 <span>Phone:</span> +91 9346622679
               </li>
-              <li>Address: Tirupati, AP, India</li>
+              <li>
+                <span>Address:</span>
+                Tirupati, AP, India
+              </li>
             </ul>
           </div>
         </div>

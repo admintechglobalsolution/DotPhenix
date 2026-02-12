@@ -26,7 +26,7 @@ export default function Solutions() {
           </div>
 
           <div className="solutions-center">
-            <Text as="h3">🐦‍🔥 Dot Phoenix Solutions</Text>
+            <Text as="h3">Dot Phoenix Solutions</Text>
           </div>
 
           <div className="solutions-list">
